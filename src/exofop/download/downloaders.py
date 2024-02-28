@@ -359,7 +359,7 @@ class ExofopTable:
                 file_name = f"{self.DEFAULT_FILE_NAME}_{term}.csv"
 
             file_name = os.path.join(target_dir, file_name)
-            tab.write("output_file.csv", format="ascii.csv", overwrite=True)
+            tab.write(file_name, format="ascii.csv", overwrite=True)
 
         return tab
 
@@ -570,7 +570,7 @@ class TimeSeriesTable(ExofopTable):
     >>> toi_list = ['TOI_1130', 'TOI_1131']
     >>> table.bulk_download(toi_list=toi_list, to_separate_folders=False)
     """
-
+    DEFAULT_FILE_NAME = "time_series_observations_overview"
     RESOURCE = "download_tseries.php"
 
 
@@ -579,7 +579,7 @@ class SpectroscopyTable(ExofopTable):
     >>> table = SpectroscopyTable(target_dir=data_dir)
     >>> df = table.download(toi='TOI_1130')
     """
-
+    DEFAULT_FILE_NAME = "spectroscopy_observations_overview"
     RESOURCE = "download_spect.php"
 
 
@@ -588,7 +588,7 @@ class ImagingTable(ExofopTable):
     >>> imaging_table = ImagingTable(target_dir=data_dir)
     >>> df = imaging_table.download(toi='TOI_1130')
     """
-
+    DEFAULT_FILE_NAME = "imaging_observations_overview"
     RESOURCE = "download_imaging.php"
 
 
@@ -597,7 +597,7 @@ class StellarParametersTable(ExofopIDTable):
     tb = StellarParametersTable(target_dir=data_dir)
     tb.download(toi='TOI_1130')
     """
-
+    DEFAULT_FILE_NAME = "stellar_parameters_overview"
     RESOURCE = "download_stellar.php"
 
 
@@ -606,7 +606,7 @@ class NearbyTargetTable(ExofopIDTable):
     tb = NearbyTargetTable(target_dir=data_dir)
     tb.download(toi='TOI_1130')
     """
-
+    DEFAULT_FILE_NAME = "nearby_target_overview"
     RESOURCE = "download_nearbytarget.php"
 
 
@@ -615,7 +615,7 @@ class StellarCompanionsTable(ExofopTable):
     tb = StellarCompanionsTable(target_dir=data_dir)
     tb.download(toi='TOI_1130')
     """
-
+    DEFAULT_FILE_NAME = "stellar_companions_overview"
     RESOURCE = "download_stellarcomp.php"
 
 

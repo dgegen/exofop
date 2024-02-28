@@ -1048,8 +1048,9 @@ def unpack_multiple_measurements_from_same_tag(
 ):
     """Unpack multiple measurements from the same tag into separate observations.
 
-    Unpacks multiple measurements from the same tag into separate dataframes and updates the dictionaries
-    containing file name components and unformatted dataframes accordingly.
+    This function takes dictionaries of observation names and their corresponding file name components,
+    along with unformatted dataframes. It then unpacks multiple measurements from the same tag into separate
+    dataframes and updates the input dictionaries accordingly.
 
     Parameters
     ----------
@@ -1059,6 +1060,19 @@ def unpack_multiple_measurements_from_same_tag(
         A dictionary containing observation names and corresponding unformatted dataframes.
     allow_multiple_filetypes : bool, optional
         A boolean indicating whether to allow multiple file types (default is True).
+
+    Notes
+    -----
+    Some observations contain multiple measurement files within the same tag,
+    e.g. due to different filters used during the measurement,
+    or different aperture sizes used to extract the light curve.
+    This function flattens the input dictionary by assigning such measurements to separate keys;
+    it does so trying to extract meaningful keys from the observation name and filename components:
+    - if the observation name contains a filter name, the filter name is appended to the key
+    - if the `filetype` attribute of the filename components contains an underscore,
+      as is often the case for different aperatures,
+      this information is split and used to create the key
+    - otherwise a cleaned version of the `filetype` component is used as the key
     """
     pattern = re.compile("|".join(["measurements", "measurement", "lightcurves"]), re.IGNORECASE)
 

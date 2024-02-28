@@ -23,8 +23,12 @@ dependencies = [
     "httpx",
     "tqdm",
 ]
-version = '0.0.1'
+version = '0.0.2'
 
+[project.urls]
+"Homepage" = "https://dgegen.github.io/exofop/"
+"Source" = "https://github.com/dgegen/exofop"
+"Bug Tracker" = "https://github.com/dgegen/exofop/issues"
 
 [project.optional-dependencies]
 visualization = ["ipython", "matplotlib", "notebook", "ipywidgets"]
