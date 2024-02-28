@@ -1,0 +1,1314 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>exofop.download &#8212; ExoFOP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css?v=7186c071" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exofop.download';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="exofop.extract" href="exofop.extract.html" />
+    <link rel="prev" title="API" href="exofop.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ExoFOP Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">QuickStart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/1_download_from_ExoFOP.html">Download tags from ExoFOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/2_extract_and_standardise_time_series_data.html">Extract and standardise ExoFOP time series observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="exofop.html">API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">exofop.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exofop.extract.html">exofop.extract</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/edit/main/docs/exofop.download.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/issues/new?title=Issue%20on%20page%20%2Fexofop.download.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/exofop.download.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>exofop.download</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.username"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.username</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.BASE_URL"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.BASE_URL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.cookies"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.cookies</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.login"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.login()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.OverviewTableAccessor"><code class="docutils literal notranslate"><span class="pre">OverviewTableAccessor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.OverviewTableAccessor.table"><code class="docutils literal notranslate"><span class="pre">OverviewTableAccessor.table</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.OverviewTableAccessor.tags"><code class="docutils literal notranslate"><span class="pre">OverviewTableAccessor.tags</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System"><code class="docutils literal notranslate"><span class="pre">System</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.name"><code class="docutils literal notranslate"><span class="pre">System.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.tic"><code class="docutils literal notranslate"><span class="pre">System.tic</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.toi"><code class="docutils literal notranslate"><span class="pre">System.toi</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.autocomplete"><code class="docutils literal notranslate"><span class="pre">System.autocomplete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.exists"><code class="docutils literal notranslate"><span class="pre">System.exists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.get_tic"><code class="docutils literal notranslate"><span class="pre">System.get_tic()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.get_toi"><code class="docutils literal notranslate"><span class="pre">System.get_toi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.is_complete"><code class="docutils literal notranslate"><span class="pre">System.is_complete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.is_consistent"><code class="docutils literal notranslate"><span class="pre">System.is_consistent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.lookup"><code class="docutils literal notranslate"><span class="pre">System.lookup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.target"><code class="docutils literal notranslate"><span class="pre">System.target</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader"><code class="docutils literal notranslate"><span class="pre">SystemDownloader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.time_series"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.time_series</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.spectroscopy"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.spectroscopy</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.imaging"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.imaging</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.stellar_parameters"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.stellar_parameters</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.nearby_target"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.nearby_target</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.stellar_companions"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.stellar_companions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download_imaging"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download_imaging()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download_spectroscopy"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download_spectroscopy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download_time_series"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download_time_series()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.from_username"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.from_username()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.light_curve"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.light_curve</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.unzip_downloaded_files"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.unzip_downloaded_files()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC"><code class="docutils literal notranslate"><span class="pre">TIC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.exists"><code class="docutils literal notranslate"><span class="pre">TIC.exists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.id"><code class="docutils literal notranslate"><span class="pre">TIC.id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.lookup"><code class="docutils literal notranslate"><span class="pre">TIC.lookup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.to_toi"><code class="docutils literal notranslate"><span class="pre">TIC.to_toi()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI"><code class="docutils literal notranslate"><span class="pre">TOI</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.exists"><code class="docutils literal notranslate"><span class="pre">TOI.exists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.id"><code class="docutils literal notranslate"><span class="pre">TOI.id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.lookup"><code class="docutils literal notranslate"><span class="pre">TOI.lookup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.planet"><code class="docutils literal notranslate"><span class="pre">TOI.planet</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.system"><code class="docutils literal notranslate"><span class="pre">TOI.system</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.to_tic"><code class="docutils literal notranslate"><span class="pre">TOI.to_tic()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader"><code class="docutils literal notranslate"><span class="pre">TagDownloader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.BASE_URL"><code class="docutils literal notranslate"><span class="pre">TagDownloader.BASE_URL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.client_kwargs"><code class="docutils literal notranslate"><span class="pre">TagDownloader.client_kwargs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.delete_zip_folder"><code class="docutils literal notranslate"><span class="pre">TagDownloader.delete_zip_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.download_tags"><code class="docutils literal notranslate"><span class="pre">TagDownloader.download_tags()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.download_tags_async"><code class="docutils literal notranslate"><span class="pre">TagDownloader.download_tags_async()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.unzip_downloaded_files"><code class="docutils literal notranslate"><span class="pre">TagDownloader.unzip_downloaded_files()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-exofop.download">
+<span id="exofop-download"></span><h1>exofop.download<a class="headerlink" href="#module-exofop.download" title="Link to this heading">#</a></h1>
+<p>This sub-package  provides functionality for downloading data from the ExoFOP website.</p>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><a class="reference internal" href="#exofop.download.SystemDownloader" title="exofop.download.SystemDownloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.SystemDownloader</span></code></a><span class="classifier">class</span></dt><dd><p>A class for downloading data related to individual stellar systems from ExoFOP.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.download.ExoFOPAuthenticator" title="exofop.download.ExoFOPAuthenticator"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.ExoFOPAuthenticator</span></code></a><span class="classifier">class</span></dt><dd><p>A class for handling authentication with and cookie storage for the ExoFOP server.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.download.TagDownloader" title="exofop.download.TagDownloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.TagDownloader</span></code></a><span class="classifier">class</span></dt><dd><p>A class for downloading data using ExoFOP tags.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.download.System" title="exofop.download.System"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.System</span></code></a><span class="classifier">class</span></dt><dd><p>A class representing an ExoFOP system identifier, e.g. a TIC ID or a TOI ID.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.download.TIC" title="exofop.download.TIC"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.TIC</span></code></a><span class="classifier">class</span></dt><dd><p>A class representing a TIC ID.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.download.TOI" title="exofop.download.TOI"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.TOI</span></code></a><span class="classifier">class</span></dt><dd><p>A class representing a TOI ID.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.download.OverviewTableAccessor" title="exofop.download.OverviewTableAccessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.OverviewTableAccessor</span></code></a><span class="classifier">class</span></dt><dd><p>A class for providing tables from ExoFOP for a given target.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>The following is a basic example of how to use the class <a class="reference internal" href="#exofop.download.SystemDownloader" title="exofop.download.SystemDownloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.download.SystemDownloader</span></code></a>
+to download data from ExoFOP:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">exofop.download</span> <span class="kn">import</span> <span class="n">System</span><span class="p">,</span> <span class="n">SystemDownloader</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;TIC 123456789&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">system_loader</span> <span class="o">=</span> <span class="n">SystemDownloader</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">system</span><span class="o">=</span><span class="n">system</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">data_dir</span><span class="o">=</span><span class="s2">&quot;path/to/directory/to/store/downloaded/tags&quot;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tags</span> <span class="o">=</span> <span class="n">system_loader</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">tags</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">system_loader</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tags</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>For a more detailed introduction, consult the tutorial <a class="reference internal" href="notebooks/1_download_from_ExoFOP.html"><span class="doc">Download tags from ExoFOP</span></a>.</p>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.download.ExoFOPAuthenticator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.download.</span></span><span class="sig-name descname"><span class="pre">ExoFOPAuthenticator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cookies_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_hours</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credential_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_cookie_jars</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/authenticator.html#ExoFOPAuthenticator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.ExoFOPAuthenticator" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for managing sessions and login to ExoFOP using httpx.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>username</strong> (<em>str</em><em>, </em><em>optional</em>) – The ExoFOP username. If not provided, user will be prompted to enter.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.ExoFOPAuthenticator.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#exofop.download.ExoFOPAuthenticator.username" title="Link to this definition">#</a></dt>
+<dd><p>The ExoFOP username used for login.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">authenticator</span> <span class="o">=</span> <span class="n">ExoFOPAuthenticator</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;lovelace&quot;</span><span class="p">)</span>
+<span class="go">Please enter your login credentials:</span>
+<span class="go">Username: myusername  # Username is printed</span>
+<span class="go">Password:             # Password is prompted</span>
+<span class="go">Login was successful. # Or &#39;Login was not successful&#39;</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.ExoFOPAuthenticator.BASE_URL">
+<span class="sig-name descname"><span class="pre">BASE_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://exofop.ipac.caltech.edu'</span></em><a class="headerlink" href="#exofop.download.ExoFOPAuthenticator.BASE_URL" title="Link to this definition">#</a></dt>
+<dd><p>Base URL for the ExoFOP website.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.ExoFOPAuthenticator.cookies">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cookies</span></span><a class="headerlink" href="#exofop.download.ExoFOPAuthenticator.cookies" title="Link to this definition">#</a></dt>
+<dd><p>Serve cookies from the cookie_jar_shelf.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.ExoFOPAuthenticator.login">
+<span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/download/authenticator.html#ExoFOPAuthenticator.login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.ExoFOPAuthenticator.login" title="Link to this definition">#</a></dt>
+<dd><p>Login to ExoFOP and return True if successful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>str</em><em>, </em><em>optional</em>) – The ExoFOP password. If not provided, user will be prompted to enter.
+For security reasons, it is strongly recommended not to hardcode or directly pass
+your password to this function. Instead, only enter your password when prompted.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span> <span class="o">=</span> <span class="n">ExoFOPAuthenticator</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;lovelace&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
+<span class="go">Please enter your login credentials:</span>
+<span class="go">Username: myusername  # Username is printed</span>
+<span class="go">Password:             # Password is prompted</span>
+<span class="go">Login was successful. # Or &#39;Login was not successful&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.download.OverviewTableAccessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.download.</span></span><span class="sig-name descname"><span class="pre">OverviewTableAccessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_loader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ExofopTable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/downloaders.html#OverviewTableAccessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.OverviewTableAccessor" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for providing tables from ExoFOP for a given target.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.OverviewTableAccessor.table">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">table</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Table</span></em><a class="headerlink" href="#exofop.download.OverviewTableAccessor.table" title="Link to this definition">#</a></dt>
+<dd><p>The table containing the data for the given target.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.OverviewTableAccessor.tags">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#exofop.download.OverviewTableAccessor.tags" title="Link to this definition">#</a></dt>
+<dd><p>The list of tags contained in the table for the given target.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.download.System">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.download.</span></span><span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#exofop.download.TIC" title="exofop.download.identifiers.TIC"><span class="pre">TIC</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#exofop.download.TOI" title="exofop.download.identifiers.TOI"><span class="pre">TOI</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complete</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>System class for handling and validating TIC and TOI IDs.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.System.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#exofop.download.System.name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.System.tic">
+<span class="sig-name descname"><span class="pre">tic</span></span><a class="headerlink" href="#exofop.download.System.tic" title="Link to this definition">#</a></dt>
+<dd><p>The TIC ID of the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.TIC" title="exofop.download.TIC">TIC</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.System.toi">
+<span class="sig-name descname"><span class="pre">toi</span></span><a class="headerlink" href="#exofop.download.System.toi" title="Link to this definition">#</a></dt>
+<dd><p>The TOI ID of the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.TOI" title="exofop.download.TOI">TOI</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<p>Initialize System with a TIC ID or TOI ID
+by explicitly providing a name and a TIC or TOI ID</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cool_system&quot;</span><span class="p">,</span> <span class="n">tic</span><span class="o">=</span><span class="s2">&quot;254113311&quot;</span><span class="p">,</span> <span class="n">toi</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As the first argument is name, we can also hand IDs using the prefixes ‘TIC’ or ‘TOI’.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TOI-1130&quot;</span><span class="p">)</span>  <span class="c1"># Indicate TOI ID with prefix &#39;TOI&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="s2">&quot;TIC_254113311&quot;</span><span class="p">)</span>  <span class="c1"># Indicate TIC ID with prefix &#39;TIC&#39;</span>
+</pre></div>
+</div>
+<p>Less recommended way, as it requires an extra lookup</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">System</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;1130&quot;</span><span class="p">)</span>
+<span class="go">System(name=1130, tic=TIC_254113311 toi=TOI1130)</span>
+</pre></div>
+</div>
+<p>Initialize System with a TIC ID or TOI ID and autocomplete</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">System</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cool_system&quot;</span><span class="p">,</span> <span class="n">tic</span><span class="o">=</span><span class="s2">&quot;254113311&quot;</span><span class="p">,</span> <span class="n">complete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">System(name=cool_system, tic=TIC_254113311 toi=TOI1130)</span>
+</pre></div>
+</div>
+<p>Get target ID, which can be used to query ExoFOP time series data</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">System</span><span class="p">(</span><span class="n">toi</span><span class="o">=</span><span class="s2">&quot;TOI-1130&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">target</span>
+<span class="go">&#39;TOI1130&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">System</span><span class="p">(</span><span class="n">tic</span><span class="o">=</span><span class="s2">&quot;TIC_254113311&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">target</span>
+<span class="go">&#39;254113311&#39;</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.System.autocomplete">
+<span class="sig-name descname"><span class="pre">autocomplete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System.autocomplete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System.autocomplete" title="Link to this definition">#</a></dt>
+<dd><p>Autocomplete the system by inferring the missing TIC or TOI ID from the provided one.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.System.exists">
+<span class="sig-name descname"><span class="pre">exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System.exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System.exists" title="Link to this definition">#</a></dt>
+<dd><p>Check if the system exists in the overview table.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.System.get_tic">
+<span class="sig-name descname"><span class="pre">get_tic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.download.TIC" title="exofop.download.identifiers.TIC"><span class="pre">TIC</span></a></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System.get_tic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System.get_tic" title="Link to this definition">#</a></dt>
+<dd><p>Get the TIC ID of the system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.System.get_toi">
+<span class="sig-name descname"><span class="pre">get_toi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.download.TOI" title="exofop.download.identifiers.TOI"><span class="pre">TOI</span></a></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System.get_toi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System.get_toi" title="Link to this definition">#</a></dt>
+<dd><p>Get the TOI ID of the system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.System.is_complete">
+<span class="sig-name descname"><span class="pre">is_complete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System.is_complete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System.is_complete" title="Link to this definition">#</a></dt>
+<dd><p>Check if the system is complete, i.e., if both TIC and TOI IDs are provided.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.System.is_consistent">
+<span class="sig-name descname"><span class="pre">is_consistent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System.is_consistent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System.is_consistent" title="Link to this definition">#</a></dt>
+<dd><p>Check if both TIC and TOI IDs are referring to the same system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.System.lookup">
+<span class="sig-name descname"><span class="pre">lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#System.lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.System.lookup" title="Link to this definition">#</a></dt>
+<dd><p>Look up the system in the overview table.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.System.target">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">target</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#exofop.download.System.target" title="Link to this definition">#</a></dt>
+<dd><p>The target ID of the system. This is either the TIC or TOI ID.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.download.</span></span><span class="sig-name descname"><span class="pre">SystemDownloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.download.System" title="exofop.download.identifiers.System"><span class="pre">System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_exofop_subdir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authenticator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.download.ExoFOPAuthenticator" title="exofop.download.authenticator.ExoFOPAuthenticator"><span class="pre">ExoFOPAuthenticator</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downloader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncDownloader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrent_downloads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/downloaders.html#SystemDownloader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.SystemDownloader" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#exofop.download.TagDownloader" title="exofop.download.downloaders.TagDownloader"><code class="xref py py-class docutils literal notranslate"><span class="pre">TagDownloader</span></code></a></p>
+<p>A class for downloading data related to individual stellar systems from ExoFOP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>system</strong> (<a class="reference internal" href="#exofop.download.System" title="exofop.download.identifiers.System"><em>exofop.download.identifiers.System</em></a>) – The system identifier for the given system.</p></li>
+<li><p><strong>data_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – The directory where downloaded and extracted files will be stored. Default is the current directory.</p></li>
+<li><p><strong>target_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – The target directory where downloaded and extracted files will be stored. Default is None.</p></li>
+<li><p><strong>add_exofop_subdir</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to add a subdirectory for ExoFOP data. Default is False.</p></li>
+<li><p><strong>authenticator</strong> (<a class="reference internal" href="#exofop.download.ExoFOPAuthenticator" title="exofop.download.authenticator.ExoFOPAuthenticator"><em>exofop.download.authenticator.ExoFOPAuthenticator</em></a><em>, </em><em>optional</em>) – An instance of ExoFOPAuthenticator for authentication to ExoFOP. Default is None.</p></li>
+<li><p><strong>downloader</strong> (<em>AsyncDownloader</em><em>, </em><em>optional</em>) – An instance of AsyncDownloader for handling asynchronous file downloads. Default is None.</p></li>
+<li><p><strong>max_concurrent_downloads</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of concurrent downloads. Default is 2.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em><em>, </em><em>optional</em>) – Timeout in seconds for each download. Default is 5.</p></li>
+<li><p><strong>max_retries</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of retries for each download. Default is 1.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.time_series">
+<span class="sig-name descname"><span class="pre">time_series</span></span><a class="headerlink" href="#exofop.download.SystemDownloader.time_series" title="Link to this definition">#</a></dt>
+<dd><p>The time series table for the given system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.OverviewTableAccessor" title="exofop.download.OverviewTableAccessor">OverviewTableAccessor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.spectroscopy">
+<span class="sig-name descname"><span class="pre">spectroscopy</span></span><a class="headerlink" href="#exofop.download.SystemDownloader.spectroscopy" title="Link to this definition">#</a></dt>
+<dd><p>The spectroscopy table for the given system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.OverviewTableAccessor" title="exofop.download.OverviewTableAccessor">OverviewTableAccessor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.imaging">
+<span class="sig-name descname"><span class="pre">imaging</span></span><a class="headerlink" href="#exofop.download.SystemDownloader.imaging" title="Link to this definition">#</a></dt>
+<dd><p>The imaging table for the given system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.OverviewTableAccessor" title="exofop.download.OverviewTableAccessor">OverviewTableAccessor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.stellar_parameters">
+<span class="sig-name descname"><span class="pre">stellar_parameters</span></span><a class="headerlink" href="#exofop.download.SystemDownloader.stellar_parameters" title="Link to this definition">#</a></dt>
+<dd><p>The stellar parameters table for the given system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.OverviewTableAccessor" title="exofop.download.OverviewTableAccessor">OverviewTableAccessor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.nearby_target">
+<span class="sig-name descname"><span class="pre">nearby_target</span></span><a class="headerlink" href="#exofop.download.SystemDownloader.nearby_target" title="Link to this definition">#</a></dt>
+<dd><p>The nearby target table for the given system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.OverviewTableAccessor" title="exofop.download.OverviewTableAccessor">OverviewTableAccessor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.stellar_companions">
+<span class="sig-name descname"><span class="pre">stellar_companions</span></span><a class="headerlink" href="#exofop.download.SystemDownloader.stellar_companions" title="Link to this definition">#</a></dt>
+<dd><p>The stellar companions table for the given system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.download.OverviewTableAccessor" title="exofop.download.OverviewTableAccessor">OverviewTableAccessor</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">system_loader</span> <span class="o">=</span> <span class="n">SystemDownloader</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">data_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">system</span><span class="o">=</span><span class="n">System</span><span class="p">(</span><span class="s1">&#39;TIC_254113311&#39;</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">max_retries</span><span class="o">=</span><span class="mi">0</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Lets say we want to download the time series observations.
+We will first see what observations are available:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tab</span> <span class="o">=</span> <span class="n">system_loader</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">table</span>
+</pre></div>
+</div>
+<p>Then we can download the tags that we are interested in:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tags</span> <span class="o">=</span> <span class="n">system_loader</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">tags</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">system_loader</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tags</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>To download all time series data for a given system:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">system_loader</span><span class="o">.</span><span class="n">download_time_series</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/downloaders.html#SystemDownloader.download"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.SystemDownloader.download" title="Link to this definition">#</a></dt>
+<dd><p>Download all all files specified by the given tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tags</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of tags for the files to be downloaded.</p></li>
+<li><p><strong>output_dir</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The directory where the downloaded files should be stored. Default is None.</p></li>
+<li><p><strong>unzip</strong> (<em>bool</em>) – Whether to unzip the downloaded files. Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>counts</strong> – A Counter object containing the number of files with each download status.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Counter[DownloadStatus]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.download_imaging">
+<span class="sig-name descname"><span class="pre">download_imaging</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Counter</span><span class="p"><span class="pre">[</span></span><span class="pre">DownloadStatus</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#SystemDownloader.download_imaging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.SystemDownloader.download_imaging" title="Link to this definition">#</a></dt>
+<dd><p>Download all imaging tables for the given system.</p>
+<p>Convenience method for downloading all imaging tables for the given system,
+and optionally unzipping the downloaded files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The directory where the downloaded files should be stored. Default is None.</p></li>
+<li><p><strong>unzip</strong> (<em>bool</em>) – Whether to unzip the downloaded files. Default is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.download_spectroscopy">
+<span class="sig-name descname"><span class="pre">download_spectroscopy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Counter</span><span class="p"><span class="pre">[</span></span><span class="pre">DownloadStatus</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#SystemDownloader.download_spectroscopy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.SystemDownloader.download_spectroscopy" title="Link to this definition">#</a></dt>
+<dd><p>Download all spectroscopy tables for the given system.</p>
+<p>Convenience method for downloading all spectroscopy tables for the given system,
+and optionally unzipping the downloaded files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The directory where the downloaded files should be stored. Default is None.</p></li>
+<li><p><strong>unzip</strong> (<em>bool</em>) – Whether to unzip the downloaded files. Default is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.download_time_series">
+<span class="sig-name descname"><span class="pre">download_time_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unzip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Counter</span><span class="p"><span class="pre">[</span></span><span class="pre">DownloadStatus</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#SystemDownloader.download_time_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.SystemDownloader.download_time_series" title="Link to this definition">#</a></dt>
+<dd><p>Download all time series observations tables for the given system.</p>
+<p>Convenience method for downloading all time series observations tables for the given system,
+and optionally unzipping the downloaded files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The directory where the downloaded files should be stored. Default is None.</p></li>
+<li><p><strong>unzip</strong> (<em>bool</em>) – Whether to unzip the downloaded files. Default is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.from_username">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_username</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">system</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.download.System" title="exofop.download.identifiers.System"><span class="pre">System</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_exofop_subdir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downloader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncDownloader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrent_downloads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/downloaders.html#SystemDownloader.from_username"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.SystemDownloader.from_username" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.light_curve">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">light_curve</span></span><a class="headerlink" href="#exofop.download.SystemDownloader.light_curve" title="Link to this definition">#</a></dt>
+<dd><p>The light curve table for the given system. Alternative name for <cite>time_series</cite>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#exofop.download.SystemDownloader.time_series" title="exofop.download.SystemDownloader.time_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_series</span></code></a></dt><dd><p>OverviewTableAccessor The light curve table for the given system.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.SystemDownloader.unzip_downloaded_files">
+<span class="sig-name descname"><span class="pre">unzip_downloaded_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#SystemDownloader.unzip_downloaded_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.SystemDownloader.unzip_downloaded_files" title="Link to this definition">#</a></dt>
+<dd><p>Unzip all downloaded files for the given system.</p>
+<p>Unzip all downloaded files for the given system and move the extracted contents to the output path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>output_dir</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The path to the folder where the extracted contents should be moved. Default is None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.download.TIC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.download.</span></span><span class="sig-name descname"><span class="pre">TIC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tic_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#exofop.download.TIC" title="exofop.download.identifiers.TIC"><span class="pre">TIC</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TIC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TIC" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>TESSS Input Catalogue (TIC) class for handling and validating TIC IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tic_id</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – The TIC ID to initialize the TIC object.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Initialize TIC with a valid TIC ID</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tic</span> <span class="o">=</span> <span class="n">TIC</span><span class="p">(</span><span class="mi">123456789</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tic</span><span class="o">.</span><span class="n">id</span>
+<span class="go">&#39;123456789&#39;</span>
+</pre></div>
+</div>
+<p>Initialize TIC with a valid TIC ID as a string</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tic_str</span> <span class="o">=</span> <span class="n">TIC</span><span class="p">(</span><span class="s1">&#39;231663901&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tic_str</span><span class="o">.</span><span class="n">to_toi</span><span class="p">()</span>
+<span class="go">TOI(101)</span>
+</pre></div>
+</div>
+<p>Initialize TIC with an invalid TIC ID (raises InvalidTICError)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">invalid_tic</span> <span class="o">=</span> <span class="n">TIC</span><span class="p">(</span><span class="s1">&#39;invalid_id&#39;</span><span class="p">)</span>  
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">InvalidTICError</span>: <span class="n">Invalid TIC ID: `invalid_id` ...</span>
+</pre></div>
+</div>
+<p>Alternatively, you can use the exists method to check if a TIC ID is valid</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TIC</span><span class="p">(</span><span class="s1">&#39;123456789&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TIC.exists">
+<span class="sig-name descname"><span class="pre">exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TIC.exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TIC.exists" title="Link to this definition">#</a></dt>
+<dd><p>Check if the system exists in the overview table.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.TIC.id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#exofop.download.TIC.id" title="Link to this definition">#</a></dt>
+<dd><p>The TESSS Input Catalogue (TIC) ID.</p>
+<p>This is a string of 9 digits, e.g., “123456789”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TIC.lookup">
+<span class="sig-name descname"><span class="pre">lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TIC.lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TIC.lookup" title="Link to this definition">#</a></dt>
+<dd><p>Look up the system in the overview table.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TIC.to_toi">
+<span class="sig-name descname"><span class="pre">to_toi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.download.TOI" title="exofop.download.identifiers.TOI"><span class="pre">TOI</span></a></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TIC.to_toi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TIC.to_toi" title="Link to this definition">#</a></dt>
+<dd><p>Convert TIC to TOI ID.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.download.TOI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.download.</span></span><span class="sig-name descname"><span class="pre">TOI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">toi_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#exofop.download.TOI" title="exofop.download.identifiers.TOI"><span class="pre">TOI</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TOI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TOI" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>TESS Objects of Interest (TOI) class for handling and validating TOI IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>toi_id</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – The TOI ID to initialize the TOI object.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Initialize TOI with a valid TOI ID</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">toi</span> <span class="o">=</span> <span class="n">TOI</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">toi</span><span class="o">.</span><span class="n">id</span>
+<span class="go">&#39;TOI1234&#39;</span>
+</pre></div>
+</div>
+<p>Initialize TOI with a valid TOI ID as a string</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">toi_str</span> <span class="o">=</span> <span class="n">TOI</span><span class="p">(</span><span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">toi_str</span><span class="o">.</span><span class="n">to_tic</span><span class="p">()</span>
+<span class="go">TIC(90504905)</span>
+</pre></div>
+</div>
+<p>Initialize TOI with an invalid TOI ID (raises InvalidTOIError)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">invalid_tic</span> <span class="o">=</span> <span class="n">TOI</span><span class="p">(</span><span class="s1">&#39;invalid_id&#39;</span><span class="p">)</span>  
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">InvalidTOIError</span>: <span class="n">Invalid TOI ID: `invalid_id` ...</span>
+</pre></div>
+</div>
+<p>Alternatively, you can use the exists method to check if a TOI ID is valid</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TOI</span><span class="p">(</span><span class="s1">&#39;101&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TOI.exists">
+<span class="sig-name descname"><span class="pre">exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TOI.exists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TOI.exists" title="Link to this definition">#</a></dt>
+<dd><p>Check if the system exists in the overview table.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.TOI.id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#exofop.download.TOI.id" title="Link to this definition">#</a></dt>
+<dd><p>The TESS Objects of Interest (TOI) ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TOI.lookup">
+<span class="sig-name descname"><span class="pre">lookup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TOI.lookup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TOI.lookup" title="Link to this definition">#</a></dt>
+<dd><p>Look up the system in the overview table.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.TOI.planet">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">planet</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#exofop.download.TOI.planet" title="Link to this definition">#</a></dt>
+<dd><p>The planet number of the TESS Objects of Interest (TOI) ID.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.TOI.system">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">system</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#exofop.download.TOI.system" title="Link to this definition">#</a></dt>
+<dd><p>TOI ID of the system without the planet number.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TOI.to_tic">
+<span class="sig-name descname"><span class="pre">to_tic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overview_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.download.TIC" title="exofop.download.identifiers.TIC"><span class="pre">TIC</span></a></span></span><a class="reference internal" href="_modules/exofop/download/identifiers.html#TOI.to_tic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TOI.to_tic" title="Link to this definition">#</a></dt>
+<dd><p>Convert TOI to TIC ID.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.download.TagDownloader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.download.</span></span><span class="sig-name descname"><span class="pre">TagDownloader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authenticator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.download.ExoFOPAuthenticator" title="exofop.download.authenticator.ExoFOPAuthenticator"><span class="pre">ExoFOPAuthenticator</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downloader</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AsyncDownloader</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_concurrent_downloads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/download/downloaders.html#TagDownloader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TagDownloader" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>TagDownloader is a class for downloading files associated with a list of ExoFOP tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – The target directory where downloaded and extracted files will be stored.
+Default is the current directory.</p></li>
+<li><p><strong>authenticator</strong> (<a class="reference internal" href="#exofop.download.ExoFOPAuthenticator" title="exofop.download.authenticator.ExoFOPAuthenticator"><em>exofop.download.authenticator.ExoFOPAuthenticator</em></a><em>, </em><em>optional</em>) – An instance of ExoFOPAuthenticator for authentication to ExoFOP. Default is None.</p></li>
+<li><p><strong>downloader</strong> (<em>AsyncDownloader</em><em>, </em><em>optional</em>) – An instance of AsyncDownloader for handling asynchronous file downloads. Default is None.</p></li>
+<li><p><strong>max_concurrent_downloads</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of concurrent downloads. Default is 5.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em><em>, </em><em>optional</em>) – Timeout in seconds for each download. Default is 100.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/path/to/data&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdl</span> <span class="o">=</span> <span class="n">TagDownloader</span><span class="p">(</span><span class="n">target_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdl</span><span class="o">.</span><span class="n">download_tags</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;5903&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdl</span><span class="o">.</span><span class="n">unzip_downloaded_files</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/path/to/data&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">authenticator</span> <span class="o">=</span> <span class="n">ExoFOPAuthenticator</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">&quot;lovelace&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdl</span> <span class="o">=</span> <span class="n">TagDownloader</span><span class="p">(</span><span class="n">target_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">authenticator</span><span class="o">=</span><span class="n">authenticator</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdl</span><span class="o">.</span><span class="n">download_tags</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;5734&#39;</span><span class="p">,</span> <span class="s1">&#39;5903&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tdl</span><span class="o">.</span><span class="n">unzip_downloaded_files</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>After downloading the tags 5734 and 5904, the directory structure looks as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>target_dir/
+├──<span class="w"> </span><span class="m">5734</span>/
+├──<span class="w"> </span><span class="m">5903</span>/
+├──<span class="w"> </span>zip/
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5734</span>.zip
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5903</span>.zip
+</pre></div>
+</div>
+<p>For more information on the ExoFOP API see:
+<a class="reference external" href="https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php">https://exofop.ipac.caltech.edu/tess/Introduction_to_ExoFOP_php_functions.php</a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.download.TagDownloader.BASE_URL">
+<span class="sig-name descname"><span class="pre">BASE_URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://exofop.ipac.caltech.edu'</span></em><a class="headerlink" href="#exofop.download.TagDownloader.BASE_URL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.download.TagDownloader.client_kwargs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">client_kwargs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#exofop.download.TagDownloader.client_kwargs" title="Link to this definition">#</a></dt>
+<dd><p>Return the client kwargs for the downloader.</p>
+<p>This includes a set of cookies if an authenticator is provided.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TagDownloader.delete_zip_folder">
+<span class="sig-name descname"><span class="pre">delete_zip_folder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#TagDownloader.delete_zip_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TagDownloader.delete_zip_folder" title="Link to this definition">#</a></dt>
+<dd><p>Delete the .zip folder and all files inside it.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tag_downloader</span><span class="o">.</span><span class="n">delete_zip_folder</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TagDownloader.download_tags">
+<span class="sig-name descname"><span class="pre">download_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Counter</span><span class="p"><span class="pre">[</span></span><span class="pre">DownloadStatus</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#TagDownloader.download_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TagDownloader.download_tags" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TagDownloader.download_tags_async">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">download_tags_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Counter</span><span class="p"><span class="pre">[</span></span><span class="pre">DownloadStatus</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#TagDownloader.download_tags_async"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TagDownloader.download_tags_async" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.download.TagDownloader.unzip_downloaded_files">
+<span class="sig-name descname"><span class="pre">unzip_downloaded_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/download/downloaders.html#TagDownloader.unzip_downloaded_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.download.TagDownloader.unzip_downloaded_files" title="Link to this definition">#</a></dt>
+<dd><p>Unzip all .zip files in the given folder and move the extracted contents to the output path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>output_dir</strong> (<em>Optional</em><em>, </em><em>str</em>) – The path to the folder where the extracted contents should be moved.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">downloader</span><span class="o">.</span><span class="n">unzip_downloaded_files</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exofop.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exofop.extract.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">exofop.extract</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.username"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.username</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.BASE_URL"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.BASE_URL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.cookies"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.cookies</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.ExoFOPAuthenticator.login"><code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator.login()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.OverviewTableAccessor"><code class="docutils literal notranslate"><span class="pre">OverviewTableAccessor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.OverviewTableAccessor.table"><code class="docutils literal notranslate"><span class="pre">OverviewTableAccessor.table</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.OverviewTableAccessor.tags"><code class="docutils literal notranslate"><span class="pre">OverviewTableAccessor.tags</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System"><code class="docutils literal notranslate"><span class="pre">System</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.name"><code class="docutils literal notranslate"><span class="pre">System.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.tic"><code class="docutils literal notranslate"><span class="pre">System.tic</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.toi"><code class="docutils literal notranslate"><span class="pre">System.toi</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.autocomplete"><code class="docutils literal notranslate"><span class="pre">System.autocomplete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.exists"><code class="docutils literal notranslate"><span class="pre">System.exists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.get_tic"><code class="docutils literal notranslate"><span class="pre">System.get_tic()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.get_toi"><code class="docutils literal notranslate"><span class="pre">System.get_toi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.is_complete"><code class="docutils literal notranslate"><span class="pre">System.is_complete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.is_consistent"><code class="docutils literal notranslate"><span class="pre">System.is_consistent()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.lookup"><code class="docutils literal notranslate"><span class="pre">System.lookup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.System.target"><code class="docutils literal notranslate"><span class="pre">System.target</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader"><code class="docutils literal notranslate"><span class="pre">SystemDownloader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.time_series"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.time_series</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.spectroscopy"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.spectroscopy</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.imaging"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.imaging</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.stellar_parameters"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.stellar_parameters</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.nearby_target"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.nearby_target</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.stellar_companions"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.stellar_companions</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download_imaging"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download_imaging()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download_spectroscopy"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download_spectroscopy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.download_time_series"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.download_time_series()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.from_username"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.from_username()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.light_curve"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.light_curve</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.SystemDownloader.unzip_downloaded_files"><code class="docutils literal notranslate"><span class="pre">SystemDownloader.unzip_downloaded_files()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC"><code class="docutils literal notranslate"><span class="pre">TIC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.exists"><code class="docutils literal notranslate"><span class="pre">TIC.exists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.id"><code class="docutils literal notranslate"><span class="pre">TIC.id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.lookup"><code class="docutils literal notranslate"><span class="pre">TIC.lookup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TIC.to_toi"><code class="docutils literal notranslate"><span class="pre">TIC.to_toi()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI"><code class="docutils literal notranslate"><span class="pre">TOI</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.exists"><code class="docutils literal notranslate"><span class="pre">TOI.exists()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.id"><code class="docutils literal notranslate"><span class="pre">TOI.id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.lookup"><code class="docutils literal notranslate"><span class="pre">TOI.lookup()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.planet"><code class="docutils literal notranslate"><span class="pre">TOI.planet</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.system"><code class="docutils literal notranslate"><span class="pre">TOI.system</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TOI.to_tic"><code class="docutils literal notranslate"><span class="pre">TOI.to_tic()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader"><code class="docutils literal notranslate"><span class="pre">TagDownloader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.BASE_URL"><code class="docutils literal notranslate"><span class="pre">TagDownloader.BASE_URL</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.client_kwargs"><code class="docutils literal notranslate"><span class="pre">TagDownloader.client_kwargs</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.delete_zip_folder"><code class="docutils literal notranslate"><span class="pre">TagDownloader.delete_zip_folder()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.download_tags"><code class="docutils literal notranslate"><span class="pre">TagDownloader.download_tags()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.download_tags_async"><code class="docutils literal notranslate"><span class="pre">TagDownloader.download_tags_async()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.download.TagDownloader.unzip_downloaded_files"><code class="docutils literal notranslate"><span class="pre">TagDownloader.unzip_downloaded_files()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Degen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, David Degen.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

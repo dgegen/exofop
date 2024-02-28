@@ -1,0 +1,1646 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exofop.extract.extractor &#8212; ExoFOP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=7186c071" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/exofop/extract/extractor';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ExoFOP Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">QuickStart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/1_download_from_ExoFOP.html">Download tags from ExoFOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/2_extract_and_standardise_time_series_data.html">Extract and standardise ExoFOP time series observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../exofop.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../exofop.download.html">exofop.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../exofop.extract.html">exofop.extract</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/issues/new?title=Issue%20on%20page%20%2F_modules/exofop/extract/extractor.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for exofop.extract.extractor</h1><div class="highlight"><pre>
+<span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LightCurveTableList&quot;</span><span class="p">,</span> <span class="s2">&quot;LightCurveTable&quot;</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">astropy.table</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">exofop.extract.load_exofop_measurements_file</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load_exofop_measurement_files_as_dfs</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">exofop.extract.parse_exofop_file_name</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">extract_components_from_exofop_measurement_file_names</span><span class="p">,</span>
+    <span class="n">parse_and_format_exofop_file_name</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">exofop.extract.synonym_map</span> <span class="kn">import</span> <span class="n">SynonymMap</span><span class="p">,</span> <span class="n">SynonymMapLc</span>
+<span class="kn">from</span> <span class="nn">exofop.utils.paths</span> <span class="kn">import</span> <span class="n">MPLSTYLE</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;exofop.extract&quot;</span><span class="p">)</span>
+
+<span class="n">SYNONYM_MAP</span> <span class="o">=</span> <span class="n">SynonymMapLc</span><span class="o">.</span><span class="n">load_from_config</span><span class="p">()</span>
+
+<span class="n">SYNONYM_MAP_LC</span> <span class="o">=</span> <span class="n">SYNONYM_MAP</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">SYNONYM_MAP_LC</span><span class="o">.</span><span class="n">cbv_names</span><span class="p">:</span>
+    <span class="k">del</span> <span class="n">SYNONYM_MAP_LC</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="LightCurveTable">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable">[docs]</a>
+<span class="k">class</span> <span class="nc">LightCurveTable</span><span class="p">(</span><span class="n">astropy</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">Table</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A custom table class for representing light curve data.</span>
+
+<span class="sd">    This class extends the functionality of `astropy.table.Table` and includes</span>
+<span class="sd">    an additional attribute &#39;complete&#39; to store information about the</span>
+<span class="sd">    completeness of the light curve data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array-like, dict, or Table, optional</span>
+<span class="sd">        The data to be stored in the table. This can be an array-like object, a dictionary,</span>
+<span class="sd">        or another Table. If not provided, an empty table will be created.</span>
+<span class="sd">    name : str, optional</span>
+<span class="sd">        The name of the observation.</span>
+<span class="sd">    file_name : str, optional</span>
+<span class="sd">        The measurement filename of the observation.</span>
+<span class="sd">    meta : dict, optional</span>
+<span class="sd">        A dictionary containing meta data for the table.</span>
+<span class="sd">    args, kwargs</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from exofop.extract import LightCurveTable</span>
+<span class="sd">    &gt;&gt;&gt; lc = LightCurveTable(</span>
+<span class="sd">    ...     [[1., 2, 3], [1., 0.9, 1.1], [0.05, 0.1, 0.075], [0.1, 0.1, 0.1], [0.2, 0.3, 0.4]],</span>
+<span class="sd">    ...     names=[&quot;time&quot;, &quot;flux&quot;, &quot;flux_err&quot;, &quot;sky&quot;, &quot;airmass&quot;],</span>
+<span class="sd">    ...     file_name=&#39;TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_compstar-lightcurves.csv&#39;</span>
+<span class="sd">    ... )</span>
+<span class="sd">    &lt;LightCurveTable length=3&gt;</span>
+<span class="sd">    time    flux  flux_err   sky   airmass</span>
+<span class="sd">    float64 float64 float64  float64 float64</span>
+<span class="sd">    ------- ------- -------- ------- -------</span>
+<span class="sd">        1.0     1.0     0.05     0.1     0.2</span>
+<span class="sd">        2.0     0.9      0.1     0.1     0.3</span>
+<span class="sd">        3.0     1.1    0.075     0.1     0.4</span>
+
+<span class="sd">    We can standardise the column names using the synonym map:</span>
+
+<span class="sd">    &gt;&gt;&gt; lc.standardise_column_names()</span>
+<span class="sd">    &gt;&gt;&gt; lc.is_complete</span>
+<span class="sd">    True</span>
+
+<span class="sd">    After standardisation, we can access time, flux, and flux_err columns as attributes:</span>
+
+<span class="sd">    &gt;&gt;&gt; lc.time.value</span>
+<span class="sd">    array([1., 2., 3.])</span>
+<span class="sd">    &gt;&gt;&gt; lc.flux.value</span>
+<span class="sd">    array([1. , 0.9, 1.1])</span>
+
+<span class="sd">    We can also apply a time correction if there is a discrepancy between the time in the file name</span>
+<span class="sd">    and the time array:</span>
+
+<span class="sd">    &gt;&gt;&gt; lc.apply_time_correction_in_case_of_discrepancy()</span>
+
+<span class="sd">    We can get the cotrending basis vectors (CBVs), i.e. all primary aliases of</span>
+<span class="sd">    lc.synonym_map that do not represent time, flux or flux_err:</span>
+
+<span class="sd">    &gt;&gt;&gt; lc.cbvs()</span>
+<span class="sd">    &lt;LightCurveTable length=3&gt;</span>
+<span class="sd">    AIRMASS Sky/Pixel_T1</span>
+<span class="sd">    float64   float64</span>
+<span class="sd">    ------- ------------</span>
+<span class="sd">        0.2          0.1</span>
+<span class="sd">        0.3          0.1</span>
+<span class="sd">        0.4          0.1</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># synonym_map_lc = SYNONYM_MAP_LC</span>
+    <span class="n">simple_synonym_map</span><span class="p">:</span> <span class="n">SynonymMapLc</span> <span class="o">=</span> <span class="n">SYNONYM_MAP_LC</span>
+    <span class="n">_synonym_map</span><span class="p">:</span> <span class="n">SynonymMapLc</span> <span class="o">=</span> <span class="n">SYNONYM_MAP</span>
+    <span class="n">time_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;is_complete&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_completeness</span><span class="p">(</span><span class="n">log_level</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># type: ignore</span>
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_name</span>  <span class="c1"># type: ignore</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">parse_and_format_exofop_file_name</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>  <span class="c1"># type: ignore</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not parse file name </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">synonym_map</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SynonymMapLc</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_synonym_map</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The time column of the observation.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">time</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">time</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Time column not found in observation </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">. Light curve is incomplete.&quot;</span>
+                <span class="s2">&quot; Standardise column names first.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@time</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">time</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">flux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The flux column of the observation.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Flux column not found in observation </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">. Light curve is incomplete.&quot;</span>
+                <span class="s2">&quot; Standardise column names first.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@flux</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">flux_err</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The flux error column of the observation.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux_err</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux_err</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Flux error column not found in observation</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">. Light curve is incomplete.&quot;</span>
+                <span class="s2">&quot; Standardise column names first.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@flux_err</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">flux_err</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux_err</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The name of the observation. Synonym of `observation_name`.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTable.observation_name</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">observation_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The name of the observation. Synonym of `name`.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTable.name</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@observation_name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">observation_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The measurement filename of the observation.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@file_name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A boolean indicating whether the table is complete and non-degenerate.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;is_complete&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@is_complete</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">is_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;is_complete&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+<div class="viewcode-block" id="LightCurveTable.check_completeness">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.check_completeness">[docs]</a>
+    <span class="k">def</span> <span class="nf">check_completeness</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SynonymMapLc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if a complete light curve is contained in the table.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">        -----------</span>
+<span class="sd">        synonym_map : SynonymMapLc</span>
+<span class="sd">            An object representing the synonym map for the Table columns.</span>
+<span class="sd">        log_level : int, optional</span>
+<span class="sd">            The log level for logging missing columns (default is 20, i.e. &#39;info&#39;).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">        -----------</span>
+<span class="sd">        bool</span>
+<span class="sd">            A boolean indicating whether the Table is complete and non-degenerate.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">synonym_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">synonym_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span>
+
+        <span class="n">missing_columns</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colnames</span>
+        <span class="p">]</span>
+        <span class="n">is_complete</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">missing_columns</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_complete</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_level</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
+                <span class="n">log_level</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;Observation &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; is incomplete or not in standard form. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Missing column(s): </span><span class="si">{</span><span class="n">missing_columns</span><span class="si">}</span><span class="s2">. &quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">log</span><span class="p">(</span>
+                <span class="n">log_level</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;Columns present in &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;: &quot;</span>
+                <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">[:</span><span class="mi">30</span><span class="p">]</span><span class="si">}</span><span class="s2"> ...&quot;</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">30</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">is_complete</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.cbvs">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.cbvs">[docs]</a>
+    <span class="k">def</span> <span class="nf">cbvs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SynonymMapLc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LightCurveTable&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the cotrending basis vectors (CBVs) contained in a standardized table.</span>
+
+<span class="sd">        This is a convenience function to get the CBVs, i.e. all primary aliases of</span>
+<span class="sd">        `synonym_map` that do not represent time, flux or flux_err.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        synonym_map : SynonymMapLc, optional</span>
+<span class="sd">            A synonym map for the column names (default is None).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LightCurveTable</span>
+<span class="sd">            A table containing the CBVs.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        This function assumes that the table is already standardised, otherwise it might return</span>
+<span class="sd">        an incomplete set of CBVs.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTable.light_curve</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">synonym_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">synonym_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span>
+
+        <span class="n">contained_cbvs</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">cbv_names</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">colnames</span><span class="p">]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">contained_cbvs</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.light_curve">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.light_curve">[docs]</a>
+    <span class="k">def</span> <span class="nf">light_curve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SynonymMapLc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LightCurveTable&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the light curve contained in a standardised table, i.e. the time, flux and flux_err columns.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        synonym_map : SynonymMapLc, optional</span>
+<span class="sd">            A synonym map for the column names (default is None).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LightCurveTable</span>
+<span class="sd">            A table containing the light curve data.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        This function assumes that the table is already standardised, otherwise it might return</span>
+<span class="sd">        an incomplete set of CBVs.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTable.cbvs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">synonym_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">synonym_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_completeness</span><span class="p">(</span><span class="n">synonym_map</span><span class="o">=</span><span class="n">synonym_map</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Light curve is incomplete. Standardise column names first.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.from_pandas">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.from_pandas">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_pandas</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">data_frame</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">meta</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a LightCurveTable from a pandas DataFrame.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        data_frame : pandas.DataFrame</span>
+<span class="sd">            The DataFrame containing the light curve data.</span>
+<span class="sd">        name : str</span>
+<span class="sd">            The name of the observation.</span>
+<span class="sd">        file_name : str</span>
+<span class="sd">            The measurement filename of the observation,</span>
+<span class="sd">            e.g. &#39;TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_compstar-lightcurves.csv&#39;</span>
+<span class="sd">            from whicht the meta data is attempted to be derived.</span>
+<span class="sd">        **kwargs</span>
+<span class="sd">            Additional keyword arguments to be passed to the `astropy.table.Table` constructor.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># meta = kwargs.pop(&#39;meta&#39;, None)</span>
+        <span class="n">tbl</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">tbl</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="n">meta</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.standardise_column_names">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.standardise_column_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">standardise_column_names</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">SynonymMap</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renames the columns of the table according to the synonym map.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">synonym_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">synonym_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">,</span> <span class="n">SynonymMap</span><span class="p">):</span>
+            <span class="n">synonym_map</span> <span class="o">=</span> <span class="n">SynonymMap</span><span class="p">()</span>
+            <span class="n">synonym_map</span> <span class="o">=</span> <span class="n">synonym_map</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">,</span> <span class="n">SynonymMap</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;synonym_map&#39; must be of type `SynonymMap` or `dict`.&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot; Instead, it is of type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">tbl</span> <span class="o">=</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">observation_name</span> <span class="o">=</span> <span class="n">tbl</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="k">for</span> <span class="n">primary_alias</span> <span class="ow">in</span> <span class="n">synonym_map</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">primary_alias</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tbl</span><span class="o">.</span><span class="n">colnames</span><span class="p">:</span>
+                <span class="n">contained_synonyms</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">synonym_map</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">tbl</span><span class="o">.</span><span class="n">colnames</span>
+                <span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">contained_synonyms</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;None of the columns of the observation </span><span class="si">{</span><span class="n">observation_name</span><span class="si">}</span><span class="s2"> match the&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot; synonyms of `</span><span class="si">{</span><span class="n">primary_alias</span><span class="si">}</span><span class="s2">`. This light curve will be incomplete. &quot;</span>
+                        <span class="o">+</span> <span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Columns present: </span><span class="si">{</span><span class="n">tbl</span><span class="o">.</span><span class="n">colnames</span><span class="p">[:</span><span class="mi">30</span><span class="p">]</span><span class="si">}</span><span class="s2"> ...&quot;</span>
+                            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tbl</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">30</span>
+                            <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot; Columns present: </span><span class="si">{</span><span class="n">tbl</span><span class="o">.</span><span class="n">colnames</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="c1"># Log warning if primary_alias is a light curve attribute</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">contained_synonyms</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">tbl</span><span class="o">.</span><span class="n">rename_column</span><span class="p">(</span><span class="n">contained_synonyms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">primary_alias</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">contained_synonyms</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Multiple columns of the observation </span><span class="si">{</span><span class="n">observation_name</span><span class="si">}</span><span class="s2"> match the&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot; synonyms of `</span><span class="si">{</span><span class="n">primary_alias</span><span class="si">}</span><span class="s2">`.&quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot; The first one, </span><span class="si">{</span><span class="n">synonym_map</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, will be used.&quot;</span>
+                    <span class="p">)</span>
+                    <span class="n">tbl</span><span class="o">.</span><span class="n">rename_column</span><span class="p">(</span><span class="n">contained_synonyms</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">primary_alias</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_complete</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_completeness</span><span class="p">(</span>
+            <span class="n">synonym_map</span><span class="o">=</span><span class="n">synonym_map</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">,</span> <span class="n">SynonymMapLc</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">inplace</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">tbl</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.parse_and_format_exofop_file_name">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.parse_and_format_exofop_file_name">[docs]</a>
+    <span class="k">def</span> <span class="nf">parse_and_format_exofop_file_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;No file name provided. Please provide a file name or set it as meta data.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">parse_and_format_exofop_file_name</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.apply_time_correction_in_case_of_discrepancy">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_time_correction_in_case_of_discrepancy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_threshold</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply time correction to the time array of a table if needed.</span>
+
+<span class="sd">        This function checks for a discrepancy between the starting time of the array</span>
+<span class="sd">        and the starting time given in the file_name_components, which was obtained by parsing the</span>
+<span class="sd">        measurement file name. If the difference is significant, it applies a time correction</span>
+<span class="sd">        by subtracting an integer number of days from the time array.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_threshold : int, optional</span>
+<span class="sd">            Threshold value for considering a time difference as significant (default is 3 days).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        None</span>
+<span class="sd">            The DataFrame is modified in-place.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No time column found. Please standardise column names first.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;jd&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">:</span>
+            <span class="n">file_name_components</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_and_format_exofop_file_name</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">file_name_components</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;jd&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;No file name components found. Please provide a valid file name, like&quot;</span>
+                <span class="s2">&quot; lc.file_name=&quot;</span>
+                <span class="s2">&quot;&#39;TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_compstar-lightcurves.csv&#39;.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;jd&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>  <span class="c1"># File name components contain no time information</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;No time correction applied. As JD is 0.0.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">start_time_difference</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;jd&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">start_time_difference</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">time_threshold</span><span class="p">:</span>
+            <span class="n">time_correction</span> <span class="o">=</span> <span class="n">start_time_difference</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Time correction of </span><span class="si">{</span><span class="n">time_correction</span><span class="si">:</span><span class="s2">.5e</span><span class="si">}</span><span class="s2"> days&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot; was added to observation &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+            <span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Original time: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2"> -&gt; &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Corrected time: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">time_correction</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">+=</span> <span class="n">time_correction</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_create_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span> <span class="n">plt</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">plt</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+            <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Could not import matplotlib.&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_completeness</span><span class="p">():</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Light curve </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is incomplete. Standardise column names first.&quot;</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="n">MPLSTYLE</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
+            <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">6.69</span><span class="p">,</span> <span class="mf">4.14</span><span class="p">))</span>
+
+            <span class="c1"># Determine method</span>
+            <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;plot&quot;</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore, as lc is complete</span>
+            <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;errorbar&quot;</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux_err</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;scatter&quot;</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">flux</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown method </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time [JD]&quot;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Flux&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">ax</span>
+
+<div class="viewcode-block" id="LightCurveTable.plot">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;plot&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.errorbar">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.errorbar">[docs]</a>
+    <span class="k">def</span> <span class="nf">errorbar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;errorbar&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTable.scatter">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTable.scatter">[docs]</a>
+    <span class="k">def</span> <span class="nf">scatter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="LightCurveTableList">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList">[docs]</a>
+<span class="k">class</span> <span class="nc">LightCurveTableList</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A list-like container for LightCurveTable objects with additional functionalities.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    target_dir : str, optional</span>
+<span class="sd">        The directory containing the downloaded tag directories (default is None).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; tbl_list = LightCurveTableList.load_exofop_data(</span>
+<span class="sd">    ...     target_dir=&#39;path/to/your/directory/with/downloaded/measurements&#39;,</span>
+<span class="sd">    ... )</span>
+<span class="sd">    &gt;&gt;&gt; tbl_list.info_df</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This class provides a convenient way to handle multiple light curve observations.</span>
+<span class="sd">    It is designed to be used in combination with the `LightCurveTable` class and provides</span>
+<span class="sd">    the following functionalities:</span>
+
+<span class="sd">    - Loads potentially heterogeneous measurement files from the specified directory.</span>
+
+<span class="sd">    - Extracts information from measurement file names.</span>
+
+<span class="sd">    - Creates or loads a summary DataFrame with information on the observations.</span>
+
+<span class="sd">    - Standardizes column and index names of the measurement DataFrames.</span>
+
+<span class="sd">    - Applies time corrections in case of time discrepancies between file_name and data.</span>
+
+<span class="sd">    - Identifies essential columns for light curves and thus checks their completeness.</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    exofop.extract.LightCurveTable : A custom table class for representing light curve data.</span>
+<span class="sd">    exofop.extract.SynonymMapLc : A map containing synonyms for the standardisation of column names.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_synonym_map</span> <span class="o">=</span> <span class="n">SYNONYM_MAP</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">target_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_info_df</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">=</span> <span class="n">target_dir</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">standardised</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">synonym_map</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SynonymMapLc</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Synonym map to standardise column names.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_synonym_map</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">synonym_map</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LightCurveTableList&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Subset of complete observations.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">standardised</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The column names are not standardised yet. Result may be incomplete.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">LightCurveTableList</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">is_complete</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">incomplete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LightCurveTableList&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Subset of incomplete observations.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">standardised</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The column names are not standardised yet. Result may be incomplete.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">LightCurveTableList</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">is_complete</span><span class="p">])</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Names of all observations.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">info_df</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;pandas.DataFrame summarizing information on observations.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_info_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_info_df</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_df</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of time arrays of all observations.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">standardised</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The column names are not standardised yet. Result may be incomplete.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">time</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]</span>
+
+<div class="viewcode-block" id="LightCurveTableList.number_of_cbvs">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.number_of_cbvs">[docs]</a>
+    <span class="k">def</span> <span class="nf">number_of_cbvs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SynonymMapLc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Number of CBVs for all observations.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">standardised</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The column names are not standardised yet. Result may be incomplete.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">cbvs</span><span class="p">(</span><span class="n">synonym_map</span><span class="o">=</span><span class="n">synonym_map</span><span class="p">)</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">]</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_get_by_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LightCurveTable</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">name</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Observation </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is not contained.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">LightCurveTable</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get an item by index or by name.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_by_name</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LightCurveTableList.standardise_column_names">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.standardise_column_names">[docs]</a>
+    <span class="k">def</span> <span class="nf">standardise_column_names</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">SynonymMap</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Standardise column names of all observations in the list.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        synonym_map : SynonymMap or dict, optional</span>
+<span class="sd">            A synonym map for the column names (default is None).</span>
+<span class="sd">        log_level : int, optional</span>
+<span class="sd">            The log level for logging missing columns (default is 20, i.e. &#39;info&#39;).</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">tbl</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">tbl</span><span class="o">.</span><span class="n">standardise_column_names</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="n">log_level</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Could not standardise column names for observation </span><span class="si">{</span><span class="n">tbl</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="n">incomplete_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="o">.</span><span class="n">is_complete</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">incomplete_names</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">incomplete_names</span><span class="p">)</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> observations are incomplete.&quot;</span>
+                <span class="sa">f</span><span class="s2">&quot; Namely: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">incomplete_names</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Investigate further using the `incomplete` attribute.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">,</span> <span class="n">SynonymMapLc</span><span class="p">):</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;All observations contain a complete light curve.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">standardised</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_info_df</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTableList.apply_time_correction_in_case_of_discrepancy">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.apply_time_correction_in_case_of_discrepancy">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_time_correction_in_case_of_discrepancy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_threshold</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply time correction to the time array of individual observations in the list if needed.</span>
+
+<span class="sd">        This function checks for a discrepancy between the starting time of the array</span>
+<span class="sd">        and the starting time given in the file_name_components, which was obtained by parsing the</span>
+<span class="sd">        measurement file name. If the difference is significant, it applies a time correction</span>
+<span class="sd">        by subtracting an integer number of days from the time array.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        time_threshold : int, optional</span>
+<span class="sd">            Threshold value for considering a time difference as significant (default is 3 days).</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTable.standardise_column_names</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">tbl</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">tbl</span><span class="o">.</span><span class="n">apply_time_correction_in_case_of_discrepancy</span><span class="p">(</span><span class="n">time_threshold</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Could not apply time correction for observation </span><span class="si">{</span><span class="n">tbl</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_info_df</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTableList.missing_cbvs">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.missing_cbvs">[docs]</a>
+    <span class="k">def</span> <span class="nf">missing_cbvs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SynonymMapLc</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check for missing CBVs in the observations contained in the list.</span>
+
+<span class="sd">        This is a convenience function to check which CBVs are missing in which observations.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        synonym_map : SynonymMapLc, optional</span>
+<span class="sd">            A synonym map for the column names (default is None).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict or None</span>
+<span class="sd">            A dictionary containing the names of the observations and the missing CBVs.</span>
+<span class="sd">            If all observations contain all CBVs, None is returned.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">synonym_map</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">synonym_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">synonym_map</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">standardised</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;The column names are not standardised yet. Result may be incomplete.&quot;</span><span class="p">)</span>
+
+        <span class="n">missing_cbvs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tbl</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">tbl</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;observatory&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="n">cbv</span> <span class="k">for</span> <span class="n">cbv</span> <span class="ow">in</span> <span class="n">synonym_map</span><span class="o">.</span><span class="n">cbv_names</span> <span class="k">if</span> <span class="n">cbv</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tbl</span><span class="o">.</span><span class="n">colnames</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">tbl</span> <span class="ow">in</span> <span class="bp">self</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Remove entries with empty lists of missing CBVs</span>
+        <span class="n">missing_cbvs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">val</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">missing_cbvs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">missing_cbvs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">missing_cbvs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTableList.update_info_df">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.update_info_df">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_info_df</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update or create a DataFrame with extracted file name components.</span>
+
+<span class="sd">        This function updates an existing DataFrame or creates a new one by populating it</span>
+<span class="sd">        with extracted components from the &#39;file_name_components_dict&#39;. The dictionary should</span>
+<span class="sd">        contain observation names as keys and corresponding file name components as values.</span>
+
+<span class="sd">        If &#39;info_df&#39; is not provided, a new DataFrame will be created.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        info_df : pandas.DataFrame or None, optional</span>
+<span class="sd">            An existing DataFrame to be updated (default is None).</span>
+<span class="sd">        file_name_components_dict : dict or None, optional</span>
+<span class="sd">            A dictionary containing observation names and corresponding file name components.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        pandas.DataFrame</span>
+<span class="sd">            The updated or newly created DataFrame containing the extracted components.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; file_name_components_dict = {</span>
+<span class="sd">        &gt;&gt;&gt;     &#39;obs1&#39;: parse_and_format_exofop_file_name(</span>
+<span class="sd">                    &#39;TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_measurements.csv&#39;),</span>
+<span class="sd">        &gt;&gt;&gt;     &#39;obs2&#39;: parse_and_format_exofop_file_name(</span>
+<span class="sd">                    &#39;TIC254113311.02_20200901_ASTEP-ANTARCTICA_Rc_measurements.csv&#39;),</span>
+<span class="sd">        &gt;&gt;&gt; }</span>
+<span class="sd">        &gt;&gt;&gt; updated_df = update_info_df_by_file_name_components(</span>
+<span class="sd">            file_name_components_dict=file_name_components_dict</span>
+<span class="sd">        )</span>
+<span class="sd">                    Date      BJD       Observatory  ... pp Measurement file name    full_file_name</span>
+<span class="sd">        obs1  2020-08-05  2459066  ASTEP-ANTARCTICA  ...  1      measurements.csv  TIC254113311....</span>
+<span class="sd">        obs2  2020-09-01  2459093  ASTEP-ANTARCTICA  ...  2      measurements.csv  TIC254113311....</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                <span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+                    <span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;BJD&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Observatory&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Filter&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;pp&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Measurement file name&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;full_file_name&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;texp&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Duration&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Efficiency&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;cbvs&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ncols&quot;</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">info_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_df</span>
+
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">meta</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">meta</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;yyyymmdd&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;BJD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;jd&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Observatory&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;observatory&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Filter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;filter&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;target&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;pp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pp&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Measurement file name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filetype&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ext&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;full_file_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;cbvs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">cbvs</span><span class="p">()</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span>
+            <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;ncols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span>
+
+            <span class="n">time</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">time</span>
+            <span class="k">if</span> <span class="n">time</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;texp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">time</span><span class="p">))</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">1200</span>
+                <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Duration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="mi">24</span>
+                <span class="c1"># N_obs/N_theory</span>
+                <span class="n">info_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;Efficiency&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+                    <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">time</span><span class="p">))</span> <span class="o">/</span> <span class="p">((</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+                    <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>  <span class="c1"># in percent</span>
+                    <span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="n">info_df</span><span class="p">[</span><span class="s2">&quot;BJD&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">info_df</span><span class="p">[</span><span class="s2">&quot;BJD&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">info_df</span><span class="p">[</span><span class="s2">&quot;pp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">info_df</span><span class="p">[</span><span class="s2">&quot;pp&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">info_df</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">default_save_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Default directory for saving the data, namely target_dir/output.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">save_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">save_dir</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="LightCurveTableList.save">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.save">[docs]</a>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">save_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the LightCurveTableList to a directory.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        save_dir : str, optional</span>
+<span class="sd">            The directory where the data should be saved. Defaults to the target_dir.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The data is saved in the following format:</span>
+<span class="sd">        - The info DataFrame is saved to a file &#39;info.csv&#39;.</span>
+<span class="sd">        - Each observation is saved to a file &#39;observation_name.ecsv&#39;.</span>
+<span class="sd">        - The observation names are used as file names.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTableList.load : Load the data from a directory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">save_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">save_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_save_dir</span>
+
+        <span class="k">if</span> <span class="n">save_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please provide a save directory.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">info_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s2">&quot;info.csv&quot;</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">tbl</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="n">tbl</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">tbl</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;.ecsv&quot;</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+            <span class="c1"># tbl.write(os.path.join(save_dir, tbl.name + &quot;.fits&quot;), overwrite=True)</span>
+
+<div class="viewcode-block" id="LightCurveTableList.load">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.load">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">load_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LightCurveTableList&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load the LightCurveTableList from a directory.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        load_dir : str, optional</span>
+<span class="sd">            The directory from which the data should be loaded (default is &#39;.&#39;).</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LightCurveTableList</span>
+<span class="sd">            The loaded LightCurveTableList.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        You can modify the info.csv file to remove observations from being loaded,</span>
+<span class="sd">        e.g. if they are incomplete, corrupted or superfluous.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        exofop.extract.LightCurveTableList.save : Soad the data from a directory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">info_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">load_dir</span><span class="p">,</span> <span class="s2">&quot;info.csv&quot;</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">tbl_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">info_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">tbl</span> <span class="o">=</span> <span class="n">LightCurveTable</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">load_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.ecsv&quot;</span><span class="p">),</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ascii.ecsv&quot;</span>
+                <span class="p">)</span>
+                <span class="c1"># tbl = LightCurveTable.read(os.path.join(load_dir, name + &quot;.fits&quot;))</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not load observation </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">tbl_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tbl</span><span class="p">)</span>
+
+        <span class="n">tbl_list</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">tbl_list</span><span class="p">)</span>
+        <span class="n">tbl_list</span><span class="o">.</span><span class="n">_info_df</span> <span class="o">=</span> <span class="n">info_df</span>
+        <span class="k">return</span> <span class="n">tbl_list</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTableList.save_to_pickle">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.save_to_pickle">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_to_pickle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save the instance to a file using pickle serialization.&quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">pickle</span>
+
+        <span class="k">if</span> <span class="n">file_name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">file_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">+</span> <span class="s2">&quot;output.pkl&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Please provide a file name.&quot;</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">pickle</span><span class="o">.</span><span class="n">HIGHEST_PROTOCOL</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LightCurveTableList.load_from_pickle">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.load_from_pickle">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_from_pickle</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LightCurveTableList&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load an instance from a saved file.&quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">pickle</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">loaded_instance</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">loaded_instance</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">loaded_instance</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Loaded object is not an instance of StandardisedExofopData&quot;</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;LightCurveTableList(</span><span class="si">{</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">name</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="bp">self</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<div class="viewcode-block" id="LightCurveTableList.load_exofop_data">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.LightCurveTableList.load_exofop_data">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_exofop_data</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">target_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">observation_names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">synonym_map_lc</span><span class="p">:</span> <span class="n">SynonymMapLc</span> <span class="o">=</span> <span class="n">SYNONYM_MAP_LC</span><span class="p">,</span>
+        <span class="n">allow_multiple_filetypes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;LightCurveTableList&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and standardize ExoFOP data for a given system.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        target_dir : str</span>
+<span class="sd">            The directory where the ExoFOP  data of the given system is stored.</span>
+
+<span class="sd">        observation_names : List[str], optional</span>
+<span class="sd">            A list of observation names to consider. If not provided, the function</span>
+<span class="sd">            will use all available observations sorted by tag.</span>
+
+<span class="sd">        time_threshold : int, optional</span>
+<span class="sd">            A threshold for applying time corrections to data in case of discrepancies</span>
+<span class="sd">            in time specifications between the file name and the data in units of days,</span>
+<span class="sd">            default is 3.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        LightCurveTableList</span>
+<span class="sd">            A list of LightCurveTables containing the ExoFOP data extracted from target_dir.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        This function loads and standardizes ExoFOP data for specific planets. It performs</span>
+<span class="sd">        the following steps:</span>
+
+<span class="sd">        1. Loads potentially heterogeneous measurement files from the specified directory.</span>
+
+<span class="sd">        2. Extracts information from measurement file names.</span>
+
+<span class="sd">        3. Unpacks multiple measurements from the same tag into separate observations.</span>
+
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; target_dir = &#39;/path/to/data&#39;</span>
+<span class="sd">        &gt;&gt;&gt; observation_names = None</span>
+<span class="sd">        &gt;&gt;&gt; synonym_map_lc = SYNONYM_MAP_LC</span>
+<span class="sd">        &gt;&gt;&gt; allow_multiple_filetypes = True</span>
+<span class="sd">        &gt;&gt;&gt; exofop_data = LightCurveTableList.load_exofop_data(</span>
+<span class="sd">        ...     target_dir=target_dir,</span>
+<span class="sd">        ...     observation_names=observation_names,</span>
+<span class="sd">        ...     synonym_map_lc=synonym_map_lc,</span>
+<span class="sd">        ...     allow_multiple_filetypes=allow_multiple_filetypes,</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; exofop_data</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Observation_names have to be sorted.</span>
+        <span class="c1"># apply_time_corrections_to_dfs_in_case_of_discrepancy can cause problems otherwise.</span>
+        <span class="k">if</span> <span class="n">observation_names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">observation_names</span> <span class="o">=</span> <span class="n">get_sorted_exofop_observation_list</span><span class="p">(</span><span class="n">target_dir</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">observation_names</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">observation_names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">extract_number_for_sort</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading data for observations: </span><span class="si">{</span><span class="n">observation_names</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">target_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Load potentially heterogenous measurement files downloaded from exofop stored in folders</span>
+        <span class="c1"># with names observation_names, which could for example be the tag name of the file</span>
+        <span class="n">unformatted_df_dict</span><span class="p">,</span> <span class="n">measurement_file_names</span> <span class="o">=</span> <span class="n">load_exofop_measurement_files_as_dfs</span><span class="p">(</span>
+            <span class="n">observation_names</span><span class="p">,</span>
+            <span class="n">target_dir</span><span class="p">,</span>
+            <span class="n">infer_separator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">essential_attribute_names</span><span class="o">=</span><span class="n">synonym_map_lc</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Extract information from exofop measurement file names</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Extracting information from file names.&quot;</span><span class="p">)</span>
+        <span class="n">file_name_components_dict</span> <span class="o">=</span> <span class="n">extract_components_from_exofop_measurement_file_names</span><span class="p">(</span>
+            <span class="n">unformatted_df_dict</span><span class="p">,</span> <span class="n">measurement_file_names</span>
+        <span class="p">)</span>
+
+        <span class="n">unpack_multiple_measurements_from_same_tag</span><span class="p">(</span>
+            <span class="n">file_name_components_dict</span><span class="o">=</span><span class="n">file_name_components_dict</span><span class="p">,</span>
+            <span class="n">unformatted_df_dict</span><span class="o">=</span><span class="n">unformatted_df_dict</span><span class="p">,</span>
+            <span class="n">allow_multiple_filetypes</span><span class="o">=</span><span class="n">allow_multiple_filetypes</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Remove leading or trailing white spaces from column names</span>
+        <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">unformatted_df_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">tbl_list</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">LightCurveTable</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">unformatted_df_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">],</span>
+            <span class="n">target_dir</span><span class="o">=</span><span class="n">target_dir</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># for tbl in tbl_list:</span>
+        <span class="c1">#     tbl.standardise_column_names(synonym_map_lc=synonym_map_lc)</span>
+
+        <span class="c1">#     # Apply time correction to the time array of a DataFrame in case of discrepancy</span>
+        <span class="c1">#     # between the time specified in the measurement and the one given in the file_name</span>
+        <span class="c1">#     tbl.apply_time_correction_in_case_of_discrepancy(time_threshold=time_threshold)</span>
+
+        <span class="k">return</span> <span class="n">tbl_list</span></div>
+</div>
+
+
+
+<span class="k">def</span> <span class="nf">unpack_multiple_measurements_from_same_tag</span><span class="p">(</span>
+    <span class="n">file_name_components_dict</span><span class="p">,</span> <span class="n">unformatted_df_dict</span><span class="p">,</span> <span class="n">allow_multiple_filetypes</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Unpack multiple measurements from the same tag into separate observations.</span>
+
+<span class="sd">    Unpacks multiple measurements from the same tag into separate dataframes and updates the dictionaries</span>
+<span class="sd">    containing file name components and unformatted dataframes accordingly.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_name_components_dict : dict</span>
+<span class="sd">        A dictionary containing observation names and corresponding file name components.</span>
+<span class="sd">    unformatted_df_dict : dict</span>
+<span class="sd">        A dictionary containing observation names and corresponding unformatted dataframes.</span>
+<span class="sd">    allow_multiple_filetypes : bool, optional</span>
+<span class="sd">        A boolean indicating whether to allow multiple file types (default is True).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;measurements&quot;</span><span class="p">,</span> <span class="s2">&quot;measurement&quot;</span><span class="p">,</span> <span class="s2">&quot;lightcurves&quot;</span><span class="p">]),</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">file_name_components_dict</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No file name components found for observation </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Observations from different filters were published in the same tag</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">({</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">val</span><span class="p">})</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                <span class="n">filter_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">val</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                    <span class="n">filter_name</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;filter&quot;</span><span class="p">]</span>
+                    <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">filter_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">ind</span><span class="p">]</span>
+                    <span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">filter_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+                <span class="k">del</span> <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Multiple measurement files from different filters found for observation </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">.&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot; Namely: </span><span class="si">{</span><span class="n">filter_names</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">all</span><span class="p">(</span><span class="s2">&quot;_&quot;</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;filetype&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">val</span><span class="p">)</span> <span class="ow">and</span> <span class="n">allow_multiple_filetypes</span><span class="p">:</span>
+                <span class="n">measurement_file_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;filetype&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">val</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                    <span class="c1"># Typical cases are mask size, e.g. 3px_Measurements.tbl</span>
+                    <span class="c1"># Remove &#39;measurement&#39;, &#39;measurements&#39; or &#39;lightcurves&#39; from the file type</span>
+                    <span class="n">new_name</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">key</span>
+                        <span class="o">+</span> <span class="s2">&quot;_&quot;</span>
+                        <span class="o">+</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+                            <span class="s2">&quot;_+&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;_&quot;</span><span class="p">,</span>
+                            <span class="n">pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;filetype&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">removeprefix</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">removesuffix</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">),</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+
+                    <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">new_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">ind</span><span class="p">]</span>
+                    <span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">new_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+                <span class="k">del</span> <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Multiple measurement files found for observation </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">.&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot; Namely: </span><span class="si">{</span><span class="n">measurement_file_names</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">allow_multiple_filetypes</span><span class="p">:</span>
+                <span class="n">measurement_file_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">val</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+                    <span class="n">file_name</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;full_file_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">ind</span><span class="p">]</span>
+                    <span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">key</span> <span class="o">+</span> <span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+                <span class="k">del</span> <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Multiple files found for observation </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">,&quot;</span>
+                    <span class="s2">&quot; non of which following standard naming conventions.&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot; Namely: </span><span class="si">{</span><span class="n">measurement_file_names</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Delete the observation from the dictionary</span>
+                <span class="k">del</span> <span class="n">unformatted_df_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">file_name_components_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">get_sorted_exofop_observation_list</span><span class="p">(</span><span class="n">data_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a sorted list of observation tags from a directory containing datasets.</span>
+<span class="sd">    Directories named &#39;zip&#39; and &#39;output&#39; are ignored.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data_dir : str</span>
+<span class="sd">        The directory containing dataset subdirectories.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        A sorted list of observation tags.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; data_dir = &#39;/path/to/data&#39;</span>
+<span class="sd">    &gt;&gt;&gt; observation_list = get_sorted_observation_list(data_dir)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">observation_list</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">tag</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">tag</span> <span class="o">!=</span> <span class="s2">&quot;zip&quot;</span> <span class="ow">and</span> <span class="n">tag</span> <span class="o">!=</span> <span class="s2">&quot;output&quot;</span>
+    <span class="p">]</span>
+    <span class="n">observation_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">observation_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">extract_number_for_sort</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tags of datasets processed: </span><span class="si">{</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">observation_list</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">observation_list</span>
+
+
+<span class="k">def</span> <span class="nf">extract_number_for_sort</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract a numerical value and trailing letters from a string for pseudo-numeric sorting.</span>
+
+<span class="sd">    This function is designed to facilitate the pseudo-numeric sorting of strings that consist of</span>
+<span class="sd">    a number followed by optional trailing letters. By dividing the input string into the numeric</span>
+<span class="sd">    part and the remaining letters, it enables a list of such strings to be sorted in a way that</span>
+<span class="sd">    resembles numeric sorting.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    s : str</span>
+<span class="sd">        Input string containing a numeric value followed by optional letters.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float or inf</span>
+<span class="sd">        Extracted numeric value. Returns float(&#39;inf&#39;) if no numeric value is present.</span>
+<span class="sd">    str</span>
+<span class="sd">        Trailing letters extracted from the input string.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; extract_number_for_sort(&#39;19914B&#39;)</span>
+<span class="sd">    (19914.0, &#39;B&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; extract_number_for_sort(&#39;ABC&#39;)</span>
+<span class="sd">    (inf, &#39;ABC&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">num</span><span class="p">,</span> <span class="n">letters</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d*)(.*)&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">num</span> <span class="ow">or</span> <span class="s2">&quot;inf&quot;</span><span class="p">),</span> <span class="n">letters</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Degen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, David Degen.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

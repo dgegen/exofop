@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Extract and standardise ExoFOP time series observations &#8212; ExoFOP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=7186c071" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/2_extract_and_standardise_time_series_data';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API" href="../exofop.html" />
+    <link rel="prev" title="Download tags from ExoFOP" href="1_download_from_ExoFOP.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ExoFOP Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">QuickStart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_download_from_ExoFOP.html">Download tags from ExoFOP</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Extract and standardise ExoFOP time series observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../exofop.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exofop.download.html">exofop.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exofop.extract.html">exofop.extract</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/dgegen/exofop/main?urlpath=lab/tree/docs/notebooks/2_extract_and_standardise_time_series_data.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dgegen/exofop/blob/main/docs/notebooks/2_extract_and_standardise_time_series_data.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/edit/main/docs/notebooks/2_extract_and_standardise_time_series_data.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/issues/new?title=Issue%20on%20page%20%2Fnotebooks/2_extract_and_standardise_time_series_data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/2_extract_and_standardise_time_series_data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Extract and standardise ExoFOP time series observations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-the-data">Extract the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardise-essential-light-curve-attributes">Standardise essential light curve attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardise-naming-of-cotrending-basis-vectors-cbvs">Standardise naming of cotrending basis vectors (CBVs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-standardised-data">Save standardised data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="extract-and-standardise-exofop-time-series-observations">
+<h1>Extract and standardise ExoFOP time series observations<a class="headerlink" href="#extract-and-standardise-exofop-time-series-observations" title="Link to this heading">#</a></h1>
+<p>This notebook demonstrates how to conveniently load and standardise time series observations from ExoFOP.</p>
+<p>The main challenge here is achieving consistent column naming across ExoFOP data files.
+With a wide range of observatories and processing pipelines contributing to ExoFOP, there are cases
+where different column names are used to denote the same underlying concept.
+For instance, the column representing time may be labelled as
+‘BJD TBD’, ‘time’, ‘TIME’, and so on.
+By mapping all of these synonyms to a primary alias, a consistent and intuitive nomenclature can be achieved,
+regardless of the original source.
+To achieve this, we use <code class="docutils literal notranslate"><span class="pre">SynonymMap(collections.defaultdict)</span></code> a dictionary-like class that
+allows the association of synonyms with a primary alias facilitating the standardisation of column names.</p>
+<p>Here is an example that illustrates how this class works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">exofop.extract</span> <span class="kn">import</span> <span class="n">LightCurveTableList</span><span class="p">,</span> <span class="n">LightCurveTable</span><span class="p">,</span> <span class="n">SynonymMap</span><span class="p">,</span> <span class="n">SynonymMapLc</span>
+
+<span class="c1"># For nice logs, we reformat the root loggger&#39;s StreamHandler</span>
+<span class="kn">from</span> <span class="nn">exofop.utils.logger</span> <span class="kn">import</span> <span class="n">configure_root_logger</span>
+<span class="n">configure_root_logger</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise a synonym map from a dictionary</span>
+<span class="n">synonym_map</span> <span class="o">=</span> <span class="n">SynonymMap</span><span class="p">()</span>
+
+<span class="c1"># Define a primary alias and its synonyms</span>
+<span class="n">synonym_map</span><span class="p">[</span><span class="s1">&#39;primary_alias_a&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;synonym_a_0&#39;</span><span class="p">,</span> <span class="s1">&#39;synonym_a_1&#39;</span><span class="p">,</span> <span class="s1">&#39;synonym_a_2&#39;</span><span class="p">]</span>
+
+<span class="c1"># Alternatively, we can use `update` to add multiple primary aliases at once</span>
+<span class="n">synonym_map</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;primary_alias_b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;synonym_b_0&#39;</span><span class="p">,</span> <span class="s1">&#39;synonym_b_1&#39;</span><span class="p">,</span> <span class="s1">&#39;synonym_b_2&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;primary_alias_c&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;synonym_c_0&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># If we realise that we were missing a synonym of `primary_alias_a`, we can add it</span>
+<span class="n">synonym_map</span><span class="o">.</span><span class="n">add_synonyms</span><span class="p">(</span><span class="s1">&#39;primary_alias_a&#39;</span><span class="p">,</span> <span class="s1">&#39;synonym_a_3&#39;</span><span class="p">)</span>
+
+<span class="c1"># And if we want to rename `primary_alias_b` to `primary_alias_b_new`, we can do so</span>
+<span class="n">synonym_map</span><span class="o">.</span><span class="n">rename_primary_alias</span><span class="p">(</span><span class="s1">&#39;primary_alias_b&#39;</span><span class="p">,</span> <span class="s1">&#39;new_primary_alias_b_new&#39;</span><span class="p">)</span>
+
+<span class="n">synonym_map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SynonymMap(tuple,
+           {&#39;primary_alias_a&#39;: (&#39;synonym_a_0&#39;,
+             &#39;synonym_a_1&#39;,
+             &#39;synonym_a_2&#39;,
+             &#39;synonym_a_3&#39;),
+            &#39;primary_alias_c&#39;: (&#39;synonym_c_0&#39;,),
+            &#39;new_primary_alias_b_new&#39;: (&#39;synonym_b_0&#39;,
+             &#39;synonym_b_1&#39;,
+             &#39;synonym_b_2&#39;,
+             &#39;primary_alias_b&#39;)})
+</pre></div>
+</div>
+</div>
+</div>
+<section id="extract-the-data">
+<h2>Extract the data<a class="headerlink" href="#extract-the-data" title="Link to this heading">#</a></h2>
+<p>The extracted data is contained in a list of <code class="docutils literal notranslate"><span class="pre">LightCurveTable</span></code> objects.
+This class extends the functionality of its parent class <code class="docutils literal notranslate"><span class="pre">astropy.table.Table</span></code>, giving access to additional attribute stored in the <code class="docutils literal notranslate"><span class="pre">meta</span></code> attribute of the table and providing various methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_dir</span> <span class="o">=</span> <span class="s1">&#39;./TOI_1130&#39;</span>  <span class="c1"># As generated in the previous tutorial</span>
+
+<span class="n">exofop_data</span> <span class="o">=</span> <span class="n">LightCurveTableList</span><span class="o">.</span><span class="n">load_exofop_data</span><span class="p">(</span>
+        <span class="n">target_dir</span><span class="o">=</span><span class="n">target_dir</span><span class="p">,</span>
+        <span class="n">observation_names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># defaults to all folders in data_dir</span>
+        <span class="n">allow_multiple_filetypes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="n">exofop_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13:56:12 :: INFO     :: Tags of datasets processed: 5903
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LightCurveTableList([&#39;5903&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>All successfully loaded tables can be inspected by index or name using</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>LightCurveTable length=5</i>
+<table id="table4827730320" class="table-striped table-bordered table-condensed">
+<thead><tr><th>BJD_TDB</th><th>rel_flux_T1_n</th><th>rel_flux_err_T1_n</th><th>mag</th><th>mag_err</th><th>var_imag</th><th>comp_imag</th><th>x_coord</th><th>y_coord</th><th>dist_center</th><th>fwhm</th><th>airmass</th><th>sky</th><th>rel_flux_mag</th><th>rel_flux_err_mag</th></tr></thead>
+<thead><tr><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th><th>float64</th></tr></thead>
+<tr><td>2458758.021817</td><td>1.0034136391780677</td><td>0.0014786849841141282</td><td>11.3739</td><td>0.0016</td><td>11.3001</td><td>11.9067</td><td>813.5899</td><td>462.2884</td><td>68.0983</td><td>2.9442</td><td>1.0847</td><td>472.4629</td><td>1.0034136391780677</td><td>0.0014786849841141282</td></tr>
+<tr><td>2458758.0226434</td><td>1.0069316688518022</td><td>0.0014838693442315374</td><td>11.3701</td><td>0.0016</td><td>11.2935</td><td>11.9054</td><td>812.7702</td><td>461.7691</td><td>67.8838</td><td>3.1278</td><td>1.0864</td><td>444.0818</td><td>1.0069316688518022</td><td>0.0014838693442315374</td></tr>
+<tr><td>2458758.0234726</td><td>1.000644931705117</td><td>0.0014746048659995184</td><td>11.3769</td><td>0.0016</td><td>11.298</td><td>11.903</td><td>813.2566</td><td>461.4115</td><td>68.4802</td><td>3.3411</td><td>1.0882</td><td>450.5804</td><td>1.000644931705117</td><td>0.0014746048659995184</td></tr>
+<tr><td>2458758.0251323</td><td>1.0025822235150676</td><td>0.0014774597647146364</td><td>11.3748</td><td>0.0016</td><td>11.2945</td><td>11.9</td><td>813.8261</td><td>460.7488</td><td>69.3518</td><td>2.9926</td><td>1.0918</td><td>425.4003</td><td>1.0025822235150676</td><td>0.0014774597647146364</td></tr>
+<tr><td>2458758.0259552</td><td>1.0056341199160994</td><td>0.0014819572054559985</td><td>11.3715</td><td>0.0016</td><td>11.2924</td><td>11.9031</td><td>813.3081</td><td>460.5687</td><td>69.1168</td><td>2.8176</td><td>1.0936</td><td>443.6741</td><td>1.0056341199160994</td><td>0.0014819572054559985</td></tr>
+</table></div></div></div>
+</div>
+<p>All information extracted from the file names is contained in the <code class="docutils literal notranslate"><span class="pre">.meta</span></code> attribute of each <code class="docutils literal notranslate"><span class="pre">LightCurveTable</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">meta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;target&#39;: &#39;TIC254113311&#39;,
+ &#39;pp&#39;: 1,
+ &#39;yyyymmdd&#39;: &#39;2019-10-01&#39;,
+ &#39;observatory&#39;: &#39;PEST&#39;,
+ &#39;filter&#39;: &#39;Rc&#39;,
+ &#39;filetype&#39;: &#39;data&#39;,
+ &#39;ext&#39;: &#39;txt&#39;,
+ &#39;full_file_name&#39;: &#39;TIC254113311-01_20191001_PEST_Rc_data.txt&#39;,
+ &#39;jd&#39;: 2458757.5,
+ &#39;is_complete&#39;: True,
+ &#39;name&#39;: &#39;5903&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="standardise-essential-light-curve-attributes">
+<h2>Standardise essential light curve attributes<a class="headerlink" href="#standardise-essential-light-curve-attributes" title="Link to this heading">#</a></h2>
+<p>Standardisation of the column names in <code class="docutils literal notranslate"><span class="pre">LightCurveTable</span></code> objects is achieved using instances of either <code class="docutils literal notranslate"><span class="pre">SynonymMap</span></code> or <code class="docutils literal notranslate"><span class="pre">SynonymMapLc</span></code>. <code class="docutils literal notranslate"><span class="pre">SynonymMapLc</span></code> is a subclass of SynonymMap specifically tailored for handling attributes related to light curves.
+It provides additional functionality to manipulate primary aliases and their synonyms, with default attributes for time, flux, and flux error.
+By default, <code class="docutils literal notranslate"><span class="pre">LightCurveTable().synonym_map</span></code> provides a set of synonyms used for standardization. However, creating a custom synonym map allows for tailored adjustments to better suit specific needs.</p>
+<p>Let’s delve into creating a custom synonym map to demonstrate its utility and ease of refinement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simple_synonym_map</span> <span class="o">=</span> <span class="n">SynonymMapLc</span><span class="p">()</span>
+<span class="n">simple_synonym_map</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;BJD_TDB&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;TIME&#39;</span><span class="p">,</span> <span class="s1">&#39;BJD&#39;</span><span class="p">,</span> <span class="s1">&#39;BJD_TDB_MOBS&#39;</span><span class="p">,</span> <span class="s1">&#39;#BJD_TDB&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;rel_flux_T1_n&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;flux&#39;</span><span class="p">,</span> <span class="s1">&#39;FLUX&#39;</span><span class="p">,</span> <span class="s1">&#39;rel_flux&#39;</span><span class="p">,</span> <span class="s1">&#39;rel_flux_T1&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;rel_flux_err_T1_n&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;flux_err&#39;</span><span class="p">,</span> <span class="s1">&#39;ERRFLUX&#39;</span><span class="p">,</span> <span class="s1">&#39;rel_flux_err_T1&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">simple_synonym_map</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">simple_synonym_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EssentialLightcurveAttributes(time=&#39;BJD_TDB&#39;, flux=&#39;rel_flux_T1_n&#39;, flux_err=&#39;rel_flux_err_T1_n&#39;)
+SynonymMapLc(&lt;class &#39;tuple&#39;&gt;, {&#39;BJD_TDB&#39;: (&#39;time&#39;, &#39;TIME&#39;, &#39;BJD&#39;, &#39;BJD_TDB_MOBS&#39;, &#39;#BJD_TDB&#39;), &#39;rel_flux_T1_n&#39;: (&#39;flux&#39;, &#39;FLUX&#39;, &#39;rel_flux&#39;, &#39;rel_flux_T1&#39;), &#39;rel_flux_err_T1_n&#39;: (&#39;flux_err&#39;, &#39;ERRFLUX&#39;, &#39;rel_flux_err_T1&#39;)})
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we utilize <code class="docutils literal notranslate"><span class="pre">simple_synonym_map</span></code> to search for secondary aliases within the column names of each table. This search is performed for each primary alias that is not already present in the table.</p>
+<p>Following this, we then check for any discrepancies between the time given in the table and the time stamp specified in the measurement file name. This verification step is crucial because CSV files may sometimes express time relative to a reference point, such as 2 450 000 BJD. If a discrepancy is detected, a reference time is inferred based on the disparity between the timestamp of the file name and the time column. This reference time is then rounded and added to the time column to ensure consistency. A warning log informs the user whenever a time correction is applied.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="o">.</span><span class="n">standardise_column_names</span><span class="p">(</span><span class="n">synonym_map</span><span class="o">=</span><span class="n">simple_synonym_map</span><span class="p">)</span>
+<span class="n">exofop_data</span><span class="o">.</span><span class="n">apply_time_correction_in_case_of_discrepancy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13:56:12 :: INFO     :: All observations contain a complete light curve.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also view an information summary table for all measurements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="o">.</span><span class="n">info_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>BJD</th>
+      <th>Observatory</th>
+      <th>Filter</th>
+      <th>target</th>
+      <th>pp</th>
+      <th>Measurement file name</th>
+      <th>full_file_name</th>
+      <th>texp</th>
+      <th>Duration</th>
+      <th>Efficiency</th>
+      <th>cbvs</th>
+      <th>ncols</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5903</th>
+      <td>2019-10-01</td>
+      <td>2458757</td>
+      <td>PEST</td>
+      <td>Rc</td>
+      <td>TIC254113311</td>
+      <td>1</td>
+      <td>data.txt</td>
+      <td>TIC254113311-01_20191001_PEST_Rc_data.txt</td>
+      <td>23.852154</td>
+      <td>3.968364</td>
+      <td>75.4</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If matplotlib is installed, you can also visually inspect any complete and standardised the light curve:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;svg&#39;
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">6.69</span><span class="p">,</span> <span class="mf">4.14</span><span class="p">))</span>
+<span class="n">exofop_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/cddbb0dec4a1043a2773f2cde92cf0ed4f91ab9949db014503282ee5fe66bf75.svg" src="../_images/cddbb0dec4a1043a2773f2cde92cf0ed4f91ab9949db014503282ee5fe66bf75.svg" /></div>
+</div>
+</section>
+<section id="standardise-naming-of-cotrending-basis-vectors-cbvs">
+<h2>Standardise naming of cotrending basis vectors (CBVs)<a class="headerlink" href="#standardise-naming-of-cotrending-basis-vectors-cbvs" title="Link to this heading">#</a></h2>
+<p>In this package, we employ the term Cotrending Basis Vectors (CBVs) to denote a collection of vectors commonly utilized for mitigating systematic effects in time-series data. Examples of such CBVs include:</p>
+<ul class="simple">
+<li><p><strong>AIRMASS</strong>: The optical path length through Earth’s atmosphere when observing a celestial object. It accounts for atmospheric refraction and absorption, impacting the observed brightness and position of celestial objects.</p></li>
+<li><p><strong>Sky/Pixel</strong>: The background sky brightness associated with a particular set of pixel in an image. This metric helps in accounting for varying levels of sky illumination across the detector array, which can affect the measured signal from celestial objects.</p></li>
+<li><p><strong>X(IJ)/Y(IJ)</strong>: Spatial coordinates of a pixel within the detector array. These coordinates define the precise location of a pixel in the two-dimensional imaging plane, aiding in accurate positional calibration and image alignment.</p></li>
+<li><p><strong>FWHM</strong>: Full Width at Half Maximum is a measurement used to quantify the width of a distribution. In the context of photometry, it quantifies the extent of blurring or spreading of the point spread function (PSF) of a star or celestial object in an image. FWHM provides crucial information about the spatial resolution and image quality, influencing the precision of photometric measurements.</p></li>
+</ul>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">time</span></code>, <code class="docutils literal notranslate"><span class="pre">flux</span></code> and <code class="docutils literal notranslate"><span class="pre">flux_err</span></code>, which are essential for a complete light curve, CBVs are optional - although highly desirable to decrease the amount of red noise present in the data.</p>
+<p>Let’s try and standardise their column names</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">synonym_map</span> <span class="o">=</span> <span class="n">simple_synonym_map</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">()</span>
+<span class="n">synonym_map</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;AIRMASS&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;AIRMASS&quot;</span><span class="p">),</span>  <span class="c1"># (&quot;airmass&quot;),</span>
+        <span class="s2">&quot;Sky/Pixel_T1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;sky&quot;</span><span class="p">,</span> <span class="s2">&quot;SKY&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;X(IJ)_T1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;x_coord&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;Y(IJ)_T1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;y_coord&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;FWHM_T1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;fwhm&quot;</span><span class="p">,</span> <span class="s2">&quot;FWHM&quot;</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># To get the names of all primary aliases in the synonym map that are not part of the light curve</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CBVs:&quot;</span><span class="p">,</span> <span class="n">synonym_map</span><span class="o">.</span><span class="n">cbv_names</span><span class="p">)</span>
+
+<span class="n">exofop_data</span><span class="o">.</span><span class="n">standardise_column_names</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13:56:13 :: INFO     :: All observations contain a complete light curve.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CBVs: [&#39;AIRMASS&#39;, &#39;Sky/Pixel_T1&#39;, &#39;X(IJ)_T1&#39;, &#39;Y(IJ)_T1&#39;, &#39;FWHM_T1&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets see if there are datasets that are missing any CBVs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We seem to be missing the cotrending basis vector airmass for the first light curve</span>
+<span class="n">exofop_data</span><span class="o">.</span><span class="n">missing_cbvs</span><span class="p">(</span><span class="n">synonym_map</span><span class="o">=</span><span class="n">synonym_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;5903&#39;: (&#39;PEST&#39;, [&#39;AIRMASS&#39;])}
+</pre></div>
+</div>
+</div>
+</div>
+<p>The observations from PEST seemt to be missing the <code class="docutils literal notranslate"><span class="pre">AIRMASS</span></code>. Let’s see if there is indeed no column corresponding to airmass in this table, or if they are using a synonym that we haven’t come across yet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">exofop_data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">colnames</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">exofop_data</span><span class="o">.</span><span class="n">missing_cbvs</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([&#39;BJD_TDB&#39;, &#39;rel_flux_T1_n&#39;, &#39;rel_flux_err_T1_n&#39;, &#39;mag&#39;, &#39;mag_err&#39;,
+        &#39;var_imag&#39;, &#39;comp_imag&#39;, &#39;X(IJ)_T1&#39;, &#39;Y(IJ)_T1&#39;, &#39;dist_center&#39;,
+        &#39;FWHM_T1&#39;, &#39;airmass&#39;, &#39;Sky/Pixel_T1&#39;, &#39;rel_flux_mag&#39;,
+        &#39;rel_flux_err_mag&#39;], dtype=&#39;&lt;U17&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>So they do in fact have a column called <code class="docutils literal notranslate"><span class="pre">airmass</span></code>. Lets add that synonym and rerun the standardisation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">synonym_map</span><span class="o">.</span><span class="n">add_synonyms</span><span class="p">(</span><span class="s1">&#39;AIRMASS&#39;</span><span class="p">,</span> <span class="s1">&#39;airmass&#39;</span><span class="p">)</span>
+<span class="n">exofop_data</span><span class="o">.</span><span class="n">standardise_column_names</span><span class="p">(</span><span class="n">synonym_map</span><span class="p">)</span>
+
+<span class="n">exofop_data</span><span class="o">.</span><span class="n">missing_cbvs</span><span class="p">(</span><span class="n">synonym_map</span><span class="o">=</span><span class="n">synonym_map</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13:56:13 :: INFO     :: All observations contain a complete light curve.
+</pre></div>
+</div>
+</div>
+</div>
+<p>If no synonym map is provided, <code class="docutils literal notranslate"><span class="pre">LightCurveTable().synonym_map</span></code> is used. If you find additional synonyms that you want to keep permanently, you can save them, using
+<code class="docutils literal notranslate"><span class="pre">synonym_map.save()</span></code> or <code class="docutils literal notranslate"><span class="pre">synonym_map.save_to_config()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LightCurveTable</span><span class="p">()</span><span class="o">.</span><span class="n">synonym_map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SynonymMapLc(tuple,
+             {&#39;AIRMASS&#39;: (&#39;airmass&#39;,),
+              &#39;BJD_TDB&#39;: (&#39;time&#39;, &#39;TIME&#39;, &#39;BJD&#39;, &#39;BJD_TDB_MOBS&#39;, &#39;#BJD_TDB&#39;),
+              &#39;FWHM_T1&#39;: (&#39;fwhm&#39;, &#39;FWHM&#39;),
+              &#39;Sky/Pixel_T1&#39;: (&#39;sky&#39;, &#39;SKY&#39;),
+              &#39;X(IJ)_T1&#39;: (&#39;x_coord&#39;,),
+              &#39;Y(IJ)_T1&#39;: (&#39;y_coord&#39;,),
+              &#39;rel_flux_T1_n&#39;: (&#39;flux&#39;,
+               &#39;FLUX&#39;,
+               &#39;rel_flux&#39;,
+               &#39;rel_flux_T1&#39;,
+               &#39;flux_star_0&#39;),
+              &#39;rel_flux_err_T1_n&#39;: (&#39;flux_err&#39;, &#39;ERRFLUX&#39;, &#39;rel_flux_err_T1&#39;)})
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the data is in a standardised form, ready to be analysed further with the probabilistic time series modelling tool of your choice.</p>
+<p>Your <code class="docutils literal notranslate"><span class="pre">light_curve'</span> <span class="pre">and</span> </code>cbvs’ can be conveniently accessed and converted to numpy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">light_curve</span><span class="p">()</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BJD_TDB</th>
+      <th>rel_flux_T1_n</th>
+      <th>rel_flux_err_T1_n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.458758e+06</td>
+      <td>1.003414</td>
+      <td>0.001479</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.458758e+06</td>
+      <td>1.006932</td>
+      <td>0.001484</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.458758e+06</td>
+      <td>1.000645</td>
+      <td>0.001475</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.458758e+06</td>
+      <td>1.002582</td>
+      <td>0.001477</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.458758e+06</td>
+      <td>1.005634</td>
+      <td>0.001482</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>2.458758e+06</td>
+      <td>1.006932</td>
+      <td>0.002319</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>2.458758e+06</td>
+      <td>1.005912</td>
+      <td>0.002316</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>2.458758e+06</td>
+      <td>1.004708</td>
+      <td>0.002313</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>2.458758e+06</td>
+      <td>1.012512</td>
+      <td>0.002425</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>2.458758e+06</td>
+      <td>1.006653</td>
+      <td>0.002411</td>
+    </tr>
+  </tbody>
+</table>
+<p>155 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cbvs</span><span class="p">()</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AIRMASS</th>
+      <th>FWHM_T1</th>
+      <th>Sky/Pixel_T1</th>
+      <th>X(IJ)_T1</th>
+      <th>Y(IJ)_T1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0847</td>
+      <td>2.9442</td>
+      <td>472.4629</td>
+      <td>813.5899</td>
+      <td>462.2884</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0864</td>
+      <td>3.1278</td>
+      <td>444.0818</td>
+      <td>812.7702</td>
+      <td>461.7691</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0882</td>
+      <td>3.3411</td>
+      <td>450.5804</td>
+      <td>813.2566</td>
+      <td>461.4115</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0918</td>
+      <td>2.9926</td>
+      <td>425.4003</td>
+      <td>813.8261</td>
+      <td>460.7488</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0936</td>
+      <td>2.8176</td>
+      <td>443.6741</td>
+      <td>813.3081</td>
+      <td>460.5687</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>2.3950</td>
+      <td>3.6697</td>
+      <td>537.8053</td>
+      <td>817.3280</td>
+      <td>466.8125</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>2.4137</td>
+      <td>3.4809</td>
+      <td>537.7516</td>
+      <td>817.5697</td>
+      <td>467.7563</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>2.4337</td>
+      <td>3.6952</td>
+      <td>514.5619</td>
+      <td>818.7373</td>
+      <td>468.5323</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>2.4531</td>
+      <td>4.0062</td>
+      <td>529.9705</td>
+      <td>817.5272</td>
+      <td>469.4299</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>2.5160</td>
+      <td>4.0115</td>
+      <td>545.7678</td>
+      <td>817.2219</td>
+      <td>472.1663</td>
+    </tr>
+  </tbody>
+</table>
+<p>155 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Finally, we can update the overview table and now see that both datasets contain the 5 CBVs we selected above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="o">.</span><span class="n">update_info_df</span><span class="p">()</span>
+<span class="n">exofop_data</span><span class="o">.</span><span class="n">info_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>BJD</th>
+      <th>Observatory</th>
+      <th>Filter</th>
+      <th>target</th>
+      <th>pp</th>
+      <th>Measurement file name</th>
+      <th>full_file_name</th>
+      <th>texp</th>
+      <th>Duration</th>
+      <th>Efficiency</th>
+      <th>cbvs</th>
+      <th>ncols</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5903</th>
+      <td>2019-10-01</td>
+      <td>2458757</td>
+      <td>PEST</td>
+      <td>Rc</td>
+      <td>TIC254113311</td>
+      <td>1</td>
+      <td>data.txt</td>
+      <td>TIC254113311-01_20191001_PEST_Rc_data.txt</td>
+      <td>23.852154</td>
+      <td>3.968364</td>
+      <td>75.4</td>
+      <td>5</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="save-standardised-data">
+<h2>Save standardised data<a class="headerlink" href="#save-standardised-data" title="Link to this heading">#</a></h2>
+<p>There are two options to save the standardised data:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exofop_data.save(save_dir:</span> <span class="pre">str)</span></code>: Saves all tables individually to save_dir with <code class="docutils literal notranslate"><span class="pre">tbl.name</span></code> as file name. Additionally, the <code class="docutils literal notranslate"><span class="pre">info_df</span></code> is saved to the same folder. <code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load(cls,</span> <span class="pre">load_dir:</span> <span class="pre">str)</span></code> can then be used to reload the data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exofop.save_to_pickle(file_path:</span> <span class="pre">str)</span></code>: Saves the object to a pickle file, which can be reloaded using <code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load_from_pickle(file_path:</span> <span class="pre">str)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exofop_data</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">save_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved to&quot;</span><span class="p">,</span>  <span class="n">exofop_data</span><span class="o">.</span><span class="n">default_save_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved to ./TOI_1130/output
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can later reload all files again using</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LightCurveTableList</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">load_dir</span><span class="o">=</span><span class="n">exofop_data</span><span class="o">.</span><span class="n">default_save_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LightCurveTableList([&#39;5903&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this notebook, we’ve shown how to extract ExoFOP light curves from a set of folders and brought
+the measurement files of each observation into a standardised format.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1_download_from_ExoFOP.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Download tags from ExoFOP</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exofop.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-the-data">Extract the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardise-essential-light-curve-attributes">Standardise essential light curve attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardise-naming-of-cotrending-basis-vectors-cbvs">Standardise naming of cotrending basis vectors (CBVs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-standardised-data">Save standardised data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Degen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, David Degen.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

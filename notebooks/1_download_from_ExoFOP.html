@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Download tags from ExoFOP &#8212; ExoFOP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=7186c071" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/1_download_from_ExoFOP';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extract and standardise ExoFOP time series observations" href="2_extract_and_standardise_time_series_data.html" />
+    <link rel="prev" title="QuickStart" href="../quickstart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ExoFOP Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">QuickStart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Download tags from ExoFOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_extract_and_standardise_time_series_data.html">Extract and standardise ExoFOP time series observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../exofop.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exofop.download.html">exofop.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exofop.extract.html">exofop.extract</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/dgegen/exofop/main?urlpath=lab/tree/docs/notebooks/1_download_from_ExoFOP.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/dgegen/exofop/blob/main/docs/notebooks/1_download_from_ExoFOP.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/edit/main/docs/notebooks/1_download_from_ExoFOP.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/issues/new?title=Issue%20on%20page%20%2Fnotebooks/1_download_from_ExoFOP.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/1_download_from_ExoFOP.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Download tags from ExoFOP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#login-to-exofop">Login to ExoFOP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-exofopauthenticator-class">The <code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator</span></code> class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-observations">Download Observations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-a-system">Identify a system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data-from-a-system">Download data from a system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bulk-loading-system-observations">Bulk Loading System Observations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-credential-files">Note on credential files</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="download-tags-from-exofop">
+<h1>Download tags from ExoFOP<a class="headerlink" href="#download-tags-from-exofop" title="Link to this heading">#</a></h1>
+<p>This notebook demonstrate how to bulk download time series observations from ExoFOP and then
+organize the downloaded data.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p>We’ll start by importing the necessary modules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">exofop</span>
+<span class="kn">from</span> <span class="nn">exofop.download</span> <span class="kn">import</span> <span class="n">ExoFOPAuthenticator</span><span class="p">,</span> <span class="n">System</span><span class="p">,</span> <span class="n">SystemDownloader</span>
+
+<span class="c1"># For nice logs, we reformat the root loggger&#39;s StreamHandler</span>
+<span class="kn">from</span> <span class="nn">exofop.utils.logger</span> <span class="kn">import</span> <span class="n">configure_root_logger</span>
+<span class="n">configure_root_logger</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="login-to-exofop">
+<h2>Login to ExoFOP<a class="headerlink" href="#login-to-exofop" title="Link to this heading">#</a></h2>
+<p>Accessing data on ExoFOP does not necessarily require logging in, but having valid credentials
+can be beneficial as certain types of data uploaded to ExoFOP are eligible for a proprietary period of 12 months within the tfopwg group.
+After 12 months, the data become publicly available unless the uploader decides to extend the proprietary period.</p>
+<blockquote>
+<div><p>ⓘ
+If you do not have an account, set <code class="docutils literal notranslate"><span class="pre">authenticator</span> <span class="pre">=</span> <span class="pre">None</span></code> and continue this tutorial at <a class="reference internal" href="#download-observations"><span class="xref myst">Download Observations</span></a>.</p>
+</div></blockquote>
+<section id="the-exofopauthenticator-class">
+<h3>The <code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator</span></code> class<a class="headerlink" href="#the-exofopauthenticator-class" title="Link to this heading">#</a></h3>
+<p>As one naturally is uncomfortable entering credentials, let’s have a look at how it
+works.
+<code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator</span></code> handles authentication by interacting with the ExoFOP website,
+storing and managing session cookies, and providing methods to log in,
+if the session cookies have expired.
+During initialisation, the class checks if valid cookies are available. If they are not,
+login is attempted using one of the following methods</p>
+<ul class="simple">
+<li><p>provide the username during initialisation and prompt the password during login</p></li>
+<li><p>use the username and password provided from a credential file</p></li>
+</ul>
+<p>The password is never stored in the object, merely the cookies generated upon successful login.</p>
+<p>So let us initialise an authenticator providing a <code class="docutils literal notranslate"><span class="pre">username</span></code>.
+Here we have explicitly handed <code class="docutils literal notranslate"><span class="pre">cookies_dir</span></code> its default value, to draw attention to the fact that
+your cookies will be stored in your local installation of the package unless you specify otherwise.
+If this installation is shared with other users, you might consider storing your cookies elsewhere,
+by changing the provided directory path.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">authenticator</span> <span class="o">=</span> <span class="n">ExoFOPAuthenticator</span><span class="p">(</span>
+    <span class="n">username</span><span class="o">=</span><span class="s1">&#39;lovelace&#39;</span><span class="p">,</span>
+    <span class="n">cookies_dir</span><span class="o">=</span><span class="n">exofop</span><span class="o">.</span><span class="n">COOKIES_DIR</span><span class="p">,</span>  <span class="c1"># default</span>
+    <span class="n">credential_file_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">number_of_cookie_jars</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:exofop.download.authenticator:Cookies will expire in 2 days, 2:46:22.418284
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let us log in to our ExoFOP account.</p>
+<p>If there are no valid cookies for this user name in the specified directory, you will be prompted to enter your password – unless you have initialised the object with a credential file in which you specify your username and password located at <code class="docutils literal notranslate"><span class="pre">credential_file_path</span></code> (see <a class="reference internal" href="#appendix"><span class="xref myst">Note in Appendix</span></a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">success</span> <span class="o">=</span> <span class="n">authenticator</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Login success: </span><span class="si">{</span><span class="n">success</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">authenticator</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:exofop.download.authenticator:Cookies are still valid. No need to login.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Login success: True
+ExoFOPAuthenticator(username=lovelace, number_of_cookie_jars=3, remaining_validity=2 days, 2:46:22.394646)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="download-observations">
+<h2>Download Observations<a class="headerlink" href="#download-observations" title="Link to this heading">#</a></h2>
+<p>In the following section, we will download multiple time series observations of a single stellar system.</p>
+<section id="identify-a-system">
+<h3>Identify a system<a class="headerlink" href="#identify-a-system" title="Link to this heading">#</a></h3>
+<p>Individual systems are identified in this package using the `System’ class, which helps to handle both TIC and TOI identifiers that may be used to refer to the system.</p>
+<p>The class can be initialised by passing a system name, TIC ID and/or TOI ID.
+A useful method provided by this class is <code class="docutils literal notranslate"><span class="pre">autocomplete()</span></code>, which completes the missing ID (TIC or TOI) by performing a lookup in a table loaded by ExoFOP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise a system</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">System</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;TOI_1130&#39;</span><span class="p">,</span> <span class="n">tic</span><span class="o">=</span><span class="s1">&#39;254113311&#39;</span><span class="p">,</span> <span class="n">toi</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Target name: </span><span class="si">{</span><span class="n">system</span><span class="o">.</span><span class="n">target</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">system</span><span class="p">)</span>
+
+<span class="c1"># Alternative ways to initialise a system</span>
+<span class="c1"># As the first argument is name, we could also hand IDs using the prefixes &#39;TIC&#39; or &#39;TOI&#39;.</span>
+<span class="c1"># system = System(name=&quot;TOI-1130&quot;)  # Indicate TOI ID with prefix &#39;TOI&#39;</span>
+<span class="c1"># system = System(&quot;TIC_254113311&quot;)  # Indicate TIC ID with prefix &#39;TIC&#39;</span>
+
+<span class="c1"># Less recommended is to give an id without prefix, as it requires an extra lookup</span>
+<span class="c1"># System(name=&quot;254113311&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target name: 254113311
+System(name=TOI_1130, tic=TIC_254113311 toi=None)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="download-data-from-a-system">
+<h3>Download data from a system<a class="headerlink" href="#download-data-from-a-system" title="Link to this heading">#</a></h3>
+<p>Next we initialise a <code class="docutils literal notranslate"><span class="pre">SystemDownloader</span></code>, which is the main object for downloading data from ExoFOP that is associated to a single target.
+The downloader works asynchronously, that means multiple requests can be done simultaneously, shortening the download speed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+
+<span class="n">system_loader</span> <span class="o">=</span> <span class="n">SystemDownloader</span><span class="p">(</span>
+    <span class="n">system</span><span class="o">=</span><span class="n">system</span><span class="p">,</span>
+    <span class="n">data_dir</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
+    <span class="n">authenticator</span><span class="o">=</span><span class="n">authenticator</span><span class="p">,</span>  <span class="c1"># optional</span>
+    <span class="n">max_concurrent_downloads</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets have a look at the time series data on ExoFOP for this target.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tab</span> <span class="o">=</span> <span class="n">system_loader</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">table</span>
+<span class="n">tab</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><i>Table length=5</i>
+<table id="table4513108080" class="table-striped table-bordered table-condensed">
+<thead><tr><th>TIC ID</th><th>TIC</th><th>TOI</th><th>Telescope</th><th>Camera</th><th>Filter</th><th>Pixel Scale</th><th>PSF</th><th>Phot Aperture Rad</th><th>Obs Date</th><th>Obs Duration</th><th>Num Obs</th><th>Obs Type</th><th>Transit Coverage</th><th>Delta Mag</th><th>User</th><th>Group</th><th>Tag</th><th>Notes</th></tr></thead>
+<thead><tr><th>int64</th><th>int64</th><th>str11</th><th>str24</th><th>str24</th><th>str10</th><th>float64</th><th>float64</th><th>float64</th><th>str10</th><th>float64</th><th>int64</th><th>str10</th><th>str14</th><th>float64</th><th>str9</th><th>str6</th><th>int64</th><th>str52</th></tr></thead>
+<tr><td>254113311</td><td>--</td><td>TOI 1130.02</td><td>PEST (0.305 m)</td><td>ST-8XME</td><td>Rc</td><td>1.23</td><td>4.48</td><td>7.0</td><td>2020-03-30</td><td>230.0</td><td>184</td><td>Continuous</td><td>Full</td><td>8.3</td><td>tan</td><td>tfopwg</td><td>18493</td><td>--</td></tr>
+<tr><td>254113311</td><td>--</td><td>TOI 1130.02</td><td>LCO-SSO-1.0m (1.0 m)</td><td>Sinistro, 1.0m</td><td>zs</td><td>0.389</td><td>1.8</td><td>9.0</td><td>2020-03-30</td><td>177.0</td><td>167</td><td>Continuous</td><td>Full</td><td>9.8</td><td>stockdale</td><td>tfopwg</td><td>18598</td><td>--</td></tr>
+<tr><td>254113311</td><td>--</td><td>TOI 1130.02</td><td>LCO-SSO (1.0 m)</td><td>Sinistro</td><td>zs</td><td>0.39</td><td>2.44</td><td>13.0</td><td>2020-05-14</td><td>205.0</td><td>192</td><td>Continuous</td><td>Full</td><td>7.36</td><td>schwarz</td><td>tfopwg</td><td>19121</td><td>--</td></tr>
+<tr><td>254113311</td><td>--</td><td>TOI 1130.02</td><td>LCO-SSO-1m0 (1.0 m)</td><td>SINISTRO</td><td>zs</td><td>0.389</td><td>2.1</td><td>6.0</td><td>2020-05-14</td><td>249.0</td><td>235</td><td>Continuous</td><td>Full</td><td>7.3</td><td>conti</td><td>tfopwg</td><td>19188</td><td>--</td></tr>
+<tr><td>254113311</td><td>--</td><td>TOI 1130.02</td><td>LCO-SAAO-1m0 (1.0 m)</td><td>SINISTRO</td><td>zs</td><td>0.389</td><td>1.81</td><td>15.0</td><td>2020-06-07</td><td>272.0</td><td>260</td><td>Continuous</td><td>Full</td><td>--</td><td>collins</td><td>tfopwg</td><td>19442</td><td>nominal .02 with overlapping .01</td></tr>
+</table></div></div></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">astropy.table.Table</span></code> can be easily converted to <code class="docutils literal notranslate"><span class="pre">pd.DataFrames</span></code> using <code class="docutils literal notranslate"><span class="pre">tab.to_pandas()</span></code>.</p>
+<p>Besides the <code class="docutils literal notranslate"><span class="pre">time_series</span></code> data, we can load the following overview tables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">system_loader.imaging.table</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">system_loader.spectroscopy.table</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">system_loader.light_curve.table</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">system_loader.stellar_parameters.table</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">system_loader.nearby_target.table</span></code></p></li>
+</ul>
+<p>We can get the tags given in the tables of any of the above attributes by replacing <code class="docutils literal notranslate"><span class="pre">table</span></code> with <code class="docutils literal notranslate"><span class="pre">tags</span></code>, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tags</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">system_loader</span><span class="o">.</span><span class="n">time_series</span><span class="o">.</span><span class="n">tags</span><span class="p">)</span>
+<span class="n">tags</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  5734,   5903,   6038,   6038,   6384,   6384,  18493,  18598,
+        19121,  19188,  19261,  19319,  19425,  19429,  19435,  19441,
+        19442,  19442,  19914,  28680,  28680,  29207,  29208,  29262,
+        33584,  33677,  96267,  96799,  97594,  97874,  97963,  97967,
+        97973,  98598,  98692,  98844,  98852,  98881,  99828, 107605,
+       424251, 428772, 428867, 428875, 429211, 429363, 430115, 431063,
+       431370, 431371, 431527, 431654, 432164, 432682, 432703, 433095,
+       433104, 433655, 437156])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, let us downlaod the first two of these tags using the <code class="docutils literal notranslate"><span class="pre">download</span></code> method.
+This will download the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> files to <code class="docutils literal notranslate"><span class="pre">system_loader.zip_dir</span></code>, which lies inside of <code class="docutils literal notranslate"><span class="pre">system_loader.target_dir</span></code>. If <code class="docutils literal notranslate"><span class="pre">unzip=True</span></code>, the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> files will be unpacked to <code class="docutils literal notranslate"><span class="pre">output_dir</span></code>, which defaults to <code class="docutils literal notranslate"><span class="pre">target_dir</span></code>. Therefore, the following lines of code should result in</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>data_dir/<span class="w">  </span><span class="c1"># as given to system_loader</span>
+
+├──TOI_1130/<span class="w">  </span><span class="c1"># target_dir, named using `system.name`</span>
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5734</span>/
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5903</span>/
+│<span class="w">   </span>├──<span class="w"> </span>zip/
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">5734</span>.zip
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span><span class="m">5903</span>.zip
+</pre></div>
+</div>
+<p>As we are running this code from a Jupyter notebook which always has an open event loop, we need to use <code class="docutils literal notranslate"><span class="pre">await</span></code> before calling the download method.</p>
+<div class="alert alert-block alert-warning">
+⚠️ <b>If we were to call this method in a script instead, we would need to omit `await`.</b>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">system_loader</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tags</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">output_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unzip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Target directory: </span><span class="si">{</span><span class="n">system_loader</span><span class="o">.</span><span class="n">target_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "669a36f4df65402a9295bad9f8685fb1", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:httpx:HTTP Request: GET https://exofop.ipac.caltech.edu/tess/download_tag_files_zip.php?tag=5903 &quot;HTTP/1.1 200 OK&quot;
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "12e62f4e804d4046a47eab3afd542f82", "version_major": 2, "version_minor": 0}</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:exofop.download:file_name=&#39;5903.zip&#39;: OK
+ERROR:exofop.download:Request error: 
+WARNING:exofop.download:Retrying download (1/2) for https://exofop.ipac.caltech.edu/tess/download_tag_files_zip.php?tag=5734
+ERROR:exofop.download:Request error: 
+INFO:exofop.download:file_name=&#39;5734.zip&#39;: TIMEOUT
+INFO:exofop.download.downloaders:Downloaded 1 of 2 files (50.0 %) successfully.
+INFO:exofop.download.downloaders:Successfully downloaded 1 files in 11.568667875 seconds.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Target directory: ./TOI_1130
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bulk-loading-system-observations">
+<h3>Bulk Loading System Observations<a class="headerlink" href="#bulk-loading-system-observations" title="Link to this heading">#</a></h3>
+<p>For convenience, some methods have been added that download all tags available for a specific type of measurement, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">SystemDownloader</span><span class="o">.</span><span class="n">download_time_series</span><span class="p">(</span><span class="n">output_path</span><span class="o">=</span><span class="p">,</span> <span class="n">unzip</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spectroscopy</span><span class="o">.</span><span class="n">tags</span>
+    <span class="k">if</span> <span class="n">output_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">,</span> <span class="s1">&#39;time_series&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="n">output_path</span><span class="p">,</span> <span class="n">unzip</span><span class="o">=</span><span class="n">unzip</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">download_imaging</span></code> and <code class="docutils literal notranslate"><span class="pre">download_spectroscopy</span></code> behave analogously.</p>
+<p>Here the resulting file structure will default to the following,
+in order to facilitate the simultaneous analysis of different types of measurements.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>TOI_1130/<span class="w">  </span><span class="c1"># target_dir, a subdirectory of the provided `data_dir`, named using `system.name`</span>
+├──<span class="w"> </span>time_series/
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5734</span>/
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5903</span>/
+│<span class="w">   </span>├──<span class="w"> </span>...
+├──<span class="w"> </span>zip/
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5734</span>.zip
+│<span class="w">   </span>├──<span class="w"> </span><span class="m">5903</span>.zip
+│<span class="w">   </span>├──<span class="w"> </span>...
+</pre></div>
+</div>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this notebook, we’ve demonstrated how to log in to ExoFOP, select from the available observations for a given system, and
+bulk download time series observation files. You can now explore and analyze the downloaded data further.</p>
+<p>Continue with the next tutorial, to learn how to extract and standardise the measurement files of all downloaded observations.</p>
+</section>
+<section id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h2>
+<section id="note-on-credential-files">
+<h3>Note on credential files<a class="headerlink" href="#note-on-credential-files" title="Link to this heading">#</a></h3>
+<p>This package accepts <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files and <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> files as credential files.</p>
+<p>These files should adhere to the following structures:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">.txt</span></code> file</p></th>
+<th class="head"><p><strong><code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span style="color:darkgray">username=your_username<br>password=your_password </span></p></td>
+<td><p><span style="color:darkgray">username: your_username<br>password: your_password </span></p></td>
+</tr>
+</tbody>
+</table>
+<p>In terms of security, it’s important to note that credential files containing your username and password pose a higher risk than entering your password when prompted. After all, a malicious actor with access to your computer could potentially locate these files, getting your full ExoFOP credentials. On the contrary, cookies have a limited lifespan, typically expiring after a certain period, which, as of the writing of this tutorial, is 7 days for ExoFOP.</p>
+<p>If you do not want your cookies to be stored on your machine for later usage,
+you can remove all cookies at the end of a session, by running <code class="docutils literal notranslate"><span class="pre">authenticator.delete_cookies()</span></code>.</p>
+<p><strong>TL;DR: For most purposes, entering a password once a week should represent the right balance between convenience and security.</strong></p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../quickstart.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">QuickStart</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2_extract_and_standardise_time_series_data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extract and standardise ExoFOP time series observations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#login-to-exofop">Login to ExoFOP</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-exofopauthenticator-class">The <code class="docutils literal notranslate"><span class="pre">ExoFOPAuthenticator</span></code> class</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-observations">Download Observations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identify-a-system">Identify a system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data-from-a-system">Download data from a system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bulk-loading-system-observations">Bulk Loading System Observations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-credential-files">Note on credential files</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Degen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, David Degen.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

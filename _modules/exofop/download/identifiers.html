@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exofop.download.identifiers &#8212; ExoFOP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=7186c071" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/exofop/download/identifiers';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ExoFOP Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">QuickStart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/1_download_from_ExoFOP.html">Download tags from ExoFOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/2_extract_and_standardise_time_series_data.html">Extract and standardise ExoFOP time series observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../exofop.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../exofop.download.html">exofop.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../exofop.extract.html">exofop.extract</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/issues/new?title=Issue%20on%20page%20%2F_modules/exofop/download/identifiers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for exofop.download.identifiers</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">import</span> <span class="nn">httpx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">exofop.utils.urls</span> <span class="kn">import</span> <span class="n">BASE_URL</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;exofop.download&quot;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">InvalidTICError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">default_message</span> <span class="o">=</span> <span class="s2">&quot;Invalid TIC ID. &quot;</span> <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;Invalid TIC ID: `</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">`. &quot;</span>
+        <span class="n">default_message</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="s2">&quot;TIC ID must be an integer or a string that can be converted to an integer. &quot;</span>
+            <span class="s2">&quot;The inter must have a length of 9 digits. &quot;</span>
+            <span class="s2">&quot;Examples: &#39;123456789&#39;, &#39;TIC-123456789&#39;, &#39;TIC_123456789&#39;, &#39;TIC 123456789&#39;.&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">default_message</span> <span class="o">+</span> <span class="s2">&quot;&quot;</span> <span class="o">+</span> <span class="n">message</span> <span class="k">if</span> <span class="n">message</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="TIC">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TIC">[docs]</a>
+<span class="k">class</span> <span class="nc">TIC</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    TESSS Input Catalogue (TIC) class for handling and validating TIC IDs.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    tic_id : Union[str, int]</span>
+<span class="sd">        The TIC ID to initialize the TIC object.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Initialize TIC with a valid TIC ID</span>
+
+<span class="sd">    &gt;&gt;&gt; tic = TIC(123456789)</span>
+<span class="sd">    &gt;&gt;&gt; tic.id</span>
+<span class="sd">    &#39;123456789&#39;</span>
+
+<span class="sd">    Initialize TIC with a valid TIC ID as a string</span>
+
+<span class="sd">    &gt;&gt;&gt; tic_str = TIC(&#39;231663901&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; tic_str.to_toi()</span>
+<span class="sd">    TOI(101)</span>
+
+<span class="sd">    Initialize TIC with an invalid TIC ID (raises InvalidTICError)</span>
+
+<span class="sd">    &gt;&gt;&gt; invalid_tic = TIC(&#39;invalid_id&#39;)  # doctest: +SKIP</span>
+<span class="sd">    Traceback (most recent call last):</span>
+<span class="sd">    InvalidTICError: Invalid TIC ID: `invalid_id` ...</span>
+
+<span class="sd">    Alternatively, you can use the exists method to check if a TIC ID is valid</span>
+
+<span class="sd">    &gt;&gt;&gt; TIC(&#39;123456789&#39;).exists()</span>
+<span class="sd">    False</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tic_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;TIC&quot;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tic_id</span><span class="p">,</span> <span class="n">TIC</span><span class="p">):</span>
+            <span class="n">tic_id</span> <span class="o">=</span> <span class="n">tic_id</span><span class="o">.</span><span class="n">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_id</span><span class="p">(</span><span class="n">tic_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_invalid</span><span class="p">(</span><span class="n">input_id</span><span class="o">=</span><span class="n">tic_id</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The TESSS Input Catalogue (TIC) ID.</span>
+
+<span class="sd">        This is a string of 9 digits, e.g., &quot;123456789&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_clean_id</span><span class="p">(</span><span class="n">tic_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make sure that the TESSS Input Catalogue (TIC) ID is clean.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tic_id</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;TIC ID must be a string or integer.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tic_id</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">tic_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">tic_id</span><span class="p">)</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">tic_id</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tic_id</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">tic_id_tmp</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">tic_id</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;tic&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="p">)</span>
+                <span class="c1"># See if it could be converted to an integer</span>
+                <span class="nb">int</span><span class="p">(</span><span class="n">tic_id_tmp</span><span class="p">)</span>
+                <span class="n">tic_id</span> <span class="o">=</span> <span class="n">tic_id_tmp</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidTICError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original exception: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">tic_id</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+
+        <span class="k">return</span> <span class="n">tic_id</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_has_valid_format</span><span class="p">(</span><span class="n">tic_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify that the TESSS Input Catalogue (TIC) ID is valid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tic_id</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">tic_id</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="TIC.lookup">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TIC.lookup">[docs]</a>
+    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Look up the system in the overview table.&quot;&quot;&quot;</span>
+        <span class="c1"># Fetch the overview table if not provided (this is usually rather slow the first time)</span>
+        <span class="k">if</span> <span class="n">overview_table</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">overview_table</span> <span class="o">=</span> <span class="n">fetch_overview_table</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">)</span>
+
+        <span class="c1"># Filter the overview_table to get rows that match the TOI</span>
+        <span class="n">filtered_rows</span> <span class="o">=</span> <span class="n">overview_table</span><span class="p">[</span><span class="n">overview_table</span><span class="p">[</span><span class="s2">&quot;TIC ID&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">filtered_rows</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TIC </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span><span class="si">}</span><span class="s2"> not found in overview table.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">filtered_rows</span></div>
+
+
+<div class="viewcode-block" id="TIC.to_toi">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TIC.to_toi">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_toi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;TOI&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert TIC to TOI ID.&quot;&quot;&quot;</span>
+        <span class="n">filtered_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">overview_table</span><span class="o">=</span><span class="n">overview_table</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">filtered_rows</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TIC </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span><span class="si">}</span><span class="s2"> not found in overview table.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">TOI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filtered_rows</span><span class="p">[</span><span class="s2">&quot;TOI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_raise_if_invalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify that the TESSS Input Catalogue (TIC) ID is valid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_valid_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">InvalidTICError</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span> <span class="k">if</span> <span class="n">input_id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">input_id</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TIC.exists">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TIC.exists">[docs]</a>
+    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the system exists in the overview table.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">overview_table</span><span class="p">)</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;TIC(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;TIC_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_tic_id</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+
+<span class="k">class</span> <span class="nc">InvalidTOIError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">default_message</span> <span class="o">=</span> <span class="s2">&quot;Invalid TOI ID. &quot;</span> <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;Invalid TOI ID: `</span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2">`. &quot;</span>
+        <span class="n">default_message</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="s2">&quot;TOI ID must be an integer or a string that can be converted to an integer, &quot;</span>
+            <span class="s2">&quot;or a float, if the TOI ID has a planet number. &quot;</span>
+            <span class="s2">&quot;Examples: &#39;TOI1234&#39;, &#39;TOI-1234&#39;, &#39;TOI_1234&#39;, &#39;1234.01&#39;.&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">default_message</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">message</span> <span class="k">if</span> <span class="n">message</span> <span class="k">else</span> <span class="n">default_message</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="TOI">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TOI">[docs]</a>
+<span class="k">class</span> <span class="nc">TOI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    TESS Objects of Interest (TOI) class for handling and validating TOI IDs.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    toi_id : Union[str, int]</span>
+<span class="sd">        The TOI ID to initialize the TOI object.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Initialize TOI with a valid TOI ID</span>
+
+<span class="sd">    &gt;&gt;&gt; toi = TOI(1234)</span>
+<span class="sd">    &gt;&gt;&gt; toi.id</span>
+<span class="sd">    &#39;TOI1234&#39;</span>
+
+<span class="sd">    Initialize TOI with a valid TOI ID as a string</span>
+
+<span class="sd">    &gt;&gt;&gt; toi_str = TOI(&#39;1234&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; toi_str.to_tic()</span>
+<span class="sd">    TIC(90504905)</span>
+
+<span class="sd">    Initialize TOI with an invalid TOI ID (raises InvalidTOIError)</span>
+
+<span class="sd">    &gt;&gt;&gt; invalid_tic = TOI(&#39;invalid_id&#39;)  # doctest: +SKIP</span>
+<span class="sd">    Traceback (most recent call last):</span>
+<span class="sd">    InvalidTOIError: Invalid TOI ID: `invalid_id` ...</span>
+
+<span class="sd">    Alternatively, you can use the exists method to check if a TOI ID is valid</span>
+
+<span class="sd">    &gt;&gt;&gt; TOI(&#39;101&#39;).exists()</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">toi_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;TOI&quot;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">toi_id</span><span class="p">,</span> <span class="n">TOI</span><span class="p">):</span>
+            <span class="n">toi_id</span> <span class="o">=</span> <span class="n">toi_id</span><span class="o">.</span><span class="n">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_id</span><span class="p">(</span><span class="n">toi_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_raise_if_invalid</span><span class="p">(</span><span class="n">input_id</span><span class="o">=</span><span class="n">toi_id</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The TESS Objects of Interest (TOI) ID.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;TOI</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">system</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;TOI ID of the system without the planet number.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">planet</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The planet number of the TESS Objects of Interest (TOI) ID.&quot;&quot;&quot;</span>
+        <span class="n">toi_split</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">toi_split</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_clean_id</span><span class="p">(</span><span class="n">toi_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Make sure that the TESS Objects of Interest (TOI) ID is clean. &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">toi_id</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;TOI ID must be a string or integer.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">toi_id</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">toi_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">toi_id</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">toi_id</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">toi_id</span><span class="p">)</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">toi_id</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">toi_id</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">toi_id_tmp</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">toi_id</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;toi-&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">toi_id_tmp</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+                    <span class="n">toi_id_tmp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">char</span><span class="p">:</span> <span class="n">char</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">toi_id</span><span class="p">))</span>
+                <span class="nb">float</span><span class="p">(</span><span class="n">toi_id_tmp</span><span class="p">)</span>
+                <span class="n">toi_id</span> <span class="o">=</span> <span class="n">toi_id_tmp</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidTOIError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original exception: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">toi_id</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+
+        <span class="k">return</span> <span class="n">toi_id</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_has_valid_format</span><span class="p">(</span><span class="n">toi_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify that the TESS Objects of Interest (TOI) ID is valid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">toi_id</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">toi_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span>
+            <span class="ow">and</span> <span class="n">toi_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+            <span class="ow">and</span> <span class="n">toi_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_raise_if_invalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_id</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify that the TESS Objects of Interest (TOI) ID is valid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_has_valid_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">InvalidTOIError</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span> <span class="k">if</span> <span class="n">input_id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">input_id</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TOI.lookup">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TOI.lookup">[docs]</a>
+    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Look up the system in the overview table.&quot;&quot;&quot;</span>
+        <span class="c1"># Fetch the overview table if not provided (this is usually rather slow the first time)</span>
+        <span class="k">if</span> <span class="n">overview_table</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">overview_table</span> <span class="o">=</span> <span class="n">fetch_overview_table</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">)</span>
+
+        <span class="c1"># Filter the overview_table to get rows that match the TOI</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">planet</span><span class="p">:</span>
+            <span class="n">filtered_rows</span> <span class="o">=</span> <span class="n">overview_table</span><span class="p">[</span><span class="n">overview_table</span><span class="p">[</span><span class="s2">&quot;TOI&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">filtered_rows</span> <span class="o">=</span> <span class="n">overview_table</span><span class="p">[</span>
+                <span class="n">overview_table</span><span class="p">[</span><span class="s2">&quot;TOI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">system</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="k">if</span> <span class="n">filtered_rows</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TOI </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="si">}</span><span class="s2"> not found in overview table.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">filtered_rows</span></div>
+
+
+<div class="viewcode-block" id="TOI.exists">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TOI.exists">[docs]</a>
+    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the system exists in the overview table.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">overview_table</span><span class="p">)</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="TOI.to_tic">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.TOI.to_tic">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_tic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TIC</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert TOI to TIC ID.&quot;&quot;&quot;</span>
+        <span class="n">filtered_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">overview_table</span><span class="o">=</span><span class="n">overview_table</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">filtered_rows</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TOI </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="si">}</span><span class="s2"> not found in overview table.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">TIC</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filtered_rows</span><span class="p">[</span><span class="s2">&quot;TIC ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;TOI(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;TOI</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_toi_id</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="System">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System">[docs]</a>
+<span class="k">class</span> <span class="nc">System</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    System class for handling and validating TIC and TOI IDs.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : str</span>
+<span class="sd">        The name of the system.</span>
+<span class="sd">    tic : TIC</span>
+<span class="sd">        The TIC ID of the system.</span>
+<span class="sd">    toi : TOI</span>
+<span class="sd">        The TOI ID of the system.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Initialize System with a TIC ID or TOI ID</span>
+<span class="sd">    by explicitly providing a name and a TIC or TOI ID</span>
+
+<span class="sd">    &gt;&gt;&gt; s = System(name=&quot;cool_system&quot;, tic=&quot;254113311&quot;, toi=None)</span>
+
+<span class="sd">    As the first argument is name, we can also hand IDs using the prefixes &#39;TIC&#39; or &#39;TOI&#39;.</span>
+
+<span class="sd">    &gt;&gt;&gt; s = System(name=&quot;TOI-1130&quot;)  # Indicate TOI ID with prefix &#39;TOI&#39;</span>
+<span class="sd">    &gt;&gt;&gt; s = System(&quot;TIC_254113311&quot;)  # Indicate TIC ID with prefix &#39;TIC&#39;</span>
+
+<span class="sd">    Less recommended way, as it requires an extra lookup</span>
+
+<span class="sd">    &gt;&gt;&gt; System(name=&quot;1130&quot;)</span>
+<span class="sd">    System(name=1130, tic=TIC_254113311 toi=TOI1130)</span>
+
+<span class="sd">    Initialize System with a TIC ID or TOI ID and autocomplete</span>
+
+<span class="sd">    &gt;&gt;&gt; System(name=&quot;cool_system&quot;, tic=&quot;254113311&quot;, complete=True)</span>
+<span class="sd">    System(name=cool_system, tic=TIC_254113311 toi=TOI1130)</span>
+
+<span class="sd">    Get target ID, which can be used to query ExoFOP time series data</span>
+
+<span class="sd">    &gt;&gt;&gt; System(toi=&quot;TOI-1130&quot;).target</span>
+<span class="sd">    &#39;TOI1130&#39;</span>
+<span class="sd">    &gt;&gt;&gt; System(tic=&quot;TIC_254113311&quot;).target</span>
+<span class="sd">    &#39;254113311&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">tic</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="s2">&quot;TIC&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">toi</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">&quot;TOI&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">complete</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+        <span class="k">if</span> <span class="n">toi</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">tic</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either `tic` or `toi` must be provided.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">toi</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">tic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_infer_from_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">tic</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">TIC</span><span class="p">(</span><span class="n">tic</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">toi</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">TOI</span><span class="p">(</span><span class="n">toi</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">complete</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">autocomplete</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">target</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The target ID of the system. This is either the TIC or TOI ID.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either `tic` or `toi` must be provided.&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="System.get_toi">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System.get_toi">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_toi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TOI</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the TOI ID of the system.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">autocomplete</span><span class="p">()</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span></div>
+
+
+<div class="viewcode-block" id="System.get_tic">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System.get_tic">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_tic</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TIC</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the TIC ID of the system.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">autocomplete</span><span class="p">()</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span></div>
+
+
+<div class="viewcode-block" id="System.autocomplete">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System.autocomplete">[docs]</a>
+    <span class="k">def</span> <span class="nf">autocomplete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Autocomplete the system by inferring the missing TIC or TOI ID from the provided one.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">to_toi</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">to_tic</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_complete</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="System.lookup">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System.lookup">[docs]</a>
+    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Look up the system in the overview table.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">overview_table</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">overview_table</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either `tic` or `toi` must be provided.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="System.exists">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System.exists">[docs]</a>
+    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">overview_table</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the system exists in the overview table.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">overview_table</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">overview_table</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Either `tic` or `toi` must be provided.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="System.is_complete">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System.is_complete">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if the system is complete, i.e., if both TIC and TOI IDs are provided.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="System.is_consistent">
+<a class="viewcode-back" href="../../../exofop.download.html#exofop.download.System.is_consistent">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_consistent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if both TIC and TOI IDs are referring to the same system.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_complete</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">to_toi</span><span class="p">()</span><span class="o">.</span><span class="n">id</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">id</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_raise_if_invalid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">_has_valid_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">id</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">InvalidTICError</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">_has_valid_format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">id</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">InvalidTOIError</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_infer_from_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="s2">&quot;toi&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="o">=</span> <span class="n">TOI</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s2">&quot;tic&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="o">=</span> <span class="n">TIC</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Target ambiguous. Trying to infer TIC or TOI ID from `</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">`.&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="o">=</span> <span class="n">TOI</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="n">success</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+            <span class="k">except</span> <span class="n">InvalidTOIError</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">toi</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">tic</span> <span class="o">=</span> <span class="n">TIC</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">success</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+                <span class="k">except</span> <span class="n">InvalidTICError</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+            <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">autocomplete</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Could not convert `</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">` to either a TIC or TOI ID.&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;Provide either a TIC or TOI ID.&quot;</span>
+                <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;System(&quot;</span> <span class="sa">f</span><span class="s2">&quot;name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, tic=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tic</span><span class="si">}</span><span class="s2"> &quot;</span> <span class="sa">f</span><span class="s2">&quot;toi=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">toi</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;)&quot;</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">cache_log_once</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Cache the results of a function and log the time it took to download the data.&quot;&quot;&quot;</span>
+    <span class="n">cached_results</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">args</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cached_results</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;Downloading TOI overview table from ExoFOP, to convert between TIC and TOI IDs. &quot;</span>
+                <span class="s2">&quot;This may take a while the first time, but will be cached for future use.&quot;</span>
+            <span class="p">)</span>
+            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+            <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloading TOI overview table took </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds.&quot;</span><span class="p">)</span>
+
+            <span class="n">cached_results</span><span class="p">[</span><span class="n">args</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+
+        <span class="k">return</span> <span class="n">cached_results</span><span class="p">[</span><span class="n">args</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="nd">@cache_log_once</span>
+<span class="k">def</span> <span class="nf">fetch_overview_table</span><span class="p">(</span><span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">BASE_URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fetch the TESS Target Of Interest (TOI) overview table from a specified base URL.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    base_url : str</span>
+<span class="sd">        The base URL for fetching the TOI overview table.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.DataFrame</span>
+<span class="sd">        A pandas DataFrame containing the TOI overview table.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; overview_table = fetch_overview_table(BASE_URL)</span>
+<span class="sd">    &gt;&gt;&gt; print(overview_table.head())  # doctest: +SKIP</span>
+<span class="sd">          TIC ID  Imaging Observations  ...  Date Modified (by ExoFOP-TESS)  editpri</span>
+<span class="sd">    0   50365310                     5  ...                      2022-12-14  1000.01</span>
+<span class="sd">    1   88863718                     5  ...                      2023-04-04  1001.01</span>
+<span class="sd">    2  124709665                     5  ...                      2022-12-14  1002.01</span>
+<span class="sd">    3  106997505                     1  ...                      2022-12-14  1003.01</span>
+<span class="sd">    4  238597883                     1  ...                      2023-03-24  1004.01</span>
+<span class="sd">    &lt;BLANKLINE&gt;</span>
+<span class="sd">    [5 rows x 63 columns]</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">overview_table</span> <span class="o">=</span> <span class="n">fetch_tois_data</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">overview_table</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Failed to fetch TOI overview table fast.&quot;</span><span class="p">)</span>
+        <span class="n">overview_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/tess/download_toi.php?output=pipe&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">overview_table</span>
+
+
+<span class="k">def</span> <span class="nf">fetch_tois_data</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch TOI overview table from ExoFOP.</span>
+
+<span class="sd">    This is a faster way to fetch the TOI overview table, but it might not be as reliable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Dictionary to rename columns</span>
+    <span class="c1"># Generated using `get_column_dictionary()`</span>
+    <span class="n">rename_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;ticid&quot;</span><span class="p">:</span> <span class="s2">&quot;TIC ID&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;toi&quot;</span><span class="p">:</span> <span class="s2">&quot;TOI&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ctoival&quot;</span><span class="p">:</span> <span class="s2">&quot;CTOI&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;master_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;Master priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sg1a_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;SG1A priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sg1b_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;SG1B priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sg2_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;SG2 priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sg3_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;SG3 priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sg4_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;SG4 priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sg5_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;SG5 priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;acwg_priority&quot;</span><span class="p">:</span> <span class="s2">&quot;ACWG priority&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;acwg_esm&quot;</span><span class="p">:</span> <span class="s2">&quot;ESM&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;acwg_tsm&quot;</span><span class="p">:</span> <span class="s2">&quot;TSM&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;acwg_ckmass&quot;</span><span class="p">:</span> <span class="s2">&quot;Predicted Mass (M_Earth)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;numtseries&quot;</span><span class="p">:</span> <span class="s2">&quot;Time Series Observations&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;numspect&quot;</span><span class="p">:</span> <span class="s2">&quot;Spectroscopy Observations&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;numimaging&quot;</span><span class="p">:</span> <span class="s2">&quot;Imaging Observations&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;disposition&quot;</span><span class="p">:</span> <span class="s2">&quot;TESS Disposition&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tfopwg_disposition&quot;</span><span class="p">:</span> <span class="s2">&quot;TFOPWG Disposition&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tfopwg_disposition_viewedit&quot;</span><span class="p">:</span> <span class="s2">&quot;View all TFOPWG Disposition&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tess_mag&quot;</span><span class="p">:</span> <span class="s2">&quot;TESS mag&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tess_mag_error&quot;</span><span class="p">:</span> <span class="s2">&quot;TESS mag error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;num_pc&quot;</span><span class="p">:</span> <span class="s2">&quot;Pipeline Signal ID&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;Source&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;detection&quot;</span><span class="p">:</span> <span class="s2">&quot;Detection&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ra&quot;</span><span class="p">:</span> <span class="s2">&quot;RA (deg)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dec&quot;</span><span class="p">:</span> <span class="s2">&quot;Dec (deg)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pm_ra&quot;</span><span class="p">:</span> <span class="s2">&quot;PM RA (mas/yr)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pmra_e&quot;</span><span class="p">:</span> <span class="s2">&quot;PM RA error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pm_dec&quot;</span><span class="p">:</span> <span class="s2">&quot;PM Dec (mas/yr)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pmdec_e&quot;</span><span class="p">:</span> <span class="s2">&quot;PM Dec error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;epoch&quot;</span><span class="p">:</span> <span class="s2">&quot;Transit Epoch (BJD)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;epoch_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Transit Epoch error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;period&quot;</span><span class="p">:</span> <span class="s2">&quot;Period (days)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;period_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Period error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="s2">&quot;Duration (hours)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;duration_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Duration error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;depth_mmag&quot;</span><span class="p">:</span> <span class="s2">&quot;Depth (mmag)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;depth1_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Depth (mmag) error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;depth_ppm&quot;</span><span class="p">:</span> <span class="s2">&quot;Depth (ppm)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;depth2_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Depth (ppm) error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;planet_radius&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet Radius (R_Earth)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;prad_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet Radius error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;planet_insolation&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet Insolation (Earth flux)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;planet_eqtemp&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet Eq Temp (K)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;planet_snr&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet SNR&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stellar_distance&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Distance (pc)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;d_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Distance error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stellar_teff&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Teff (K)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;teff_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Teff error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stellar_logg&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar log(g) (cm/s2)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;logg_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar log(g) error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stellar_radius&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Radius (R_Sun)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;srad_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Radius error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mh&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Metallicity&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mh_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Metallicity error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mass&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Mass (M_Sun)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mass_e&quot;</span><span class="p">:</span> <span class="s2">&quot;Stellar Mass error&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sectors&quot;</span><span class="p">:</span> <span class="s2">&quot;Sectors&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;comments&quot;</span><span class="p">:</span> <span class="s2">&quot;Comments&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date_toi_alerted&quot;</span><span class="p">:</span> <span class="s2">&quot;Date TOI Alerted (by TESS Project)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date_toi_edited&quot;</span><span class="p">:</span> <span class="s2">&quot;Date TOI Updated (by TESS Project)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;date_modified&quot;</span><span class="p">:</span> <span class="s2">&quot;Date Modified (by ExoFOP-TESS)&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://exofop.ipac.caltech.edu/tess/json/tois.json&quot;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1"># rename_dict = get_column_dictionary()</span>
+        <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">rename_dict</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">get_column_dictionary</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get the column dictionary for the TOI overview table.&quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/tess/view_toi.php&quot;</span>
+
+    <span class="c1"># Send a GET request to the webpage</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="c1"># Extract JavaScript code containing column definitions using regex</span>
+    <span class="n">column_defs_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;var\s+columnDefs\s*=\s*(\[.*?\]);&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)[</span>
+        <span class="mi">0</span>
+    <span class="p">]</span>
+
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;headerName:\s*&quot;([^&quot;]+)&quot;,\s*field:\s*&quot;([^&quot;]+)&quot;&#39;</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">column_defs_regex</span><span class="p">)</span>
+
+    <span class="n">column_dictionary</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="n">column_name</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">field_name</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">column_dictionary</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">column_name</span>
+
+    <span class="k">return</span> <span class="n">column_dictionary</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Degen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, David Degen.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

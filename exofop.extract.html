@@ -1,0 +1,1523 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>exofop.extract &#8212; ExoFOP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css?v=7186c071" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exofop.extract';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="exofop.download" href="exofop.download.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ExoFOP Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">QuickStart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/1_download_from_ExoFOP.html">Download tags from ExoFOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/2_extract_and_standardise_time_series_data.html">Extract and standardise ExoFOP time series observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="exofop.html">API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="exofop.download.html">exofop.download</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">exofop.extract</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/edit/main/docs/exofop.extract.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/issues/new?title=Issue%20on%20page%20%2Fexofop.extract.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/exofop.extract.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>exofop.extract</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable"><code class="docutils literal notranslate"><span class="pre">LightCurveTable</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.apply_time_correction_in_case_of_discrepancy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.cbvs"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.cbvs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.check_completeness"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.check_completeness()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.errorbar"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.errorbar()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.file_name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.file_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.flux"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.flux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.flux_err"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.flux_err</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.from_pandas"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.from_pandas()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.is_complete"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.is_complete</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.light_curve"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.light_curve()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.observation_name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.observation_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.parse_and_format_exofop_file_name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.parse_and_format_exofop_file_name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.plot"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.scatter"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.scatter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.simple_synonym_map"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.simple_synonym_map</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.standardise_column_names"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.standardise_column_names()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.synonym_map"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.synonym_map</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.time"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.time</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.time_threshold"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.time_threshold</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.apply_time_correction_in_case_of_discrepancy"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.apply_time_correction_in_case_of_discrepancy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.complete"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.complete</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.default_save_dir"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.default_save_dir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.incomplete"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.incomplete</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.info_df"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.info_df</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.load"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.load_exofop_data"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load_exofop_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.load_from_pickle"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load_from_pickle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.missing_cbvs"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.missing_cbvs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.names"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.names</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.number_of_cbvs"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.number_of_cbvs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.save"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.save_to_pickle"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.save_to_pickle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.standardise_column_names"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.standardise_column_names()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.synonym_map"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.synonym_map</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.time"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.time</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.update_info_df"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.update_info_df()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap"><code class="docutils literal notranslate"><span class="pre">SynonymMap</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.add_synonyms"><code class="docutils literal notranslate"><span class="pre">SynonymMap.add_synonyms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.from_dict"><code class="docutils literal notranslate"><span class="pre">SynonymMap.from_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.get_primary_alias"><code class="docutils literal notranslate"><span class="pre">SynonymMap.get_primary_alias()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.get_rename_dict"><code class="docutils literal notranslate"><span class="pre">SynonymMap.get_rename_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.load_from_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMap.load_from_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.primary_alias_to_synonyms"><code class="docutils literal notranslate"><span class="pre">SynonymMap.primary_alias_to_synonyms</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.rebuild_synonym_mapping"><code class="docutils literal notranslate"><span class="pre">SynonymMap.rebuild_synonym_mapping()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.remove_synonym"><code class="docutils literal notranslate"><span class="pre">SynonymMap.remove_synonym()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.rename_primary_alias"><code class="docutils literal notranslate"><span class="pre">SynonymMap.rename_primary_alias()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.save_to_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMap.save_to_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.update"><code class="docutils literal notranslate"><span class="pre">SynonymMap.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.light_curve_attributes"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.light_curve_attributes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.cbv_names"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.cbv_names</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.copy"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.copy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.deepcopy"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.deepcopy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.flux"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.flux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.flux_err"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.flux_err</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.load_from_config"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.load_from_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.load_from_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.load_from_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.rename_primary_alias"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.rename_primary_alias()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.save_to_config"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.save_to_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.save_to_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.save_to_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.time"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-exofop.extract">
+<span id="exofop-extract"></span><h1>exofop.extract<a class="headerlink" href="#module-exofop.extract" title="Link to this heading">#</a></h1>
+<p>This sub-package  provides functionality for extracting data downloaded from the ExoFOP website
+into a uniform format facilitating further analysis.</p>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.LightCurveTableList"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTableList</span></code></a><span class="classifier">class</span></dt><dd><p>A list of LightCurveTable instances with additional functionalities.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.extract.LightCurveTable" title="exofop.extract.LightCurveTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable</span></code></a><span class="classifier">class</span></dt><dd><p>A class representing a light curve table extracted from ExoFOP.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.extract.SynonymMap" title="exofop.extract.SynonymMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.extract.SynonymMap</span></code></a><span class="classifier">class</span></dt><dd><p>A class for handling the standardisation of column names.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.SynonymMapLc"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.extract.SynonymMapLc</span></code></a><span class="classifier">class</span></dt><dd><p>A class for handling the standardisation of column names, with additional functionalities for
+the essential light curve attributes ‘time’, ‘flux’, and ‘flux_err’.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>The following is a basic example of how to use the class <a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.LightCurveTableList"><code class="xref py py-class docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTableList</span></code></a>
+to extract data downloaded from ExoFOP:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">exofop.extract</span> <span class="kn">import</span> <span class="n">LightCurveTableList</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">target_dir</span> <span class="o">=</span> <span class="s2">&quot;path/to/your/directory/with/downloaded/measurements&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lctl</span> <span class="o">=</span> <span class="n">LightCurveTableList</span><span class="o">.</span><span class="n">load_exofop_data</span><span class="p">(</span><span class="n">target_dir</span><span class="o">=</span><span class="n">target_dir</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lctl</span><span class="o">.</span><span class="n">standardise_column_names</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lctl</span><span class="o">.</span><span class="n">apply_time_correction_in_case_of_discrepancy</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">lctl</span><span class="o">.</span><span class="n">info_df</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lctl_complete</span> <span class="o">=</span> <span class="n">lctl</span><span class="o">.</span><span class="n">complete</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lctl_complete</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>For a more detailed introduction, consult the tutorial <a class="reference internal" href="notebooks/2_extract_and_standardise_time_series_data.html"><span class="doc">Extract and standardise ExoFOP time series observations</span></a>.</p>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.extract.</span></span><span class="sig-name descname"><span class="pre">LightCurveTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Table</span></code></p>
+<p>A custom table class for representing light curve data.</p>
+<p>This class extends the functionality of <cite>astropy.table.Table</cite> and includes
+an additional attribute ‘complete’ to store information about the
+completeness of the light curve data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array-like</em><em>, </em><em>dict</em><em>, or </em><em>Table</em><em>, </em><em>optional</em>) – The data to be stored in the table. This can be an array-like object, a dictionary,
+or another Table. If not provided, an empty table will be created.</p></li>
+<li><p><strong>name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the observation.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The measurement filename of the observation.</p></li>
+<li><p><strong>meta</strong> (<em>dict</em><em>, </em><em>optional</em>) – A dictionary containing meta data for the table.</p></li>
+<li><p><strong>args</strong> – </p></li>
+<li><p><strong>kwargs</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">exofop.extract</span> <span class="kn">import</span> <span class="n">LightCurveTable</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lc</span> <span class="o">=</span> <span class="n">LightCurveTable</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[[</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.075</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">]],</span>
+<span class="gp">... </span>    <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;flux&quot;</span><span class="p">,</span> <span class="s2">&quot;flux_err&quot;</span><span class="p">,</span> <span class="s2">&quot;sky&quot;</span><span class="p">,</span> <span class="s2">&quot;airmass&quot;</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_compstar-lightcurves.csv&#39;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">&lt;LightCurveTable length=3&gt;</span>
+<span class="go">time    flux  flux_err   sky   airmass</span>
+<span class="go">float64 float64 float64  float64 float64</span>
+<span class="go">------- ------- -------- ------- -------</span>
+<span class="go">    1.0     1.0     0.05     0.1     0.2</span>
+<span class="go">    2.0     0.9      0.1     0.1     0.3</span>
+<span class="go">    3.0     1.1    0.075     0.1     0.4</span>
+</pre></div>
+</div>
+<p>We can standardise the column names using the synonym map:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lc</span><span class="o">.</span><span class="n">standardise_column_names</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lc</span><span class="o">.</span><span class="n">is_complete</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>After standardisation, we can access time, flux, and flux_err columns as attributes:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lc</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">value</span>
+<span class="go">array([1., 2., 3.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lc</span><span class="o">.</span><span class="n">flux</span><span class="o">.</span><span class="n">value</span>
+<span class="go">array([1. , 0.9, 1.1])</span>
+</pre></div>
+</div>
+<p>We can also apply a time correction if there is a discrepancy between the time in the file name
+and the time array:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lc</span><span class="o">.</span><span class="n">apply_time_correction_in_case_of_discrepancy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can get the cotrending basis vectors (CBVs), i.e. all primary aliases of
+lc.synonym_map that do not represent time, flux or flux_err:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lc</span><span class="o">.</span><span class="n">cbvs</span><span class="p">()</span>
+<span class="go">&lt;LightCurveTable length=3&gt;</span>
+<span class="go">AIRMASS Sky/Pixel_T1</span>
+<span class="go">float64   float64</span>
+<span class="go">------- ------------</span>
+<span class="go">    0.2          0.1</span>
+<span class="go">    0.3          0.1</span>
+<span class="go">    0.4          0.1</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy">
+<span class="sig-name descname"><span class="pre">apply_time_correction_in_case_of_discrepancy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.apply_time_correction_in_case_of_discrepancy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy" title="Link to this definition">#</a></dt>
+<dd><p>Apply time correction to the time array of a table if needed.</p>
+<p>This function checks for a discrepancy between the starting time of the array
+and the starting time given in the file_name_components, which was obtained by parsing the
+measurement file name. If the difference is significant, it applies a time correction
+by subtracting an integer number of days from the time array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_threshold</strong> (<em>int</em><em>, </em><em>optional</em>) – Threshold value for considering a time difference as significant (default is 3 days).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The DataFrame is modified in-place.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.cbvs">
+<span class="sig-name descname"><span class="pre">cbvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.LightCurveTable" title="exofop.extract.extractor.LightCurveTable"><span class="pre">LightCurveTable</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.cbvs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.cbvs" title="Link to this definition">#</a></dt>
+<dd><p>Get the cotrending basis vectors (CBVs) contained in a standardized table.</p>
+<p>This is a convenience function to get the CBVs, i.e. all primary aliases of
+<cite>synonym_map</cite> that do not represent time, flux or flux_err.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>synonym_map</strong> (<a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.SynonymMapLc"><em>SynonymMapLc</em></a><em>, </em><em>optional</em>) – A synonym map for the column names (default is None).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A table containing the CBVs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.extract.LightCurveTable" title="exofop.extract.LightCurveTable">LightCurveTable</a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function assumes that the table is already standardised, otherwise it might return
+an incomplete set of CBVs.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.LightCurveTable.light_curve" title="exofop.extract.LightCurveTable.light_curve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable.light_curve</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.check_completeness">
+<span class="sig-name descname"><span class="pre">check_completeness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.check_completeness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.check_completeness" title="Link to this definition">#</a></dt>
+<dd><p>Check if a complete light curve is contained in the table.</p>
+<section id="parameters">
+<h2>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>synonym_map<span class="classifier">SynonymMapLc</span></dt><dd><p>An object representing the synonym map for the Table columns.</p>
+</dd>
+<dt>log_level<span class="classifier">int, optional</span></dt><dd><p>The log level for logging missing columns (default is 20, i.e. ‘info’).</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h2>Returns:<a class="headerlink" href="#returns" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>bool</dt><dd><p>A boolean indicating whether the Table is complete and non-degenerate.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.errorbar">
+<span class="sig-name descname"><span class="pre">errorbar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.errorbar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.errorbar" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.file_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file_name</span></span><a class="headerlink" href="#exofop.extract.LightCurveTable.file_name" title="Link to this definition">#</a></dt>
+<dd><p>The measurement filename of the observation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.flux">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flux</span></span><a class="headerlink" href="#exofop.extract.LightCurveTable.flux" title="Link to this definition">#</a></dt>
+<dd><p>The flux column of the observation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.flux_err">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flux_err</span></span><a class="headerlink" href="#exofop.extract.LightCurveTable.flux_err" title="Link to this definition">#</a></dt>
+<dd><p>The flux error column of the observation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.from_pandas">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_frame</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.from_pandas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.from_pandas" title="Link to this definition">#</a></dt>
+<dd><p>Create a LightCurveTable from a pandas DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_frame</strong> (<em>pandas.DataFrame</em>) – The DataFrame containing the light curve data.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the observation.</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – The measurement filename of the observation,
+e.g. ‘TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_compstar-lightcurves.csv’
+from whicht the meta data is attempted to be derived.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments to be passed to the <cite>astropy.table.Table</cite> constructor.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.is_complete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_complete</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#exofop.extract.LightCurveTable.is_complete" title="Link to this definition">#</a></dt>
+<dd><p>A boolean indicating whether the table is complete and non-degenerate.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.light_curve">
+<span class="sig-name descname"><span class="pre">light_curve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.LightCurveTable" title="exofop.extract.extractor.LightCurveTable"><span class="pre">LightCurveTable</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.light_curve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.light_curve" title="Link to this definition">#</a></dt>
+<dd><p>Get the light curve contained in a standardised table, i.e. the time, flux and flux_err columns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>synonym_map</strong> (<a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.SynonymMapLc"><em>SynonymMapLc</em></a><em>, </em><em>optional</em>) – A synonym map for the column names (default is None).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A table containing the light curve data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.extract.LightCurveTable" title="exofop.extract.LightCurveTable">LightCurveTable</a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function assumes that the table is already standardised, otherwise it might return
+an incomplete set of CBVs.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.LightCurveTable.cbvs" title="exofop.extract.LightCurveTable.cbvs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable.cbvs</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#exofop.extract.LightCurveTable.name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the observation. Synonym of <cite>observation_name</cite>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.LightCurveTable.observation_name" title="exofop.extract.LightCurveTable.observation_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable.observation_name</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.observation_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">observation_name</span></span><a class="headerlink" href="#exofop.extract.LightCurveTable.observation_name" title="Link to this definition">#</a></dt>
+<dd><p>The name of the observation. Synonym of <cite>name</cite>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.LightCurveTable.name" title="exofop.extract.LightCurveTable.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable.name</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.parse_and_format_exofop_file_name">
+<span class="sig-name descname"><span class="pre">parse_and_format_exofop_file_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.parse_and_format_exofop_file_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.parse_and_format_exofop_file_name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.plot" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.scatter">
+<span class="sig-name descname"><span class="pre">scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.scatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.scatter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.simple_synonym_map">
+<span class="sig-name descname"><span class="pre">simple_synonym_map</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'BJD_TDB':</span> <span class="pre">('time',</span> <span class="pre">'TIME',</span> <span class="pre">'BJD',</span> <span class="pre">'BJD_TDB_MOBS',</span> <span class="pre">'#BJD_TDB'),</span> <span class="pre">'rel_flux_T1_n':</span> <span class="pre">('flux',</span> <span class="pre">'FLUX',</span> <span class="pre">'rel_flux',</span> <span class="pre">'rel_flux_T1',</span> <span class="pre">'flux_star_0'),</span> <span class="pre">'rel_flux_err_T1_n':</span> <span class="pre">('flux_err',</span> <span class="pre">'ERRFLUX',</span> <span class="pre">'rel_flux_err_T1')}</span></em><a class="headerlink" href="#exofop.extract.LightCurveTable.simple_synonym_map" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.standardise_column_names">
+<span class="sig-name descname"><span class="pre">standardise_column_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMap" title="exofop.extract.synonym_map.SynonymMap"><span class="pre">SynonymMap</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTable.standardise_column_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTable.standardise_column_names" title="Link to this definition">#</a></dt>
+<dd><p>Renames the columns of the table according to the synonym map.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.synonym_map">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">synonym_map</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a></em><a class="headerlink" href="#exofop.extract.LightCurveTable.synonym_map" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.time">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#exofop.extract.LightCurveTable.time" title="Link to this definition">#</a></dt>
+<dd><p>The time column of the observation.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTable.time_threshold">
+<span class="sig-name descname"><span class="pre">time_threshold</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#exofop.extract.LightCurveTable.time_threshold" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.extract.</span></span><span class="sig-name descname"><span class="pre">LightCurveTableList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></p>
+<p>A list-like container for LightCurveTable objects with additional functionalities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – The directory containing the downloaded tag directories (default is None).</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl_list</span> <span class="o">=</span> <span class="n">LightCurveTableList</span><span class="o">.</span><span class="n">load_exofop_data</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">target_dir</span><span class="o">=</span><span class="s1">&#39;path/to/your/directory/with/downloaded/measurements&#39;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl_list</span><span class="o">.</span><span class="n">info_df</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This class provides a convenient way to handle multiple light curve observations.
+It is designed to be used in combination with the <cite>LightCurveTable</cite> class and provides
+the following functionalities:</p>
+<ul class="simple">
+<li><p>Loads potentially heterogeneous measurement files from the specified directory.</p></li>
+<li><p>Extracts information from measurement file names.</p></li>
+<li><p>Creates or loads a summary DataFrame with information on the observations.</p></li>
+<li><p>Standardizes column and index names of the measurement DataFrames.</p></li>
+<li><p>Applies time corrections in case of time discrepancies between file_name and data.</p></li>
+<li><p>Identifies essential columns for light curves and thus checks their completeness.</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#exofop.extract.LightCurveTable" title="exofop.extract.LightCurveTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable</span></code></a></dt><dd><p>A custom table class for representing light curve data.</p>
+</dd>
+<dt><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.SynonymMapLc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.SynonymMapLc</span></code></a></dt><dd><p>A map containing synonyms for the standardisation of column names.</p>
+</dd>
+</dl>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.apply_time_correction_in_case_of_discrepancy">
+<span class="sig-name descname"><span class="pre">apply_time_correction_in_case_of_discrepancy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.apply_time_correction_in_case_of_discrepancy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.apply_time_correction_in_case_of_discrepancy" title="Link to this definition">#</a></dt>
+<dd><p>Apply time correction to the time array of individual observations in the list if needed.</p>
+<p>This function checks for a discrepancy between the starting time of the array
+and the starting time given in the file_name_components, which was obtained by parsing the
+measurement file name. If the difference is significant, it applies a time correction
+by subtracting an integer number of days from the time array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_threshold</strong> (<em>int</em><em>, </em><em>optional</em>) – Threshold value for considering a time difference as significant (default is 3 days).</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.LightCurveTable.standardise_column_names" title="exofop.extract.LightCurveTable.standardise_column_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable.standardise_column_names</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.complete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">complete</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.extractor.LightCurveTableList"><span class="pre">LightCurveTableList</span></a></em><a class="headerlink" href="#exofop.extract.LightCurveTableList.complete" title="Link to this definition">#</a></dt>
+<dd><p>Subset of complete observations.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.default_save_dir">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_save_dir</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#exofop.extract.LightCurveTableList.default_save_dir" title="Link to this definition">#</a></dt>
+<dd><p>Default directory for saving the data, namely target_dir/output.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.incomplete">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">incomplete</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.extractor.LightCurveTableList"><span class="pre">LightCurveTableList</span></a></em><a class="headerlink" href="#exofop.extract.LightCurveTableList.incomplete" title="Link to this definition">#</a></dt>
+<dd><p>Subset of incomplete observations.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.info_df">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">info_df</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DataFrame</span></em><a class="headerlink" href="#exofop.extract.LightCurveTableList.info_df" title="Link to this definition">#</a></dt>
+<dd><p>pandas.DataFrame summarizing information on observations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.load">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">load_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.extractor.LightCurveTableList"><span class="pre">LightCurveTableList</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.load" title="Link to this definition">#</a></dt>
+<dd><p>Load the LightCurveTableList from a directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>load_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – The directory from which the data should be loaded (default is ‘.’).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The loaded LightCurveTableList.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.LightCurveTableList">LightCurveTableList</a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>You can modify the info.csv file to remove observations from being loaded,
+e.g. if they are incomplete, corrupted or superfluous.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#exofop.extract.LightCurveTableList.save" title="exofop.extract.LightCurveTableList.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTableList.save</span></code></a></dt><dd><p>Soad the data from a directory.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.load_exofop_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_exofop_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observation_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">synonym_map_lc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'BJD_TDB':</span> <span class="pre">('time',</span> <span class="pre">'TIME',</span> <span class="pre">'BJD',</span> <span class="pre">'BJD_TDB_MOBS',</span> <span class="pre">'#BJD_TDB'),</span> <span class="pre">'rel_flux_T1_n':</span> <span class="pre">('flux',</span> <span class="pre">'FLUX',</span> <span class="pre">'rel_flux',</span> <span class="pre">'rel_flux_T1',</span> <span class="pre">'flux_star_0'),</span> <span class="pre">'rel_flux_err_T1_n':</span> <span class="pre">('flux_err',</span> <span class="pre">'ERRFLUX',</span> <span class="pre">'rel_flux_err_T1')}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_multiple_filetypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.extractor.LightCurveTableList"><span class="pre">LightCurveTableList</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.load_exofop_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.load_exofop_data" title="Link to this definition">#</a></dt>
+<dd><p>Load and standardize ExoFOP data for a given system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_dir</strong> (<em>str</em>) – The directory where the ExoFOP  data of the given system is stored.</p></li>
+<li><p><strong>observation_names</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – A list of observation names to consider. If not provided, the function
+will use all available observations sorted by tag.</p></li>
+<li><p><strong>time_threshold</strong> (<em>int</em><em>, </em><em>optional</em>) – A threshold for applying time corrections to data in case of discrepancies
+in time specifications between the file name and the data in units of days,
+default is 3.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of LightCurveTables containing the ExoFOP data extracted from target_dir.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.LightCurveTableList">LightCurveTableList</a></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function loads and standardizes ExoFOP data for specific planets. It performs
+the following steps:</p>
+<ol class="arabic simple">
+<li><p>Loads potentially heterogeneous measurement files from the specified directory.</p></li>
+<li><p>Extracts information from measurement file names.</p></li>
+<li><p>Unpacks multiple measurements from the same tag into separate observations.</p></li>
+</ol>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">target_dir</span> <span class="o">=</span> <span class="s1">&#39;/path/to/data&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">observation_names</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span> <span class="o">=</span> <span class="n">SYNONYM_MAP_LC</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">allow_multiple_filetypes</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exofop_data</span> <span class="o">=</span> <span class="n">LightCurveTableList</span><span class="o">.</span><span class="n">load_exofop_data</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">target_dir</span><span class="o">=</span><span class="n">target_dir</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">observation_names</span><span class="o">=</span><span class="n">observation_names</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">synonym_map_lc</span><span class="o">=</span><span class="n">synonym_map_lc</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">allow_multiple_filetypes</span><span class="o">=</span><span class="n">allow_multiple_filetypes</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">exofop_data</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.load_from_pickle">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_from_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.LightCurveTableList" title="exofop.extract.extractor.LightCurveTableList"><span class="pre">LightCurveTableList</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.load_from_pickle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.load_from_pickle" title="Link to this definition">#</a></dt>
+<dd><p>Load an instance from a saved file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.missing_cbvs">
+<span class="sig-name descname"><span class="pre">missing_cbvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.missing_cbvs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.missing_cbvs" title="Link to this definition">#</a></dt>
+<dd><p>Check for missing CBVs in the observations contained in the list.</p>
+<p>This is a convenience function to check which CBVs are missing in which observations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>synonym_map</strong> (<a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.SynonymMapLc"><em>SynonymMapLc</em></a><em>, </em><em>optional</em>) – A synonym map for the column names (default is None).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the names of the observations and the missing CBVs.
+If all observations contain all CBVs, None is returned.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#exofop.extract.LightCurveTableList.names" title="Link to this definition">#</a></dt>
+<dd><p>Names of all observations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.number_of_cbvs">
+<span class="sig-name descname"><span class="pre">number_of_cbvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.number_of_cbvs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.number_of_cbvs" title="Link to this definition">#</a></dt>
+<dd><p>Number of CBVs for all observations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.save" title="Link to this definition">#</a></dt>
+<dd><p>Save the LightCurveTableList to a directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>save_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – The directory where the data should be saved. Defaults to the target_dir.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The data is saved in the following format:
+- The info DataFrame is saved to a file ‘info.csv’.
+- Each observation is saved to a file ‘observation_name.ecsv’.
+- The observation names are used as file names.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#exofop.extract.LightCurveTableList.load" title="exofop.extract.LightCurveTableList.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTableList.load</span></code></a></dt><dd><p>Load the data from a directory.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.save_to_pickle">
+<span class="sig-name descname"><span class="pre">save_to_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.save_to_pickle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.save_to_pickle" title="Link to this definition">#</a></dt>
+<dd><p>Save the instance to a file using pickle serialization.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.standardise_column_names">
+<span class="sig-name descname"><span class="pre">standardise_column_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#exofop.extract.SynonymMap" title="exofop.extract.synonym_map.SynonymMap"><span class="pre">SynonymMap</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.standardise_column_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.standardise_column_names" title="Link to this definition">#</a></dt>
+<dd><p>Standardise column names of all observations in the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>synonym_map</strong> (<a class="reference internal" href="#exofop.extract.SynonymMap" title="exofop.extract.SynonymMap"><em>SynonymMap</em></a><em> or </em><em>dict</em><em>, </em><em>optional</em>) – A synonym map for the column names (default is None).</p></li>
+<li><p><strong>log_level</strong> (<em>int</em><em>, </em><em>optional</em>) – The log level for logging missing columns (default is 20, i.e. ‘info’).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy" title="exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.synonym_map">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">synonym_map</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a></em><a class="headerlink" href="#exofop.extract.LightCurveTableList.synonym_map" title="Link to this definition">#</a></dt>
+<dd><p>Synonym map to standardise column names.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.time">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span></em><a class="headerlink" href="#exofop.extract.LightCurveTableList.time" title="Link to this definition">#</a></dt>
+<dd><p>List of time arrays of all observations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.LightCurveTableList.update_info_df">
+<span class="sig-name descname"><span class="pre">update_info_df</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/exofop/extract/extractor.html#LightCurveTableList.update_info_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.LightCurveTableList.update_info_df" title="Link to this definition">#</a></dt>
+<dd><p>Update or create a DataFrame with extracted file name components.</p>
+<p>This function updates an existing DataFrame or creates a new one by populating it
+with extracted components from the ‘file_name_components_dict’. The dictionary should
+contain observation names as keys and corresponding file name components as values.</p>
+<p>If ‘info_df’ is not provided, a new DataFrame will be created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>info_df</strong> (<em>pandas.DataFrame</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – An existing DataFrame to be updated (default is None).</p></li>
+<li><p><strong>file_name_components_dict</strong> (<em>dict</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – A dictionary containing observation names and corresponding file name components.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated or newly created DataFrame containing the extracted components.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">file_name_components_dict</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;obs1&#39;</span><span class="p">:</span> <span class="n">parse_and_format_exofop_file_name</span><span class="p">(</span>
+<span class="go">            &#39;TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_measurements.csv&#39;),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s1">&#39;obs2&#39;</span><span class="p">:</span> <span class="n">parse_and_format_exofop_file_name</span><span class="p">(</span>
+<span class="go">            &#39;TIC254113311.02_20200901_ASTEP-ANTARCTICA_Rc_measurements.csv&#39;),</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">updated_df</span> <span class="o">=</span> <span class="n">update_info_df_by_file_name_components</span><span class="p">(</span>
+<span class="go">    file_name_components_dict=file_name_components_dict</span>
+<span class="go">)</span>
+<span class="go">            Date      BJD       Observatory  ... pp Measurement file name    full_file_name</span>
+<span class="go">obs1  2020-08-05  2459066  ASTEP-ANTARCTICA  ...  1      measurements.csv  TIC254113311....</span>
+<span class="go">obs2  2020-09-01  2459093  ASTEP-ANTARCTICA  ...  2      measurements.csv  TIC254113311....</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.extract.</span></span><span class="sig-name descname"><span class="pre">SynonymMap</span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">defaultdict</span></code></p>
+<p>A dictionary-like class that allows the association of synonyms with a primary alias.</p>
+<p>This class plays a pivotal role in achieving consistent column naming across ExoFOP
+(Exoplanet Follow-up Observing Program) data files. With a wide range of
+observatories and processing pipelines contributing to ExoFOP, there are cases
+where different column names are used to denote the same underlying concept.
+For instance, the column representing time may be labelled as
+‘BJD TBD’, ‘time’, ‘TIME’, and so on.</p>
+<p>This class addresses this complexity by facilitating the organization of mappings between
+a primary concept alias and its corresponding synonyms. This systematic approach ensures
+that a consistent and intuitive nomenclature can be achieved, regardless of the original source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Initialise the synonym map</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map</span> <span class="o">=</span> <span class="n">SynonymMap</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;TIME&#39;</span><span class="p">,</span> <span class="s1">&#39;BJD TBD&#39;</span><span class="p">,</span> <span class="s1">&#39;another_synonym&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map</span><span class="o">.</span><span class="n">get_rename_dict</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="go">{&#39;Time&#39;: &#39;time&#39;, &#39;TIME&#39;: &#39;time&#39;, &#39;BJD TBD&#39;: &#39;time&#39;, &#39;another_synonym&#39;: &#39;time&#39;}</span>
+</pre></div>
+</div>
+<p>Add a new primary alias and its synonyms</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map</span><span class="p">[</span><span class="s1">&#39;flux&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;flux&#39;</span><span class="p">,</span> <span class="s1">&#39;FLUX&#39;</span><span class="p">,</span> <span class="s1">&#39;rel_flux&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Add a new synonym to an existing primary alias</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map</span><span class="o">.</span><span class="n">add_synonyms</span><span class="p">(</span><span class="s1">&#39;flux&#39;</span><span class="p">,</span> <span class="s1">&#39;rel_flux_T1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Rename a primary alias and update its synonyms accordingly</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map</span><span class="o">.</span><span class="n">rename_primary_alias</span><span class="p">(</span><span class="s1">&#39;flux&#39;</span><span class="p">,</span> <span class="s1">&#39;FLUX&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([&#39;time&#39;, &#39;FLUX&#39;])</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.SynonymMapLc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.SynonymMapLc</span></code></a></p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.add_synonyms">
+<span class="sig-name descname"><span class="pre">add_synonyms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primary_alias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">synonym</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.add_synonyms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.add_synonyms" title="Link to this definition">#</a></dt>
+<dd><p>Add synonyms to an existing primary alias.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.from_dict" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.get_primary_alias">
+<span class="sig-name descname"><span class="pre">get_primary_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.get_primary_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.get_primary_alias" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve the primary alias associated with a synonym, if it is contained.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.get_rename_dict">
+<span class="sig-name descname"><span class="pre">get_rename_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primary_alias</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.get_rename_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.get_rename_dict" title="Link to this definition">#</a></dt>
+<dd><p>Retrieve a dictionary for renaming synonyms to their primary alias.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>primary_alias</strong> (<em>str</em>) – The primary alias for which to retrieve the renaming dictionary</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rename dict.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.load_from_yaml">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_from_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.load_from_yaml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.load_from_yaml" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.primary_alias_to_synonyms">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">primary_alias_to_synonyms</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#exofop.extract.SynonymMap.primary_alias_to_synonyms" title="Link to this definition">#</a></dt>
+<dd><p>A dictionary mapping primary aliases to their synonyms.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.rebuild_synonym_mapping">
+<span class="sig-name descname"><span class="pre">rebuild_synonym_mapping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.rebuild_synonym_mapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.rebuild_synonym_mapping" title="Link to this definition">#</a></dt>
+<dd><p>Update the synonym_to_primary_mapping dictionary based on the current state of the SynonymMap.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.remove_synonym">
+<span class="sig-name descname"><span class="pre">remove_synonym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">primary_alias</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">synonym</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.remove_synonym"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.remove_synonym" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.rename_primary_alias">
+<span class="sig-name descname"><span class="pre">rename_primary_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_primary_alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_primary_alias</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.rename_primary_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.rename_primary_alias" title="Link to this definition">#</a></dt>
+<dd><p>Rename a primary alias and update its synonyms accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>old_primary_alias</strong> (<em>str</em>) – The primary alias to be renamed.</p></li>
+<li><p><strong>new_primary_alias</strong> (<em>str</em>) – The new primary alias to replace the old one.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the old primary alias does not exist in the mapping.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.save_to_yaml">
+<span class="sig-name descname"><span class="pre">save_to_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.save_to_yaml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.save_to_yaml" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMap.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">synonym_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMap.update"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMap.update" title="Link to this definition">#</a></dt>
+<dd><p>Update the synonym map with a dictionary of primary aliases and their synonyms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>synonym_map</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Tuple</em><em>[</em><em>str</em><em>, </em><em>...</em><em>]</em><em>]</em>) – A dictionary of primary aliases and their synonyms.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">exofop.extract.</span></span><span class="sig-name descname"><span class="pre">SynonymMapLc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">light_curve_attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EssentialLightcurveAttributes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'BJD_TDB'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rel_flux_T1_n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flux_err</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rel_flux_err_T1_n'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#exofop.extract.SynonymMap" title="exofop.extract.synonym_map.SynonymMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">SynonymMap</span></code></a></p>
+<p>A subclass of SynonymMap specifically tailored for handling light curve attributes,
+with the ability to manipulate primary aliases and their synonyms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>light_curve_attributes</strong> (<em>Optional</em><em>[</em><em>EssentialLightcurveAttributes</em><em>]</em><em>, </em><em>optional</em>) – An instance of EssentialLightcurveAttributes defining primary aliases for time,
+flux, and flux error. If None, default aliases will be used.</p></li>
+<li><p><strong>time</strong> (<em>str</em><em>, </em><em>optional</em>) – Primary alias for time attribute. Default is “BJD_TDB”.</p></li>
+<li><p><strong>flux</strong> (<em>str</em><em>, </em><em>optional</em>) – Primary alias for flux attribute. Default is “rel_flux_T1_n”.</p></li>
+<li><p><strong>flux_err</strong> (<em>str</em><em>, </em><em>optional</em>) – Primary alias for flux error attribute. Default is “rel_flux_err_T1_n”.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.light_curve_attributes">
+<span class="sig-name descname"><span class="pre">light_curve_attributes</span></span><a class="headerlink" href="#exofop.extract.SynonymMapLc.light_curve_attributes" title="Link to this definition">#</a></dt>
+<dd><p>The primary aliases for the essential light curve attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>EssentialLightcurveAttributes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span> <span class="o">=</span> <span class="n">SynonymMapLc</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">&quot;BJD_TDB&quot;</span><span class="p">,</span> <span class="n">flux</span><span class="o">=</span><span class="s2">&quot;flux&quot;</span><span class="p">,</span> <span class="n">flux_err</span><span class="o">=</span><span class="s2">&quot;flux_err&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span><span class="p">[</span><span class="s2">&quot;BJD_TDB&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;BJD&quot;</span><span class="p">,</span> <span class="s2">&quot;BJD_TDB_MOBS&quot;</span><span class="p">,</span> <span class="s2">&quot;#BJD_TDB&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span><span class="p">[</span><span class="s2">&quot;flux&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flux&quot;</span><span class="p">,</span> <span class="s2">&quot;FLUX&quot;</span><span class="p">,</span> <span class="s2">&quot;rel_flux&quot;</span><span class="p">,</span> <span class="s2">&quot;rel_flux_T1&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span><span class="p">[</span><span class="s2">&quot;flux_err&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flux_err&quot;</span><span class="p">,</span> <span class="s2">&quot;ERRFLUX&quot;</span><span class="p">,</span> <span class="s2">&quot;rel_flux_err_T1&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span><span class="p">[</span><span class="s2">&quot;cbv_0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cbv_0_synonym_0&quot;</span><span class="p">,</span> <span class="s2">&quot;cbv_0_synonym_1&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can access the primary aliases and their synonyms as attributes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span><span class="o">.</span><span class="n">light_curve_attributes</span>
+<span class="go">EssentialLightcurveAttributes(time=&#39;BJD_TDB&#39;, flux=&#39;flux&#39;, flux_err=&#39;flux_err&#39;)</span>
+</pre></div>
+</div>
+<p>For convenience, you can access the primary aliases of the light curve attributes as properties
+&gt;&gt;&gt; synonym_map_lc.time
+(‘time’, ‘BJD’, ‘BJD_TDB_MOBS’, ‘#BJD_TDB’)
+&gt;&gt;&gt; synonym_map_lc.rename_primary_alias(“BJD_TDB”, “time”)
+&gt;&gt;&gt; synonym_map_lc.keys()
+dict_keys([‘flux’, ‘flux_err’, ‘cbv_0’, ‘time’])</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#exofop.extract.SynonymMap" title="exofop.extract.SynonymMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.SynonymMap</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">exofop.extract.EssentialLightcurveAttributes</span></code></p>
+</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.cbv_names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cbv_names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#exofop.extract.SynonymMapLc.cbv_names" title="Link to this definition">#</a></dt>
+<dd><p>List of primary aliases for the cotrending basis vectors (CBVs).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">a</span> <span class="pre">shallow</span> <span class="pre">copy</span> <span class="pre">of</span> <span class="pre">D.</span></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc.copy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.deepcopy">
+<span class="sig-name descname"><span class="pre">deepcopy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc.deepcopy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc.deepcopy" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.flux">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flux</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#exofop.extract.SynonymMapLc.flux" title="Link to this definition">#</a></dt>
+<dd><p>Tuple of synonyms for the flux attribute.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.flux_err">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flux_err</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#exofop.extract.SynonymMapLc.flux_err" title="Link to this definition">#</a></dt>
+<dd><p>Tuple of synonyms for the flux error attribute.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.load_from_config">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc.load_from_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc.load_from_config" title="Link to this definition">#</a></dt>
+<dd><p>Load the synonym map from the local config directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reset</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the synonym map is reset to the default configuration.
+If False, the synonym map is loaded from the local config directory.
+Default is False.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The synonym map instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.SynonymMapLc">SynonymMapLc</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Load the user-modified default synonym map from the local config directory</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span> <span class="o">=</span> <span class="n">SynonymMapLc</span><span class="o">.</span><span class="n">load_from_config</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Load the default synonym map from the local config directory as shipped with the package</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">synonym_map_lc</span> <span class="o">=</span> <span class="n">SynonymMapLc</span><span class="o">.</span><span class="n">load_from_config</span><span class="p">(</span><span class="n">reset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.load_from_yaml">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_from_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#exofop.extract.SynonymMapLc" title="exofop.extract.synonym_map.SynonymMapLc"><span class="pre">SynonymMapLc</span></a></span></span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc.load_from_yaml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc.load_from_yaml" title="Link to this definition">#</a></dt>
+<dd><p>Load the synonym map from a YAML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The path to the YAML file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.rename_primary_alias">
+<span class="sig-name descname"><span class="pre">rename_primary_alias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_primary_alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_primary_alias</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc.rename_primary_alias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc.rename_primary_alias" title="Link to this definition">#</a></dt>
+<dd><p>Rename a primary alias and update its synonyms accordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>old_primary_alias</strong> (<em>str</em>) – The primary alias to be renamed.</p></li>
+<li><p><strong>new_primary_alias</strong> (<em>str</em>) – The new primary alias to replace the old one.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the old primary alias does not exist in the mapping.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.save_to_config">
+<span class="sig-name descname"><span class="pre">save_to_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc.save_to_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc.save_to_config" title="Link to this definition">#</a></dt>
+<dd><p>Save the synonym map to the local config directory.</p>
+<p>The synonym map is saved to the local config directory as ‘synonym_map_lc_local.yaml’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.save_to_yaml">
+<span class="sig-name descname"><span class="pre">save_to_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/exofop/extract/synonym_map.html#SynonymMapLc.save_to_yaml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#exofop.extract.SynonymMapLc.save_to_yaml" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="exofop.extract.SynonymMapLc.time">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#exofop.extract.SynonymMapLc.time" title="Link to this definition">#</a></dt>
+<dd><p>Tuple of synonyms for the time attribute.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exofop.download.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">exofop.download</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable"><code class="docutils literal notranslate"><span class="pre">LightCurveTable</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.apply_time_correction_in_case_of_discrepancy"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.apply_time_correction_in_case_of_discrepancy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.cbvs"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.cbvs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.check_completeness"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.check_completeness()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.errorbar"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.errorbar()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.file_name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.file_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.flux"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.flux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.flux_err"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.flux_err</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.from_pandas"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.from_pandas()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.is_complete"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.is_complete</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.light_curve"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.light_curve()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.observation_name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.observation_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.parse_and_format_exofop_file_name"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.parse_and_format_exofop_file_name()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.plot"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.scatter"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.scatter()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.simple_synonym_map"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.simple_synonym_map</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.standardise_column_names"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.standardise_column_names()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.synonym_map"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.synonym_map</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.time"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.time</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTable.time_threshold"><code class="docutils literal notranslate"><span class="pre">LightCurveTable.time_threshold</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.apply_time_correction_in_case_of_discrepancy"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.apply_time_correction_in_case_of_discrepancy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.complete"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.complete</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.default_save_dir"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.default_save_dir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.incomplete"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.incomplete</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.info_df"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.info_df</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.load"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.load_exofop_data"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load_exofop_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.load_from_pickle"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.load_from_pickle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.missing_cbvs"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.missing_cbvs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.names"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.names</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.number_of_cbvs"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.number_of_cbvs()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.save"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.save_to_pickle"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.save_to_pickle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.standardise_column_names"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.standardise_column_names()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.synonym_map"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.synonym_map</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.time"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.time</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.LightCurveTableList.update_info_df"><code class="docutils literal notranslate"><span class="pre">LightCurveTableList.update_info_df()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap"><code class="docutils literal notranslate"><span class="pre">SynonymMap</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.add_synonyms"><code class="docutils literal notranslate"><span class="pre">SynonymMap.add_synonyms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.from_dict"><code class="docutils literal notranslate"><span class="pre">SynonymMap.from_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.get_primary_alias"><code class="docutils literal notranslate"><span class="pre">SynonymMap.get_primary_alias()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.get_rename_dict"><code class="docutils literal notranslate"><span class="pre">SynonymMap.get_rename_dict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.load_from_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMap.load_from_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.primary_alias_to_synonyms"><code class="docutils literal notranslate"><span class="pre">SynonymMap.primary_alias_to_synonyms</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.rebuild_synonym_mapping"><code class="docutils literal notranslate"><span class="pre">SynonymMap.rebuild_synonym_mapping()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.remove_synonym"><code class="docutils literal notranslate"><span class="pre">SynonymMap.remove_synonym()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.rename_primary_alias"><code class="docutils literal notranslate"><span class="pre">SynonymMap.rename_primary_alias()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.save_to_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMap.save_to_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMap.update"><code class="docutils literal notranslate"><span class="pre">SynonymMap.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.light_curve_attributes"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.light_curve_attributes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.cbv_names"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.cbv_names</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.copy"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.copy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.deepcopy"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.deepcopy()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.flux"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.flux</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.flux_err"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.flux_err</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.load_from_config"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.load_from_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.load_from_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.load_from_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.rename_primary_alias"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.rename_primary_alias()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.save_to_config"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.save_to_config()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.save_to_yaml"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.save_to_yaml()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exofop.extract.SynonymMapLc.time"><code class="docutils literal notranslate"><span class="pre">SynonymMapLc.time</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Degen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, David Degen.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

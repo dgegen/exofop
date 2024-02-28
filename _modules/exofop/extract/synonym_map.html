@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exofop.extract.synonym_map &#8212; ExoFOP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/style.css?v=7186c071" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/exofop/extract/synonym_map';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ExoFOP Documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../motivation.html">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">QuickStart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/1_download_from_ExoFOP.html">Download tags from ExoFOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/2_extract_and_standardise_time_series_data.html">Extract and standardise ExoFOP time series observations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../exofop.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../exofop.download.html">exofop.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../exofop.extract.html">exofop.extract</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dgegen/exofop/issues/new?title=Issue%20on%20page%20%2F_modules/exofop/extract/synonym_map.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for exofop.extract.synonym_map</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+
+
+<span class="k">class</span> <span class="nc">EssentialLightcurveAttributes</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents essential attributes of a lightcurve.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    time : str</span>
+<span class="sd">        The primary alias for the time attribute.</span>
+<span class="sd">    flux : str</span>
+<span class="sd">        The primary alias for the flux attribute.</span>
+<span class="sd">    flux_err : str</span>
+<span class="sd">        The primary alias for the flux error attribute.</span>
+
+<span class="sd">    Methods</span>
+<span class="sd">    -------</span>
+<span class="sd">    update_primary_alias(old_primary_alias, new_primary_alias)</span>
+<span class="sd">        Rename a primary alias and update its synonyms accordingly.</span>
+<span class="sd">    __deepcopy__(memo)</span>
+<span class="sd">        Create a deep copy of the instance.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">time</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span>
+    <span class="n">flux</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;flux&quot;</span>
+    <span class="n">flux_err</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;flux_err&quot;</span>
+
+    <span class="k">def</span> <span class="nf">update_primary_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_primary_alias</span><span class="p">,</span> <span class="n">new_primary_alias</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rename a primary alias and update its synonyms accordingly.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        old_primary_alias : str</span>
+<span class="sd">            The primary alias to be renamed.</span>
+<span class="sd">        new_primary_alias : str</span>
+<span class="sd">            The new primary alias to replace the old one.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        KeyError</span>
+<span class="sd">            If the old primary alias does not exist in the mapping.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">old_primary_alias</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">EssentialLightcurveAttributes</span><span class="p">(</span>
+                <span class="o">**</span><span class="p">{</span>
+                    <span class="n">key</span><span class="p">:</span> <span class="p">(</span><span class="n">value</span> <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">old_primary_alias</span> <span class="k">else</span> <span class="n">new_primary_alias</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The primary alias &#39;</span><span class="si">{</span><span class="n">old_primary_alias</span><span class="si">}</span><span class="s2">&#39; does not exist in the mapping.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memo</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a deep copy of the instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        memo : dict</span>
+<span class="sd">            A dictionary that keeps track of already copied objects to avoid infinite recursion.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        EssentialLightcurveAttributes</span>
+<span class="sd">            A deep copy of the instance.</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        This method is called by the `copy.deepcopy` function.</span>
+<span class="sd">        EssentialLightcurveAttributes is a NamedTuple, so we use the `_make` method.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SynonymMap">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap">[docs]</a>
+<span class="k">class</span> <span class="nc">SynonymMap</span><span class="p">(</span><span class="n">defaultdict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A dictionary-like class that allows the association of synonyms with a primary alias.</span>
+
+<span class="sd">    This class plays a pivotal role in achieving consistent column naming across ExoFOP</span>
+<span class="sd">    (Exoplanet Follow-up Observing Program) data files. With a wide range of</span>
+<span class="sd">    observatories and processing pipelines contributing to ExoFOP, there are cases</span>
+<span class="sd">    where different column names are used to denote the same underlying concept.</span>
+<span class="sd">    For instance, the column representing time may be labelled as</span>
+<span class="sd">    &#39;BJD TBD&#39;, &#39;time&#39;, &#39;TIME&#39;, and so on.</span>
+
+<span class="sd">    This class addresses this complexity by facilitating the organization of mappings between</span>
+<span class="sd">    a primary concept alias and its corresponding synonyms. This systematic approach ensures</span>
+<span class="sd">    that a consistent and intuitive nomenclature can be achieved, regardless of the original source.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    None</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    Initialise the synonym map</span>
+
+<span class="sd">    &gt;&gt;&gt; synonym_map = SynonymMap()</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map[&#39;time&#39;] = (&#39;Time&#39;, &#39;TIME&#39;, &#39;BJD TBD&#39;, &#39;another_synonym&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map.get_rename_dict(&#39;time&#39;)</span>
+<span class="sd">    {&#39;Time&#39;: &#39;time&#39;, &#39;TIME&#39;: &#39;time&#39;, &#39;BJD TBD&#39;: &#39;time&#39;, &#39;another_synonym&#39;: &#39;time&#39;}</span>
+
+<span class="sd">    Add a new primary alias and its synonyms</span>
+
+<span class="sd">    &gt;&gt;&gt; synonym_map[&#39;flux&#39;] = (&#39;flux&#39;, &#39;FLUX&#39;, &#39;rel_flux&#39;)</span>
+
+<span class="sd">    Add a new synonym to an existing primary alias</span>
+
+<span class="sd">    &gt;&gt;&gt; synonym_map.add_synonyms(&#39;flux&#39;, &#39;rel_flux_T1&#39;)</span>
+
+<span class="sd">    Rename a primary alias and update its synonyms accordingly</span>
+
+<span class="sd">    &gt;&gt;&gt; synonym_map.rename_primary_alias(&#39;flux&#39;, &#39;FLUX&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map.keys()</span>
+<span class="sd">    dict_keys([&#39;time&#39;, &#39;FLUX&#39;])</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    exofop.extract.SynonymMapLc</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="nb">tuple</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">primary_alias_to_synonyms</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;A dictionary mapping primary aliases to their synonyms.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span>
+        <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rebuild_synonym_mapping</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span>
+
+    <span class="nd">@primary_alias_to_synonyms</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">primary_alias_to_synonyms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span> <span class="o">=</span> <span class="n">value</span>
+
+<div class="viewcode-block" id="SynonymMap.get_rename_dict">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.get_rename_dict">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_rename_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">primary_alias</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieve a dictionary for renaming synonyms to their primary alias.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        primary_alias : str</span>
+<span class="sd">            The primary alias for which to retrieve the renaming dictionary</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        dict</span>
+<span class="sd">            Rename dict.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">primary_alias_to_synonyms</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">primary_alias</span><span class="p">,</span> <span class="p">{})</span></div>
+
+
+<div class="viewcode-block" id="SynonymMap.get_primary_alias">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.get_primary_alias">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_primary_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synonym</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve the primary alias associated with a synonym, if it is contained.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">primary_alias</span><span class="p">,</span> <span class="n">rename_dict</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">primary_alias_to_synonyms</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">synonym</span> <span class="ow">in</span> <span class="n">rename_dict</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">primary_alias</span>
+
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="SynonymMap.add_synonyms">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.add_synonyms">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_synonyms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">primary_alias</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">synonym</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add synonyms to an existing primary alias.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synonym</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">synonym</span> <span class="o">=</span> <span class="p">(</span><span class="n">synonym</span><span class="p">,)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">synonym</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">set</span><span class="p">)):</span>
+            <span class="n">synonym</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">synonym</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="o">+</span> <span class="nb">tuple</span><span class="p">(</span>
+            <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">synonym</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SynonymMap.remove_synonym">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.remove_synonym">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove_synonym</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">primary_alias</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">synonym</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="k">if</span> <span class="n">item</span> <span class="o">!=</span> <span class="n">synonym</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">primary_alias</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Tuple a primary alias and their synonyms.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        primary_alias : str</span>
+<span class="sd">            The primary alias to tuple.</span>
+<span class="sd">        alias : Tuple[str, ...]</span>
+<span class="sd">            The tuple of synonyms associated with the primary alias.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">alias</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">alias</span> <span class="o">=</span> <span class="p">(</span><span class="n">alias</span><span class="p">,)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">alias</span><span class="p">,</span> <span class="nb">set</span><span class="p">):</span>
+            <span class="n">alias</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">alias</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">alias</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+            <span class="n">alias</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">alias</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">primary_alias</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="c1"># Check if the suggested primary alias already exists as a synonym</span>
+            <span class="n">existing_primary_alias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_primary_alias</span><span class="p">(</span><span class="n">primary_alias</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">existing_primary_alias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;The primary alias &#39;</span><span class="si">{</span><span class="n">primary_alias</span><span class="si">}</span><span class="s2">&#39; already exists as a synonym for &#39;</span><span class="si">{</span><span class="n">existing_primary_alias</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">primary_alias</span><span class="p">,</span> <span class="n">alias</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_primary_alias_to_synonyms</span><span class="p">(</span><span class="n">primary_alias</span><span class="p">,</span> <span class="n">alias</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SynonymMap.update">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.update">[docs]</a>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">synonym_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the synonym map with a dictionary of primary aliases and their synonyms.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        synonym_map : Dict[str, Tuple[str, ...]]</span>
+<span class="sd">            A dictionary of primary aliases and their synonyms.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">primary_alias</span><span class="p">,</span> <span class="n">synonyms</span> <span class="ow">in</span> <span class="n">synonym_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="o">=</span> <span class="n">synonyms</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_update_primary_alias_to_synonyms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">primary_alias</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">alias</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the primary alias to synonyms mapping.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">synonyms_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">synonym</span> <span class="ow">in</span> <span class="n">alias</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_check_existing_aliases</span><span class="p">(</span><span class="n">synonym</span><span class="p">,</span> <span class="n">primary_alias</span><span class="p">)</span>
+            <span class="n">synonyms_dict</span><span class="p">[</span><span class="n">synonym</span><span class="p">]</span> <span class="o">=</span> <span class="n">primary_alias</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">primary_alias_to_synonyms</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="o">=</span> <span class="n">synonyms_dict</span>
+
+    <span class="k">def</span> <span class="nf">_check_existing_aliases</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">synonym</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">new_primary_alias</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if a synonym is already associated with a different primary alias.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        synonym : str</span>
+<span class="sd">            The synonym to check.</span>
+<span class="sd">        new_primary_alias : str</span>
+<span class="sd">            The new primary alias to which the synonym is being associated.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        KeyError</span>
+<span class="sd">            If the synonym is already associated with a different primary alias.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">existing_primary_alias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">synonym</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">synonym</span> <span class="ow">in</span> <span class="n">synonyms</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">synonyms</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="n">new_primary_alias</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The synonym &#39;</span><span class="si">{</span><span class="n">synonym</span><span class="si">}</span><span class="s2">&#39; is already associated with the primary alias &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">existing_primary_alias</span><span class="si">}</span><span class="s2">&#39;. It cannot be used as a synonym for &#39;</span><span class="si">{</span><span class="n">new_primary_alias</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+            <span class="p">)</span>
+
+<div class="viewcode-block" id="SynonymMap.rebuild_synonym_mapping">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.rebuild_synonym_mapping">[docs]</a>
+    <span class="k">def</span> <span class="nf">rebuild_synonym_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the synonym_to_primary_mapping dictionary based on the current state of the SynonymMap.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">primary_alias</span><span class="p">,</span> <span class="n">synonyms</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span><span class="p">[</span><span class="n">primary_alias</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">synonym</span><span class="p">:</span> <span class="n">primary_alias</span> <span class="k">for</span> <span class="n">synonym</span> <span class="ow">in</span> <span class="n">synonyms</span>
+            <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="SynonymMap.rename_primary_alias">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.rename_primary_alias">[docs]</a>
+    <span class="k">def</span> <span class="nf">rename_primary_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_primary_alias</span><span class="p">,</span> <span class="n">new_primary_alias</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rename a primary alias and update its synonyms accordingly.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        old_primary_alias : str</span>
+<span class="sd">            The primary alias to be renamed.</span>
+<span class="sd">        new_primary_alias : str</span>
+<span class="sd">            The new primary alias to replace the old one.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        KeyError</span>
+<span class="sd">            If the old primary alias does not exist in the mapping.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">old_primary_alias</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The primary alias &#39;</span><span class="si">{</span><span class="n">old_primary_alias</span><span class="si">}</span><span class="s2">&#39; does not exist in the mapping.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Get the synonyms for the old primary alias</span>
+        <span class="n">synonyms_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">primary_alias_to_synonyms</span><span class="p">[</span><span class="n">old_primary_alias</span><span class="p">]</span>
+
+        <span class="c1"># Remove the old primary alias and its synonyms</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="n">old_primary_alias</span><span class="p">]</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span><span class="p">[</span><span class="n">old_primary_alias</span><span class="p">]</span>
+
+        <span class="c1"># Add the new primary alias and its synonyms</span>
+        <span class="bp">self</span><span class="p">[</span><span class="n">new_primary_alias</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="nb">tuple</span><span class="p">(</span><span class="n">synonyms_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="n">old_primary_alias</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_primary_alias_to_synonyms</span><span class="p">[</span><span class="n">new_primary_alias</span><span class="p">]</span> <span class="o">=</span> <span class="n">synonyms_dict</span></div>
+
+
+<div class="viewcode-block" id="SynonymMap.from_dict">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.from_dict">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">instance</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">instance</span></div>
+
+
+<div class="viewcode-block" id="SynonymMap.save_to_yaml">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.save_to_yaml">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_to_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">yaml</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SynonymMap.load_from_yaml">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMap.load_from_yaml">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_from_yaml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_load_yaml_content</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_load_yaml_content</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">yaml</span>
+
+        <span class="k">def</span> <span class="nf">tuple_constructor</span><span class="p">(</span><span class="n">loader</span><span class="p">:</span> <span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">yaml</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">MappingNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+            <span class="n">string_list</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="n">construct_sequence</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="n">string_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">string_list</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">string_tuple</span>
+
+        <span class="n">yaml</span><span class="o">.</span><span class="n">SafeLoader</span><span class="o">.</span><span class="n">add_constructor</span><span class="p">(</span><span class="s2">&quot;tag:yaml.org,2002:python/tuple&quot;</span><span class="p">,</span> <span class="n">tuple_constructor</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">data</span></div>
+
+
+
+<div class="viewcode-block" id="SynonymMapLc">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc">[docs]</a>
+<span class="k">class</span> <span class="nc">SynonymMapLc</span><span class="p">(</span><span class="n">SynonymMap</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A subclass of SynonymMap specifically tailored for handling light curve attributes,</span>
+<span class="sd">    with the ability to manipulate primary aliases and their synonyms.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    light_curve_attributes : Optional[EssentialLightcurveAttributes], optional</span>
+<span class="sd">        An instance of EssentialLightcurveAttributes defining primary aliases for time,</span>
+<span class="sd">        flux, and flux error. If None, default aliases will be used.</span>
+<span class="sd">    time : str, optional</span>
+<span class="sd">        Primary alias for time attribute. Default is &quot;BJD_TDB&quot;.</span>
+<span class="sd">    flux : str, optional</span>
+<span class="sd">        Primary alias for flux attribute. Default is &quot;rel_flux_T1_n&quot;.</span>
+<span class="sd">    flux_err : str, optional</span>
+<span class="sd">        Primary alias for flux error attribute. Default is &quot;rel_flux_err_T1_n&quot;.</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    light_curve_attributes : EssentialLightcurveAttributes</span>
+<span class="sd">        The primary aliases for the essential light curve attributes.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc = SynonymMapLc(time=&quot;BJD_TDB&quot;, flux=&quot;flux&quot;, flux_err=&quot;flux_err&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc[&quot;BJD_TDB&quot;] = [&quot;time&quot;, &quot;BJD&quot;, &quot;BJD_TDB_MOBS&quot;, &quot;#BJD_TDB&quot;]</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc[&quot;flux&quot;] = [&quot;flux&quot;, &quot;FLUX&quot;, &quot;rel_flux&quot;, &quot;rel_flux_T1&quot;]</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc[&quot;flux_err&quot;] = [&quot;flux_err&quot;, &quot;ERRFLUX&quot;, &quot;rel_flux_err_T1&quot;]</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc[&quot;cbv_0&quot;] = [&quot;cbv_0_synonym_0&quot;, &quot;cbv_0_synonym_1&quot;]</span>
+
+<span class="sd">    You can access the primary aliases and their synonyms as attributes</span>
+
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc.light_curve_attributes</span>
+<span class="sd">    EssentialLightcurveAttributes(time=&#39;BJD_TDB&#39;, flux=&#39;flux&#39;, flux_err=&#39;flux_err&#39;)</span>
+
+<span class="sd">    For convenience, you can access the primary aliases of the light curve attributes as properties</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc.time</span>
+<span class="sd">    (&#39;time&#39;, &#39;BJD&#39;, &#39;BJD_TDB_MOBS&#39;, &#39;#BJD_TDB&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc.rename_primary_alias(&quot;BJD_TDB&quot;, &quot;time&quot;)</span>
+<span class="sd">    &gt;&gt;&gt; synonym_map_lc.keys()</span>
+<span class="sd">    dict_keys([&#39;flux&#39;, &#39;flux_err&#39;, &#39;cbv_0&#39;, &#39;time&#39;])</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    exofop.extract.SynonymMap</span>
+<span class="sd">    exofop.extract.EssentialLightcurveAttributes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">light_curve_attributes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">EssentialLightcurveAttributes</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">time</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;BJD_TDB&quot;</span><span class="p">,</span>
+        <span class="n">flux</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;rel_flux_T1_n&quot;</span><span class="p">,</span>
+        <span class="n">flux_err</span><span class="o">=</span><span class="s2">&quot;rel_flux_err_T1_n&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">light_curve_attributes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">primary_alias_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">flux_err</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span> <span class="o">=</span> <span class="n">EssentialLightcurveAttributes</span><span class="p">(</span><span class="o">*</span><span class="n">primary_alias_list</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">light_curve_attributes</span><span class="p">,</span> <span class="n">EssentialLightcurveAttributes</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="s2">&quot;light_curve_attributes must be an instance of EssentialLightcurveAttributes.&quot;</span>
+                <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span> <span class="o">=</span> <span class="n">light_curve_attributes</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cbv_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;List of primary aliases for the cotrending basis vectors (CBVs).&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tuple of synonyms for the time attribute.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">time</span><span class="p">]</span>
+
+    <span class="nd">@time</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">time</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">flux</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tuple of synonyms for the flux attribute.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux</span><span class="p">]</span>
+
+    <span class="nd">@flux</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">flux_err</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tuple of synonyms for the flux error attribute.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux_err</span><span class="p">]</span>
+
+    <span class="nd">@flux_err</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">flux_err</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">flux_err</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+<div class="viewcode-block" id="SynonymMapLc.rename_primary_alias">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc.rename_primary_alias">[docs]</a>
+    <span class="k">def</span> <span class="nf">rename_primary_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">old_primary_alias</span><span class="p">,</span> <span class="n">new_primary_alias</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rename a primary alias and update its synonyms accordingly.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        old_primary_alias : str</span>
+<span class="sd">            The primary alias to be renamed.</span>
+<span class="sd">        new_primary_alias : str</span>
+<span class="sd">            The new primary alias to replace the old one.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        KeyError</span>
+<span class="sd">            If the old primary alias does not exist in the mapping.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">old_primary_alias</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">update_primary_alias</span><span class="p">(</span><span class="n">old_primary_alias</span><span class="p">,</span> <span class="n">new_primary_alias</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">rename_primary_alias</span><span class="p">(</span><span class="n">old_primary_alias</span><span class="p">,</span> <span class="n">new_primary_alias</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SynonymMapLc&quot;</span><span class="p">:</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="n">SynonymMapLc</span><span class="p">(</span><span class="n">light_curve_attributes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">new</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">new</span>
+
+    <span class="k">def</span> <span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SynonymMapLc&quot;</span><span class="p">:</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="n">SynonymMapLc</span><span class="p">(</span><span class="n">light_curve_attributes</span><span class="o">=</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="p">))</span>
+        <span class="n">memo</span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)]</span> <span class="o">=</span> <span class="n">new</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">new</span><span class="p">[</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">memo</span><span class="p">)]</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">memo</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">new</span>
+
+<div class="viewcode-block" id="SynonymMapLc.copy">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc.copy">[docs]</a>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SynonymMapLc&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SynonymMapLc.deepcopy">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc.deepcopy">[docs]</a>
+    <span class="k">def</span> <span class="nf">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SynonymMapLc&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SynonymMapLc.save_to_yaml">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc.save_to_yaml">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_to_yaml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">yaml</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;light_curve_attributes&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">light_curve_attributes</span><span class="o">.</span><span class="n">_asdict</span><span class="p">(),</span>
+            <span class="s2">&quot;synonyms&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span>
+        <span class="p">}</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SynonymMapLc.load_from_yaml">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc.load_from_yaml">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_from_yaml</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SynonymMapLc&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load the synonym map from a YAML file.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        file_path : str</span>
+<span class="sd">            The path to the YAML file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_load_yaml_content</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="n">light_curve_attributes_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;light_curve_attributes&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">synonyms_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;synonyms&quot;</span><span class="p">,</span> <span class="p">{})</span>
+
+        <span class="n">light_curve_attributes</span> <span class="o">=</span> <span class="n">EssentialLightcurveAttributes</span><span class="p">(</span><span class="o">**</span><span class="n">light_curve_attributes_data</span><span class="p">)</span>
+        <span class="n">synonyms</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">synonyms_data</span><span class="p">)</span>
+
+        <span class="n">instance</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">light_curve_attributes</span><span class="o">=</span><span class="n">light_curve_attributes</span><span class="p">)</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">synonyms</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">instance</span></div>
+
+
+<div class="viewcode-block" id="SynonymMapLc.load_from_config">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc.load_from_config">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">load_from_config</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SynonymMapLc&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load the synonym map from the local config directory.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        reset : bool, optional</span>
+<span class="sd">            If True, the synonym map is reset to the default configuration.</span>
+<span class="sd">            If False, the synonym map is loaded from the local config directory.</span>
+<span class="sd">            Default is False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        SynonymMapLc</span>
+<span class="sd">            The synonym map instance.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Load the user-modified default synonym map from the local config directory</span>
+
+<span class="sd">        &gt;&gt;&gt; synonym_map_lc = SynonymMapLc.load_from_config()</span>
+
+<span class="sd">        Load the default synonym map from the local config directory as shipped with the package</span>
+
+<span class="sd">        &gt;&gt;&gt; synonym_map_lc = SynonymMapLc.load_from_config(reset=True)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="kn">from</span> <span class="nn">exofop.utils.paths</span> <span class="kn">import</span> <span class="n">CONFIG_DIR</span>
+
+        <span class="n">config_content</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">CONFIG_DIR</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;synonym_map_lc_local.yaml&quot;</span> <span class="ow">in</span> <span class="n">config_content</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">reset</span><span class="p">:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CONFIG_DIR</span><span class="p">,</span> <span class="s2">&quot;synonym_map_lc_local.yaml&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s2">&quot;synonym_map_lc.yaml&quot;</span> <span class="ow">in</span> <span class="n">config_content</span><span class="p">:</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CONFIG_DIR</span><span class="p">,</span> <span class="s2">&quot;synonym_map_lc.yaml&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                <span class="s2">&quot;No synonym_map_lc.yaml or synonym_map_lc_local.yaml found in config directory.&quot;</span>
+                <span class="s2">&quot;Reinstall the package to restore the default config files.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">instance</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">load_from_yaml</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CONFIG_DIR</span><span class="p">,</span> <span class="s2">&quot;synonym_map_lc_local.yaml&quot;</span><span class="p">))</span> <span class="ow">or</span> <span class="n">reset</span><span class="p">:</span>
+            <span class="n">instance</span><span class="o">.</span><span class="n">save_to_config</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">instance</span></div>
+
+
+<div class="viewcode-block" id="SynonymMapLc.save_to_config">
+<a class="viewcode-back" href="../../../exofop.extract.html#exofop.extract.SynonymMapLc.save_to_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_to_config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the synonym map to the local config directory.</span>
+
+<span class="sd">        The synonym map is saved to the local config directory as &#39;synonym_map_lc_local.yaml&#39;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="kn">from</span> <span class="nn">exofop.utils.paths</span> <span class="kn">import</span> <span class="n">CONFIG_DIR</span>
+
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CONFIG_DIR</span><span class="p">,</span> <span class="s2">&quot;synonym_map_lc_local.yaml&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_to_yaml</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By David Degen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, David Degen.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
