@@ -1435,8 +1435,9 @@ document.write(`
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Unpack multiple measurements from the same tag into separate observations.</span>
 
-<span class="sd">    Unpacks multiple measurements from the same tag into separate dataframes and updates the dictionaries</span>
-<span class="sd">    containing file name components and unformatted dataframes accordingly.</span>
+<span class="sd">    This function takes dictionaries of observation names and their corresponding file name components,</span>
+<span class="sd">    along with unformatted dataframes. It then unpacks multiple measurements from the same tag into separate</span>
+<span class="sd">    dataframes and updates the input dictionaries accordingly.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -1446,6 +1447,19 @@ document.write(`
 <span class="sd">        A dictionary containing observation names and corresponding unformatted dataframes.</span>
 <span class="sd">    allow_multiple_filetypes : bool, optional</span>
 <span class="sd">        A boolean indicating whether to allow multiple file types (default is True).</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Some observations contain multiple measurement files within the same tag,</span>
+<span class="sd">    e.g. due to different filters used during the measurement,</span>
+<span class="sd">    or different aperture sizes used to extract the light curve.</span>
+<span class="sd">    This function flattens the input dictionary by assigning such measurements to separate keys;</span>
+<span class="sd">    it does so trying to extract meaningful keys from the observation name and filename components:</span>
+<span class="sd">    - if the observation name contains a filter name, the filter name is appended to the key</span>
+<span class="sd">    - if the `filetype` attribute of the filename components contains an underscore,</span>
+<span class="sd">      as is often the case for different aperatures,</span>
+<span class="sd">      this information is split and used to create the key</span>
+<span class="sd">    - otherwise a cleaned version of the `filetype` component is used as the key</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;measurements&quot;</span><span class="p">,</span> <span class="s2">&quot;measurement&quot;</span><span class="p">,</span> <span class="s2">&quot;lightcurves&quot;</span><span class="p">]),</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
 

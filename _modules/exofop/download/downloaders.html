@@ -695,7 +695,7 @@ document.write(`
                 <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">DEFAULT_FILE_NAME</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">term</span><span class="si">}</span><span class="s2">.csv&quot;</span>
 
             <span class="n">file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
-            <span class="n">tab</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;output_file.csv&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ascii.csv&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">tab</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;ascii.csv&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">tab</span>
 
@@ -906,7 +906,7 @@ document.write(`
 <span class="sd">    &gt;&gt;&gt; toi_list = [&#39;TOI_1130&#39;, &#39;TOI_1131&#39;]</span>
 <span class="sd">    &gt;&gt;&gt; table.bulk_download(toi_list=toi_list, to_separate_folders=False)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">DEFAULT_FILE_NAME</span> <span class="o">=</span> <span class="s2">&quot;time_series_observations_overview&quot;</span>
     <span class="n">RESOURCE</span> <span class="o">=</span> <span class="s2">&quot;download_tseries.php&quot;</span>
 
 
@@ -915,7 +915,7 @@ document.write(`
 <span class="sd">    &gt;&gt;&gt; table = SpectroscopyTable(target_dir=data_dir)</span>
 <span class="sd">    &gt;&gt;&gt; df = table.download(toi=&#39;TOI_1130&#39;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">DEFAULT_FILE_NAME</span> <span class="o">=</span> <span class="s2">&quot;spectroscopy_observations_overview&quot;</span>
     <span class="n">RESOURCE</span> <span class="o">=</span> <span class="s2">&quot;download_spect.php&quot;</span>
 
 
@@ -924,7 +924,7 @@ document.write(`
 <span class="sd">    &gt;&gt;&gt; imaging_table = ImagingTable(target_dir=data_dir)</span>
 <span class="sd">    &gt;&gt;&gt; df = imaging_table.download(toi=&#39;TOI_1130&#39;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">DEFAULT_FILE_NAME</span> <span class="o">=</span> <span class="s2">&quot;imaging_observations_overview&quot;</span>
     <span class="n">RESOURCE</span> <span class="o">=</span> <span class="s2">&quot;download_imaging.php&quot;</span>
 
 
@@ -933,7 +933,7 @@ document.write(`
 <span class="sd">    tb = StellarParametersTable(target_dir=data_dir)</span>
 <span class="sd">    tb.download(toi=&#39;TOI_1130&#39;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">DEFAULT_FILE_NAME</span> <span class="o">=</span> <span class="s2">&quot;stellar_parameters_overview&quot;</span>
     <span class="n">RESOURCE</span> <span class="o">=</span> <span class="s2">&quot;download_stellar.php&quot;</span>
 
 
@@ -942,7 +942,7 @@ document.write(`
 <span class="sd">    tb = NearbyTargetTable(target_dir=data_dir)</span>
 <span class="sd">    tb.download(toi=&#39;TOI_1130&#39;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">DEFAULT_FILE_NAME</span> <span class="o">=</span> <span class="s2">&quot;nearby_target_overview&quot;</span>
     <span class="n">RESOURCE</span> <span class="o">=</span> <span class="s2">&quot;download_nearbytarget.php&quot;</span>
 
 
@@ -951,7 +951,7 @@ document.write(`
 <span class="sd">    tb = StellarCompanionsTable(target_dir=data_dir)</span>
 <span class="sd">    tb.download(toi=&#39;TOI_1130&#39;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">DEFAULT_FILE_NAME</span> <span class="o">=</span> <span class="s2">&quot;stellar_companions_overview&quot;</span>
     <span class="n">RESOURCE</span> <span class="o">=</span> <span class="s2">&quot;download_stellarcomp.php&quot;</span>
 
 

@@ -27,7 +27,7 @@ The package supports additional features through optional dependencies.
 You can install these dependencies based on your needs. Choose from the following options:
 
 ```bash
-# To also install visualization tools, including matplotlib, plotly and dash
+# To also install visualization tools, including matplotlib and notebook
 python3 -m pip install ".[visualization]"
 ```
 
