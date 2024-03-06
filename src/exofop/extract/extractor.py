@@ -99,6 +99,7 @@ class LightCurveTable(astropy.table.Table):
 
     # synonym_map_lc = SYNONYM_MAP_LC
     simple_synonym_map: SynonymMapLc = SYNONYM_MAP_LC
+    default_synonym_map: SynonymMapLc = SYNONYM_MAP
     _synonym_map: SynonymMapLc = SYNONYM_MAP
     time_threshold: float = 3
 
@@ -127,6 +128,12 @@ class LightCurveTable(astropy.table.Table):
     @property
     def synonym_map(self) -> SynonymMapLc:
         return self._synonym_map
+
+    @synonym_map.setter
+    def synonym_map(self, value):
+        if not isinstance(value, SynonymMapLc):
+            raise ValueError(f"Expected a SynonymMapLc, got {type(value)}.")
+        self._synonym_map = value
 
     @property
     def time(self):
