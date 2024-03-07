@@ -6,7 +6,7 @@ from typing import Dict, List, NamedTuple, Optional, Set, Tuple, Union
 
 class EssentialLightcurveAttributes(NamedTuple):
     """
-    Represents essential attributes of a lightcurve.
+    A class for handling the essential light curve attributes 'time', 'flux', and 'flux_err'.
 
     Attributes
     ----------
@@ -16,14 +16,6 @@ class EssentialLightcurveAttributes(NamedTuple):
         The primary alias for the flux attribute.
     flux_err : str
         The primary alias for the flux error attribute.
-
-    Methods
-    -------
-    update_primary_alias(old_primary_alias, new_primary_alias)
-        Rename a primary alias and update its synonyms accordingly.
-    __deepcopy__(memo)
-        Create a deep copy of the instance.
-
     """
 
     time: str = "time"

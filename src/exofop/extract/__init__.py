@@ -17,6 +17,9 @@ Outline
     A class for handling the standardisation of column names, with additional functionalities for
     the essential light curve attributes 'time', 'flux', and 'flux_err'.
 
+:class:`exofop.extract.EssentialLightcurveAttributes` : class
+    A class for handling the essential light curve attributes 'time', 'flux', and 'flux_err'.
+
 Example
 -------
 The following is a basic example of how to use the class :class:`exofop.extract.LightCurveTableList`
@@ -38,6 +41,6 @@ Classes
 """
 
 from .extractor import LightCurveTableList, LightCurveTable
-from .synonym_map import SynonymMap, SynonymMapLc
+from .synonym_map import SynonymMap, SynonymMapLc, EssentialLightcurveAttributes
 
-__all__ = ["LightCurveTableList", "LightCurveTable", "SynonymMap", "SynonymMapLc"]
+__all__ = ["LightCurveTableList", "LightCurveTable", "SynonymMap", "SynonymMapLc", "EssentialLightcurveAttributes"]

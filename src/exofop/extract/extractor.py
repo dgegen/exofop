@@ -49,6 +49,17 @@ class LightCurveTable(astropy.table.Table):
         A dictionary containing meta data for the table.
     args, kwargs
 
+    Class Attributes
+    ----------------
+    synonym_map : SynonymMapLc
+        A map containing synonyms for the standardisation of column names.
+    time_threshold : float
+        Threshold value for considering a time difference as significant (default is 3 days).
+    simple_synonym_map : SynonymMapLc
+        A minimalistic map for the standardisation of column names.
+    default_synonym_map : SynonymMapLc
+        A map containing the default synonyms for the standardisation of column names.
+
     Examples
     --------
     >>> from exofop.extract import LightCurveTable
@@ -127,6 +138,7 @@ class LightCurveTable(astropy.table.Table):
 
     @property
     def synonym_map(self) -> SynonymMapLc:
+        """Synonym map to standardise column names."""
         return self._synonym_map
 
     @synonym_map.setter
@@ -565,8 +577,6 @@ class LightCurveTableList(list):
     exofop.extract.SynonymMapLc : A map containing synonyms for the standardisation of column names.
     """
 
-    _synonym_map = SYNONYM_MAP
-
     def __init__(self, *args, target_dir: Optional[str] = None, **kwargs):
         super().__init__(*args, **kwargs)
         self._info_df = None
@@ -577,7 +587,7 @@ class LightCurveTableList(list):
     def synonym_map(self) -> SynonymMapLc:
         """Synonym map to standardise column names."""
         if len(self) == 0:
-            return self._synonym_map
+            return SYNONYM_MAP
         else:
             return self[0].synonym_map
 
