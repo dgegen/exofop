@@ -372,6 +372,17 @@ document.write(`
 <span class="sd">        A dictionary containing meta data for the table.</span>
 <span class="sd">    args, kwargs</span>
 
+<span class="sd">    Class Attributes</span>
+<span class="sd">    ----------------</span>
+<span class="sd">    synonym_map : SynonymMapLc</span>
+<span class="sd">        A map containing synonyms for the standardisation of column names.</span>
+<span class="sd">    time_threshold : float</span>
+<span class="sd">        Threshold value for considering a time difference as significant (default is 3 days).</span>
+<span class="sd">    simple_synonym_map : SynonymMapLc</span>
+<span class="sd">        A minimalistic map for the standardisation of column names.</span>
+<span class="sd">    default_synonym_map : SynonymMapLc</span>
+<span class="sd">        A map containing the default synonyms for the standardisation of column names.</span>
+
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
 <span class="sd">    &gt;&gt;&gt; from exofop.extract import LightCurveTable</span>
@@ -450,6 +461,7 @@ document.write(`
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">synonym_map</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SynonymMapLc</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Synonym map to standardise column names.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_synonym_map</span>
 
     <span class="nd">@synonym_map</span><span class="o">.</span><span class="n">setter</span>
@@ -921,8 +933,6 @@ document.write(`
 <span class="sd">    exofop.extract.SynonymMapLc : A map containing synonyms for the standardisation of column names.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">_synonym_map</span> <span class="o">=</span> <span class="n">SYNONYM_MAP</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">target_dir</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_info_df</span> <span class="o">=</span> <span class="kc">None</span>
@@ -933,7 +943,7 @@ document.write(`
     <span class="k">def</span> <span class="nf">synonym_map</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SynonymMapLc</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Synonym map to standardise column names.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_synonym_map</span>
+            <span class="k">return</span> <span class="n">SYNONYM_MAP</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">synonym_map</span>
 
