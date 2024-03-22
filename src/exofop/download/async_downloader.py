@@ -93,7 +93,7 @@ class AsyncDownloader:
         if not os.path.exists(self.download_directory):
             os.makedirs(self.download_directory)
 
-        self.transport = httpx.AsyncHTTPTransport(retries=transport_retries)
+        self.transport_retries = transport_retries
         self.max_retries = max_retries
         self.cookie_feeder = cookie_feeder
 
@@ -129,7 +129,8 @@ class AsyncDownloader:
             file_names = [None] * len(url_list)
         if client_kwargs is None:
             client_kwargs = {}
-        client_kwargs.setdefault("transport", self.transport)
+        if "transport" not in client_kwargs:
+            client_kwargs["transport"] = httpx.AsyncHTTPTransport(retries=self.transport_retries)
 
         if async_client is None:
             async_client = httpx.AsyncClient(**client_kwargs)
@@ -287,9 +288,10 @@ class AsyncDownloader:
     ):
         async with semaphore, client.stream("GET", url, timeout=timeout, cookies=cookies) as response:
                 response.raise_for_status()
-                file_name = AsyncDownloader.extract_filename_from_url_or_headers(
-                    url, response, file_name
-                )
+                if file_name is None:
+                    file_name = AsyncDownloader.extract_filename_from_url_or_headers(
+                        url, response
+                    )
                 total = int(response.headers["Content-Length"])
                 file_path = os.path.join(download_directory, file_name)
 
@@ -319,13 +321,12 @@ class AsyncDownloader:
 
     @staticmethod
     def extract_filename_from_url_or_headers(
-        url: str, response: httpx.Response, file_name: str
+        url: str, response: httpx.Response
     ) -> str:
         # Extract filename from the URL or response headers
         url_path = urlsplit(url).path
         filename = (
-            file_name
-            or os.path.basename(url_path)
+            os.path.basename(url_path)
             or response.headers.get("content-disposition", "").split("filename=")[1].strip('"')
         )
         return filename

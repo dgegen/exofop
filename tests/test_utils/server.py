@@ -40,7 +40,7 @@ class SlowHTTPRequestHandler(SimpleHTTPRequestHandler):
         self.delay_per_chunk = 0.1
         super().__init__(*args, **kwargs)
 
-    def do_get(self):
+    def do_GET(self):
         """Serve a GET request."""
         delay = uniform(MIN_DELAY, MAX_DELAY)
         tag_name = self.path[:-4].lower().split("_")

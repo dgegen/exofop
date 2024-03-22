@@ -108,8 +108,8 @@ class ExoFOPAuthenticator:
             if password is not None:
                 success = self._login(password=password)
 
-            if not success:
-                logger.warning("Login was not successful. Please check your credentials.")
+                if not success:
+                    logger.warning("Login was not successful. Please check your credentials.")
 
     @property
     def cookies(self):
