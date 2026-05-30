@@ -68,6 +68,3 @@ lint.extend-select = [
   "N", # pep8 Naming
   "RUF"
 ]
-
-[tool.setuptools.packages.find]
-where = ["src"]
