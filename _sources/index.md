@@ -27,4 +27,3 @@ notebooks/2_extract_and_standardise_time_series_data.ipynb
 
 exofop.md
 ```
-
