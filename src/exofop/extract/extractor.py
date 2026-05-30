@@ -1,4 +1,4 @@
-__all__ = ["LightCurveTableList", "LightCurveTable"]
+__all__ = ["LightCurveTable", "LightCurveTableList"]
 
 import logging
 import os
@@ -833,7 +833,7 @@ class LightCurveTableList(list):
                 info_df.loc[item.name, "Duration"] = (time[-1] - time[0]) * 24
                 # N_obs/N_theory
                 info_df.loc[item.name, "Efficiency"] = np.round(
-                    ((len(time) - 1) * np.min(np.diff(time)) / ((time[-1] - time[0])))
+                    ((len(time) - 1) * np.min(np.diff(time)) / (time[-1] - time[0]))
                     * 100,  # in percent
                     decimals=1,
                 )
@@ -1182,7 +1182,7 @@ def get_sorted_exofop_observation_list(data_dir):
     ]
     observation_list = sorted(observation_list, key=extract_number_for_sort)
 
-    logger.info(f'Tags of datasets processed: {" ".join(observation_list)}')
+    logger.info(f"Tags of datasets processed: {' '.join(observation_list)}")
 
     return observation_list
 

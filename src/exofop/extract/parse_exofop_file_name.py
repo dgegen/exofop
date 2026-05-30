@@ -266,7 +266,7 @@ def parse_exofop_file_name(file_name: str) -> dict[str, str]:
         return file_name_components  # Return the extracted components as a dictionary
     elif match := re.match(prefix_pattern, file_name):  # Tries to match target, pp, yyyymmdd
         logger.warning(
-            f"Invalid file name format: '{file_name}'." " Extracted components will be incomplete."
+            f"Invalid file name format: '{file_name}'. Extracted components will be incomplete."
         )
         file_name_components = match.groupdict()
         file_name_components["full_file_name"] = file_name

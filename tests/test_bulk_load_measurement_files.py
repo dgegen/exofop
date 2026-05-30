@@ -52,13 +52,11 @@ def test_load_exofop_measurements_files_from_direcetory(test_files_dir):
     test_data_dir, observation_names = test_files_dir
 
     for observation_name in observation_names:
-        unformatted_df_list, _ = (
-            load_exofop_measurements_files_from_direcetory(
-                observation_name=observation_name,
-                data_dir=test_data_dir,
-                infer_separator=True,
-                essential_attribute_names=LightCurveTable().synonym_map.light_curve_attributes,
-            )
+        unformatted_df_list, _ = load_exofop_measurements_files_from_direcetory(
+            observation_name=observation_name,
+            data_dir=test_data_dir,
+            infer_separator=True,
+            essential_attribute_names=LightCurveTable().synonym_map.light_curve_attributes,
         )
         for item in unformatted_df_list:
             assert isinstance(item, pd.DataFrame)
@@ -74,7 +72,6 @@ def test_load_exofop_measurements_files_from_direcetory(test_files_dir):
 
 
 def test_load_exofop_measurement_files_as_dfs(test_files_dir):
-
     test_data_dir, observation_names = test_files_dir
 
     unformatted_df_dict, measurement_file_names = load_exofop_measurement_files_as_dfs(
@@ -100,22 +97,24 @@ def test_unpack_multiple_measurements_from_same_tag():
     measurement_file_names = [
         "TIC123456789.01_20200101_TELESCOPE-NAME-0_Rc_3px_measurements.csv",
         "TIC123456789.01_20200101_TELESCOPE-NAME-0_Rc_5px_measurements.tbl",
-        "TIC123456789.01_20200101_TELESCOPE-NAME-0_Rc_10_px_measurements_without_header.txt"
+        "TIC123456789.01_20200101_TELESCOPE-NAME-0_Rc_10_px_measurements_without_header.txt",
     ]
-    
+
     true_file_name_components_dict = extract_components_from_exofop_measurement_file_names(
-            dict(zip(range(len(measurement_file_names)), range(len(measurement_file_names)))),
-            measurement_file_names
-        )
-    
+        dict(zip(range(len(measurement_file_names)), range(len(measurement_file_names)))),
+        measurement_file_names,
+    )
+
     nested_file_name_components_dict = {
         "0": list(true_file_name_components_dict.values()),
     }
     unformatted_df_dict = {"0": ["df_1", "df_2", "df_3"]}
 
-    unpack_multiple_measurements_from_same_tag(nested_file_name_components_dict, unformatted_df_dict)
+    unpack_multiple_measurements_from_same_tag(
+        nested_file_name_components_dict, unformatted_df_dict
+    )
 
-    assert list(unformatted_df_dict.keys()) == ['0_3px', '0_5px', '0_10_px_without_header']
+    assert list(unformatted_df_dict.keys()) == ["0_3px", "0_5px", "0_10_px_without_header"]
 
 
 def test_load_exofop_data(test_files_dir):

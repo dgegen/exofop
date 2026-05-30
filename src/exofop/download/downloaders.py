@@ -125,8 +125,8 @@ class TagDownloader:
 
     @property
     def client_kwargs(self) -> dict:
-        """Return the client kwargs for the downloader. 
-        
+        """Return the client kwargs for the downloader.
+
         This includes a set of cookies if an authenticator is provided.
         """
         client_kwargs = {}
@@ -255,7 +255,7 @@ class TagDownloader:
 
         status_response = counts[DownloadStatus.OK]
         total_responses = sum(counts.values())
-        total_responses = total_responses if total_responses > 0 else 1 # avoid division by zero
+        total_responses = total_responses if total_responses > 0 else 1  # avoid division by zero
         status_rate = round(status_response / total_responses * 100, 2)
         logger.info(
             f"Downloaded {status_response} of {total_responses} files "
@@ -475,7 +475,7 @@ class ExofopTable:
         return file_names
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}(" f"target_dir={self.target_dir})"
+        return f"{self.__class__.__name__}(target_dir={self.target_dir})"
 
 
 class ExofopIDTable(ExofopTable):
@@ -570,6 +570,7 @@ class TimeSeriesTable(ExofopTable):
     >>> toi_list = ['TOI_1130', 'TOI_1131']
     >>> table.bulk_download(toi_list=toi_list, to_separate_folders=False)
     """
+
     DEFAULT_FILE_NAME = "time_series_observations_overview"
     RESOURCE = "download_tseries.php"
 
@@ -579,6 +580,7 @@ class SpectroscopyTable(ExofopTable):
     >>> table = SpectroscopyTable(target_dir=data_dir)
     >>> df = table.download(toi='TOI_1130')
     """
+
     DEFAULT_FILE_NAME = "spectroscopy_observations_overview"
     RESOURCE = "download_spect.php"
 
@@ -588,6 +590,7 @@ class ImagingTable(ExofopTable):
     >>> imaging_table = ImagingTable(target_dir=data_dir)
     >>> df = imaging_table.download(toi='TOI_1130')
     """
+
     DEFAULT_FILE_NAME = "imaging_observations_overview"
     RESOURCE = "download_imaging.php"
 
@@ -597,6 +600,7 @@ class StellarParametersTable(ExofopIDTable):
     tb = StellarParametersTable(target_dir=data_dir)
     tb.download(toi='TOI_1130')
     """
+
     DEFAULT_FILE_NAME = "stellar_parameters_overview"
     RESOURCE = "download_stellar.php"
 
@@ -606,6 +610,7 @@ class NearbyTargetTable(ExofopIDTable):
     tb = NearbyTargetTable(target_dir=data_dir)
     tb.download(toi='TOI_1130')
     """
+
     DEFAULT_FILE_NAME = "nearby_target_overview"
     RESOURCE = "download_nearbytarget.php"
 
@@ -615,6 +620,7 @@ class StellarCompanionsTable(ExofopTable):
     tb = StellarCompanionsTable(target_dir=data_dir)
     tb.download(toi='TOI_1130')
     """
+
     DEFAULT_FILE_NAME = "stellar_companions_overview"
     RESOURCE = "download_stellarcomp.php"
 
@@ -651,9 +657,7 @@ class OverviewTableAccessor:
         return self.table_loader.download(target=self.target, target_dir=self.target_dir)
 
     def __repr__(self) -> str:
-        return (
-            f"{self.__class__.__name__}(" f"target={self.target}, table_loader={self.table_loader})"
-        )
+        return f"{self.__class__.__name__}(target={self.target}, table_loader={self.table_loader})"
 
 
 class SystemDownloader(TagDownloader):

@@ -4,13 +4,13 @@ import os
 PACKAGEDIR: str = os.path.abspath(
     os.path.join(
         os.path.abspath(os.path.dirname(__file__)),  # exofop/utils
-        os.pardir
-        )
+        os.pardir,
+    )
 )
 
 COOKIES_DIR: str = os.path.join(PACKAGEDIR, "cookies")
 
-CONFIG_DIR : str = os.path.join(PACKAGEDIR, "config")
+CONFIG_DIR: str = os.path.join(PACKAGEDIR, "config")
 
 MPLSTYLE: str = f"{PACKAGEDIR}/config/style.mplstyle"
 """ Path to stylesheet for matplotlib.

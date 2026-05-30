@@ -13,7 +13,6 @@ from exofop.extract.parse_exofop_file_name import (
 
 
 class TestParseExofopFileName(unittest.TestCase):
-
     def test_parse_exofop_file_name_valid(self):
         file_name = "TIC254113311.01_20200805_ASTEP-ANTARCTICA_Rc_compstar-lightcurves.csv"
         result = parse_exofop_file_name(file_name)

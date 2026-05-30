@@ -104,10 +104,7 @@ class TIC:
         """
         Verify that the TESSS Input Catalogue (TIC) ID is valid.
         """
-        if len(tic_id) > 9 or not tic_id.isdigit():
-            return False
-
-        return True
+        return not (len(tic_id) > 9 or not tic_id.isdigit())
 
     def lookup(self, overview_table: Optional[pd.DataFrame] = None) -> pd.DataFrame:
         """Look up the system in the overview table."""
@@ -139,9 +136,7 @@ class TIC:
 
     def exists(self, overview_table: Optional[pd.DataFrame] = None) -> bool:
         """Check if the system exists in the overview table."""
-        if self.lookup(overview_table).empty:
-            return False
-        return True
+        return not self.lookup(overview_table).empty
 
     def __repr__(self) -> str:
         return f"TIC({self._tic_id})"
@@ -196,7 +191,7 @@ class TOI:
     True
 
     """
-    
+
     def __init__(self, toi_id: Union[str, int, float, "TOI"]):
         if isinstance(toi_id, TOI):
             toi_id = toi_id.id
@@ -223,7 +218,7 @@ class TOI:
 
     @staticmethod
     def _clean_id(toi_id: Union[str, int, float]) -> str:
-        """ Make sure that the TESS Objects of Interest (TOI) ID is clean. """
+        """Make sure that the TESS Objects of Interest (TOI) ID is clean."""
         if not isinstance(toi_id, (str, int, float)):
             raise TypeError("TOI ID must be a string or integer.")
 
@@ -287,9 +282,7 @@ class TOI:
 
     def exists(self, overview_table: Optional[pd.DataFrame] = None) -> bool:
         """Check if the system exists in the overview table."""
-        if self.lookup(overview_table).empty:
-            return False
-        return True
+        return not self.lookup(overview_table).empty
 
     def to_tic(self, overview_table: Optional[pd.DataFrame] = None) -> TIC:
         """Convert TOI to TIC ID."""
@@ -434,19 +427,16 @@ class System:
 
     def is_complete(self) -> bool:
         """Check if the system is complete, i.e., if both TIC and TOI IDs are provided."""
-        if self.tic is not None and self.toi is not None:
-            return True
-        return False
+        return self.tic is not None and self.toi is not None
 
     def is_consistent(self) -> bool:
         """Check if both TIC and TOI IDs are referring to the same system."""
         if not self.is_complete():
             return True
 
-        if self.tic is not None and self.toi is not None and (self.tic.to_toi().id != self.toi.id):
-            return False
-
-        return True
+        return not (
+            self.tic is not None and self.toi is not None and (self.tic.to_toi().id != self.toi.id)
+        )
 
     def _raise_if_invalid(self) -> None:
         if self.tic is not None and not self.tic._has_valid_format(self.tic.id):
@@ -485,7 +475,7 @@ class System:
                 )
 
     def __repr__(self) -> str:
-        return "System(" f"name={self.name}, tic={self.tic} " f"toi={self.toi}" ")"
+        return f"System(name={self.name}, tic={self.tic} toi={self.toi})"
 
 
 def cache_log_once(func):
@@ -494,7 +484,6 @@ def cache_log_once(func):
 
     @wraps(func)
     def wrapper(*args, **kwargs):
-
         if args not in cached_results:
             logger.info(
                 "Downloading TOI overview table from ExoFOP, to convert between TIC and TOI IDs. "
@@ -541,7 +530,7 @@ def fetch_overview_table(base_url: str = BASE_URL) -> pd.DataFrame:
     4  238597883                     1  ...                      2023-03-24  1004.01
     <BLANKLINE>
     [5 rows x 63 columns]
-    
+
     """
     overview_table = fetch_tois_data()
     if overview_table is None:

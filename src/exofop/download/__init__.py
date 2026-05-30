@@ -5,10 +5,10 @@ Outline
 -------
 :class:`exofop.download.SystemDownloader` : class
     A class for downloading data related to individual stellar systems from ExoFOP.
-    
+
 :class:`exofop.download.ExoFOPAuthenticator` : class
     A class for handling authentication with and cookie storage for the ExoFOP server.
-    
+
 :class:`exofop.download.TagDownloader` : class
     A class for downloading data using ExoFOP tags.
 
@@ -49,11 +49,11 @@ from .identifiers import System, TIC, TOI
 from .downloaders import TagDownloader, SystemDownloader, OverviewTableAccessor
 
 __all__ = [
-    "ExoFOPAuthenticator",
-    "System",
     "TIC",
     "TOI",
-    "TagDownloader",
-    "SystemDownloader",
+    "ExoFOPAuthenticator",
     "OverviewTableAccessor",
+    "System",
+    "SystemDownloader",
+    "TagDownloader",
 ]

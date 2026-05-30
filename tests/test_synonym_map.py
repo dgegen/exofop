@@ -144,13 +144,14 @@ def test_rename_alias(synonym_map_lc):
     synonym_map_lc["time"] = ["Time", "BJD", "BJD_TDB", "#BJD_TDB"]
     synonym_map_lc.rename_primary_alias("time", "time_renamed")
     assert synonym_map_lc.get_rename_dict("time_renamed") == {
-        'Time': 'time_renamed',
-        'BJD': 'time_renamed',
-        'BJD_TDB': 'time_renamed',
-        '#BJD_TDB': 'time_renamed',
-        'time': 'time_renamed'
+        "Time": "time_renamed",
+        "BJD": "time_renamed",
+        "BJD_TDB": "time_renamed",
+        "#BJD_TDB": "time_renamed",
+        "time": "time_renamed",
     }
     assert "time" not in synonym_map_lc
+
 
 def test_yaml_serialization_deserialization(tmp_path):
     file_path = tmp_path / "synonym_map_lc.yaml"
@@ -165,7 +166,7 @@ def test_yaml_serialization_deserialization(tmp_path):
 def test_load_from_default_config():
     synonym_map_lc = SynonymMapLc.load_from_config()
     assert isinstance(synonym_map_lc, SynonymMapLc)
-    
+
     synonym_map_lc = SynonymMapLc.load_from_config(reset=True)
     assert isinstance(synonym_map_lc, SynonymMapLc)
 

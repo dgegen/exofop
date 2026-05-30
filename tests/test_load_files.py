@@ -35,6 +35,3 @@ def test_load_generic_measurement(test_files_dir, sub_dir):
         assert isinstance(df, pd.DataFrame)
         assert df.size > 0
         print(df)
-
-
-

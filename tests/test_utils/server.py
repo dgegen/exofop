@@ -107,13 +107,13 @@ if __name__ == "__main__":
         "--bind",
         "-b",
         metavar="ADDRESS",
-        help="Specify alternate bind address " "[default: all interfaces]",
+        help="Specify alternate bind address [default: all interfaces]",
     )
     parser.add_argument(
         "--directory",
         "-d",
         default=os.getcwd(),
-        help="Specify alternative directory " "[default:current directory]",
+        help="Specify alternative directory [default:current directory]",
     )
     parser.add_argument(
         "--error-rate",
@@ -121,7 +121,7 @@ if __name__ == "__main__":
         metavar="PROBABILITY",
         default=0.0,
         type=float,
-        help="Error rate; e.g. use .25 for 25%% probability " "[default:0.0]",
+        help="Error rate; e.g. use .25 for 25%% probability [default:0.0]",
     )
     parser.add_argument(
         "port",

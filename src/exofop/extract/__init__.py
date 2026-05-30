@@ -43,4 +43,10 @@ Classes
 from .extractor import LightCurveTableList, LightCurveTable
 from .synonym_map import SynonymMap, SynonymMapLc, EssentialLightcurveAttributes
 
-__all__ = ["LightCurveTableList", "LightCurveTable", "SynonymMap", "SynonymMapLc", "EssentialLightcurveAttributes"]
+__all__ = [
+    "EssentialLightcurveAttributes",
+    "LightCurveTable",
+    "LightCurveTableList",
+    "SynonymMap",
+    "SynonymMapLc",
+]

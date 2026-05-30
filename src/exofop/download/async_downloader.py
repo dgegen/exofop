@@ -3,6 +3,7 @@ import os
 import logging
 from collections import Counter
 from enum import Enum
+
 # from http import HTTPStatus
 from pathlib import Path
 from typing import Iterator, Optional, Union
@@ -15,6 +16,7 @@ import tqdm.auto as tqdm  # type: ignore
 
 logger = logging.getLogger("exofop.download")
 DownloadStatus = Enum("DownloadStatus", "OK NOT_FOUND ERROR TIMEOUT")
+
 
 class AsyncDownloader:
     """
@@ -107,12 +109,12 @@ class AsyncDownloader:
     ) -> Counter[DownloadStatus]:
         counts = asyncio.run(
             self.download_supervisor(
-                    url_list=url_list,
-                    file_names=file_names,
-                    download_directory=download_directory,
-                    async_client=async_client,
-                    client_kwargs=client_kwargs,
-                )
+                url_list=url_list,
+                file_names=file_names,
+                download_directory=download_directory,
+                async_client=async_client,
+                client_kwargs=client_kwargs,
+            )
         )
 
         return counts
@@ -286,49 +288,47 @@ class AsyncDownloader:
         timeout: float = 10,
         show_progress=True,
     ):
-        async with semaphore, client.stream("GET", url, timeout=timeout, cookies=cookies) as response:
-                response.raise_for_status()
-                if file_name is None:
-                    file_name = AsyncDownloader.extract_filename_from_url_or_headers(
-                        url, response
-                    )
-                total = int(response.headers["Content-Length"])
-                file_path = os.path.join(download_directory, file_name)
+        async with (
+            semaphore,
+            client.stream("GET", url, timeout=timeout, cookies=cookies) as response,
+        ):
+            response.raise_for_status()
+            if file_name is None:
+                file_name = AsyncDownloader.extract_filename_from_url_or_headers(url, response)
+            total = int(response.headers["Content-Length"])
+            file_path = os.path.join(download_directory, file_name)
 
-                try:
-                    async with aiofiles.open(file_path, "wb") as download_file:
-                        with tqdm.tqdm(
-                            total=total,
-                            unit_scale=True,
-                            unit_divisor=1024,
-                            unit="B",
-                            desc=f"Downloading {os.path.basename(file_name)}",
-                            leave=True,
-                            bar_format="{l_bar}{bar:10}{r_bar}{bar:-10b}",
-                            disable=not show_progress,
-                        ) as progress:
+            try:
+                async with aiofiles.open(file_path, "wb") as download_file:
+                    with tqdm.tqdm(
+                        total=total,
+                        unit_scale=True,
+                        unit_divisor=1024,
+                        unit="B",
+                        desc=f"Downloading {os.path.basename(file_name)}",
+                        leave=True,
+                        bar_format="{l_bar}{bar:10}{r_bar}{bar:-10b}",
+                        disable=not show_progress,
+                    ) as progress:
+                        num_bytes_downloaded = response.num_bytes_downloaded
+                        async for chunk in response.aiter_bytes():
+                            await download_file.write(chunk)
+                            progress.update(response.num_bytes_downloaded - num_bytes_downloaded)
                             num_bytes_downloaded = response.num_bytes_downloaded
-                            async for chunk in response.aiter_bytes():
-                                await download_file.write(chunk)
-                                progress.update(response.num_bytes_downloaded - num_bytes_downloaded)
-                                num_bytes_downloaded = response.num_bytes_downloaded
-                except Exception as exc:
-                    # Remove empty files
-                    if await aiofiles.os.path.getsize(file_path) == 0:
-                        logger.debug(f"Removing empty file {file_path}")
-                        await aiofiles.os.remove(file_path)
-                    raise exc
+            except Exception as exc:
+                # Remove empty files
+                if await aiofiles.os.path.getsize(file_path) == 0:
+                    logger.debug(f"Removing empty file {file_path}")
+                    await aiofiles.os.remove(file_path)
+                raise exc
 
     @staticmethod
-    def extract_filename_from_url_or_headers(
-        url: str, response: httpx.Response
-    ) -> str:
+    def extract_filename_from_url_or_headers(url: str, response: httpx.Response) -> str:
         # Extract filename from the URL or response headers
         url_path = urlsplit(url).path
-        filename = (
-            os.path.basename(url_path)
-            or response.headers.get("content-disposition", "").split("filename=")[1].strip('"')
-        )
+        filename = os.path.basename(url_path) or response.headers.get(
+            "content-disposition", ""
+        ).split("filename=")[1].strip('"')
         return filename
 
     @staticmethod

@@ -48,7 +48,7 @@ def load_exofop_measurement_files_as_dfs(
             # + ("\n" if len(df.columns) >= 20 else "")
         )
         if len(df.columns) < 20:
-            logger.debug(f'Concretely: {", ".join(df.columns)}.\n')
+            logger.debug(f"Concretely: {', '.join(df.columns)}.\n")
 
     measurement_file_names = []
     df_dict = {}
@@ -226,7 +226,7 @@ def load_exofop_measurements_files_from_direcetory(
     if len(found_measurement_files) > 1:
         competing_files = ", ".join(found_measurement_files)
         logger.debug(
-            f"Competing measurement files {competing_files}" ' in observation "{observation_name}"'
+            f'Competing measurement files {competing_files} in observation "{{observation_name}}"'
         )
 
         return df_list, found_measurement_files
@@ -266,7 +266,7 @@ def load_generic_measurement_file(
         return None if majority_is_numeric else "infer"
 
     if infer_separator:
-        kwargs["sep"] = kwargs.get("sep", None)
+        kwargs["sep"] = kwargs.get("sep")
         kwargs["engine"] = "python"
 
     index_col = determine_index_col(file_path, **kwargs)  # returns 0 or None
@@ -346,7 +346,7 @@ def load_measurements_pest(
         """
         matching_items = [item for item in candidates if search_string in item]
         assert len(matching_items) != 0, (
-            f"No matching item found for '{search_string}'" "among candidates: {candidates}"
+            f"No matching item found for '{search_string}'among candidates: {{candidates}}"
         )
         assert len(matching_items) == 1, (
             f"More than one matching item found for '{search_string}'"
@@ -454,7 +454,7 @@ def check_uniqueness_of_column_names(df_list, observation_names):
             duplicated_columns = df.columns[df.columns.duplicated()]
             logger.warning(
                 f'Duplicate columns found in observation "{observation_name}": '
-                f'{", ".join(duplicated_columns)}'
+                f"{', '.join(duplicated_columns)}"
             )
 
 

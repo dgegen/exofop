@@ -5,10 +5,10 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath('..src'))
-sys.path.insert(0, os.path.abspath('..src/exofop/download'))
-sys.path.insert(0, os.path.abspath('..src/exofop/extract'))
-sys.path.insert(0, os.path.abspath('..src/exofop/utils'))
+sys.path.insert(0, os.path.abspath("..src"))
+sys.path.insert(0, os.path.abspath("..src/exofop/download"))
+sys.path.insert(0, os.path.abspath("..src/exofop/extract"))
+sys.path.insert(0, os.path.abspath("..src/exofop/utils"))
 
 language = "en"
 master_doc = "index"
@@ -16,9 +16,9 @@ master_doc = "index"
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'ExoFOP'
-copyright = '2024, David Degen'
-author = 'David Degen'
+project = "ExoFOP"
+copyright = "2024, David Degen"
+author = "David Degen"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -36,8 +36,8 @@ extensions = [
 ]
 
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 
 source_suffix = {
@@ -58,7 +58,7 @@ html_css_files = ["style.css"]
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 # html_theme = 'alabaster'
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 html_theme_options = {
     "path_to_docs": "docs",

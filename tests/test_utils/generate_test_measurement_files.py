@@ -70,12 +70,14 @@ def get_essential_light_curve(
         start_time = 2.45900e06
         end_time = start_time + n_measurements * texp
         return np.linspace(start_time, end_time, num=n_measurements)
-    
+
     if columns is None:
         columns = ["time", "flux", "flux_err"]
 
     time = get_time()
-    flux = mean_flux * np.ones(n_measurements) + np.random.default_rng(42).normal(0, 1e-3, n_measurements)
+    flux = mean_flux * np.ones(n_measurements) + np.random.default_rng(42).normal(
+        0, 1e-3, n_measurements
+    )
     flux_err = np.full(n_measurements, 1e-3)
 
     df = pd.DataFrame(np.array([time, flux, flux_err]).T, columns=columns)
