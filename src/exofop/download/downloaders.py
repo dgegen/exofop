@@ -729,7 +729,7 @@ class SystemDownloader(TagDownloader):
         authenticator: Optional[ExoFOPAuthenticator] = None,
         downloader: Optional[AsyncDownloader] = None,
         max_concurrent_downloads=2,
-        timeout=5,
+        timeout=30,
         max_retries=1,
     ) -> None:
         self.system = system
