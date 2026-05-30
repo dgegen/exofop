@@ -260,9 +260,7 @@ class SynonymMap(defaultdict):
         """
         self._primary_alias_to_synonyms = {}
         for primary_alias, synonyms in self.items():
-            self._primary_alias_to_synonyms[primary_alias] = {
-                synonym: primary_alias for synonym in synonyms
-            }
+            self._primary_alias_to_synonyms[primary_alias] = dict.fromkeys(synonyms, primary_alias)
 
     def rename_primary_alias(self, old_primary_alias, new_primary_alias):
         """
@@ -300,7 +298,7 @@ class SynonymMap(defaultdict):
     @classmethod
     def from_dict(cls, data: dict):
         instance = cls()
-        instance.update(data)
+        instance.update({k: tuple(v) if isinstance(v, list) else v for k, v in data.items()})
         return instance
 
     def save_to_yaml(self, file_path):

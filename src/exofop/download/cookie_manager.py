@@ -89,10 +89,7 @@ class CookieJarShelf:
         for cookie_jar, cookie_dict in zip(self.cookie_jar_shelf, saved_shelf):
             cookie_jar._cookies = cookie_dict
 
-        if self.cookies_still_valid():
-            return True
-
-        return False
+        return bool(self.cookies_still_valid())
 
     def cookies_still_valid(self, buffer_hours=0) -> bool:
         if not self.cookie_jar_shelf:

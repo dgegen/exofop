@@ -51,9 +51,7 @@ jobs:
         run: uv sync --locked --group docs
 
       - name: Build HTML
-        run: |
-          cd docs/
-          uv run make -C docs html
+        run: uv run make -C docs html
 
       - name: Deploy to GitHub Pages
         run: uv run ghp-import -n -p -f docs/_build/html

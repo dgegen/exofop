@@ -3,31 +3,31 @@ light_curve_attributes:
   flux_err: rel_flux_err_T1_n
   time: BJD_TDB
 synonyms:
-  AIRMASS: !!python/tuple
+  AIRMASS:
   - airmass
-  BJD_TDB: !!python/tuple
+  BJD_TDB:
   - time
   - TIME
   - BJD
   - BJD_TDB_MOBS
   - '#BJD_TDB'
-  FWHM_T1: !!python/tuple
+  FWHM_T1:
   - fwhm
   - FWHM
-  Sky/Pixel_T1: !!python/tuple
+  Sky/Pixel_T1:
   - sky
   - SKY
-  X(IJ)_T1: !!python/tuple
+  X(IJ)_T1:
   - x_coord
-  Y(IJ)_T1: !!python/tuple
+  Y(IJ)_T1:
   - y_coord
-  rel_flux_T1_n: !!python/tuple
+  rel_flux_T1_n:
   - flux
   - FLUX
   - rel_flux
   - rel_flux_T1
   - flux_star_0
-  rel_flux_err_T1_n: !!python/tuple
+  rel_flux_err_T1_n:
   - flux_err
   - ERRFLUX
   - rel_flux_err_T1
